@@ -1,5 +1,5 @@
 ---
-templateKey: blog-post
+templateKey: post
 title: Time Management Web App
 description: Trying to stay on schedule with Senior Design
 date: 2018-04-01T00:00:00.000Z

@@ -1,5 +1,5 @@
 ---
-templateKey: blog-post
+templateKey: post
 title: Word Clocks
 description: A custom Christmas present, with Arduino and LEDs
 date: 2015-12-01T00:00:00.000Z

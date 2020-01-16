@@ -1,5 +1,5 @@
 ---
-templateKey: blog-post
+templateKey: post
 title: Full Stack Web Developer, Microsensor Labs
 subtitle: Chicago, IL
 description: Heck yeah.

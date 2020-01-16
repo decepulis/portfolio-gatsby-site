@@ -1,5 +1,5 @@
 ---
-templateKey: blog-post
+templateKey: post
 title: Counselor & Head Counselor at Camp Kretinga
 subtitle: Lithuanian Catholic Youth Camp, Wasaga Beach, Ontario
 description: Five years of caring for kiddos, running programs, and making memories

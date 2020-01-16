@@ -1,5 +1,5 @@
 ---
-templateKey: blog-post
+templateKey: post
 title: Rad - Portfolio Theme
 date: 2020-01-16T20:24:09.204Z
 description: >-

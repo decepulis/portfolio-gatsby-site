@@ -1,5 +1,5 @@
 ---
-templateKey: blog-post
+templateKey: post
 title: Quantified Selfie
 description: Data Visualization of Messages
 date: 2016-05-01T00:00:00.000Z

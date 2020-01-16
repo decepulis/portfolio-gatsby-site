@@ -1,5 +1,5 @@
 ---
-templateKey: blog-post
+templateKey: post
 title: Teaching Assistant, Engineering Models with MATLAB
 subtitle: University of Cincinnati, Cincinnati, OH
 description: The best part of my university career was passing it on

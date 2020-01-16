@@ -1,5 +1,5 @@
 ---
-templateKey: blog-post
+templateKey: post
 title: Thesis & Publication
 description: Creating Socio-Technical Patches for Information Foraging - A Requirements Traceability Case Study
 date: 2018-08-01T00:00:00.000Z

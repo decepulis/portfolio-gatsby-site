@@ -1,5 +1,5 @@
 ---
-templateKey: blog-post
+templateKey: post
 title: Corporate Research Co-op, Bosch
 subtitle: Renningen, Germany
 description: Using web technologies to build a suite of sensor-data analytics tools. In Germany.
