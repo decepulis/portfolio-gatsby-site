@@ -15,6 +15,9 @@ export default function Education() {
           edges {
             node {
               id
+              fields {
+                slug
+              }
               frontmatter {
                 title
                 subtitle

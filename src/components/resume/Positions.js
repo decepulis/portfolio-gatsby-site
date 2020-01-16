@@ -15,6 +15,9 @@ export default function Positions() {
           edges {
             node {
               id
+              fields {
+                slug
+              }
               frontmatter {
                 title
                 subtitle

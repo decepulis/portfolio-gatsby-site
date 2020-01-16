@@ -15,6 +15,9 @@ export default function Projects() {
           edges {
             node {
               id
+              fields {
+                slug
+              }
               frontmatter {
                 title
                 subtitle
@@ -40,6 +43,7 @@ export default function Projects() {
           subtitle={node.frontmatter.subtitle}
           date={node.frontmatter.date}
           description={node.frontmatter.description}
+          slug={node.fields.slug}
         />
       ))}
       <p>View All {data.allMarkdownRemark.totalCount} Entries &rarr;</p>
