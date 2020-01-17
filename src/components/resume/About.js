@@ -9,6 +9,7 @@ export default function About() {
       <img
         id="headshot"
         src="/assets/headshot-bw-web.jpg"
+        alt="Yep. That's my face, gazing into the camera. Black and white. I thought I had a pretty nice haircut here, too."
         align="right"
         width="300"
         height="300"
