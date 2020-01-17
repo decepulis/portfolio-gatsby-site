@@ -3,7 +3,7 @@ import React from "react"
 import { Link } from "gatsby"
 import { Breadcrumb } from "gatsby-plugin-breadcrumb"
 
-export default ({ children, pageContext }) => {
+export default ({ children, pageContext, pageTitle }) => {
   const {
     breadcrumb: { crumbs },
   } = pageContext
@@ -33,11 +33,13 @@ export default ({ children, pageContext }) => {
             textDecoration: "",
             fontSize: "",
             color: "",
+            textTransform: "capitalize",
           }}
           crumbActiveStyle={{
             color: "",
           }}
           crumbSeparator=" / "
+          crumbLabel={pageTitle}
         />
       </nav>
       <main>{children}</main>

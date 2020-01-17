@@ -6,10 +6,12 @@ import Layout from "../components/layout"
 import PostPreview from "../components/PostPreview"
 
 export default ({ data, pageContext }) => {
+  const pageTitle = pageContext.slug.replace(/\//g, "")
+
   return (
-    <Layout pageContext={pageContext}>
+    <Layout pageContext={pageContext} pageTitle={pageTitle}>
       <header>
-        <h1>{pageContext.slug}</h1>
+        <h1 style={{ textTransform: "capitalize" }}>{pageTitle}</h1>
       </header>
       {data.allMarkdownRemark.edges.map(({ node }) => (
         <PostPreview

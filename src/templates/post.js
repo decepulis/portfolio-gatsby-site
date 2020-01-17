@@ -5,7 +5,7 @@ import Layout from "../components/layout"
 export default ({ data, pageContext }) => {
   const post = data.markdownRemark
   return (
-    <Layout pageContext={pageContext}>
+    <Layout pageContext={pageContext} pageTitle={post.frontmatter.title}>
       <article>
         <header>
           <h1>{post.frontmatter.title}</h1>
