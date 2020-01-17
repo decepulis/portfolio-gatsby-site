@@ -1,6 +1,6 @@
 import React from "react"
-import { graphql, useStaticQuery } from "gatsby"
-import PostPreview from "./PostPreview"
+import { graphql, useStaticQuery, Link } from "gatsby"
+import PostPreview from "../PostPreview"
 
 export default function Education() {
   const data = useStaticQuery(
@@ -43,9 +43,14 @@ export default function Education() {
           subtitle={node.frontmatter.subtitle}
           date={node.frontmatter.date}
           description={node.frontmatter.description}
+          slug={node.fields.slug}
         />
       ))}
-      <p>View All {data.allMarkdownRemark.totalCount} Entries &rarr;</p>
+      <p>
+        <Link to="/education/">
+          View All {data.allMarkdownRemark.totalCount} Entries &rarr;
+        </Link>
+      </p>
     </section>
   )
 }
