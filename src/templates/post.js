@@ -2,10 +2,10 @@ import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
 
-export default ({ data }) => {
+export default ({ data, pageContext }) => {
   const post = data.markdownRemark
   return (
-    <Layout>
+    <Layout pageContext={pageContext}>
       <article>
         <header>
           <h1>{post.frontmatter.title}</h1>

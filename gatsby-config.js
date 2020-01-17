@@ -1,6 +1,13 @@
 module.exports = {
+  siteMetadata: {
+    siteUrl:
+      process.env.NODE_ENV === "production"
+        ? "https://decepulis.netlify.com"
+        : "http://localhost:8000",
+  },
   plugins: [
     `gatsby-plugin-netlify-cms`,
+    `gatsby-transformer-remark`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -8,6 +15,13 @@ module.exports = {
         path: `${__dirname}/src/posts`,
       },
     },
-    `gatsby-transformer-remark`,
+    {
+      resolve: `gatsby-plugin-breadcrumb`,
+      options: {
+        // useAutoGen: required 'true' to use autogen
+        useAutoGen: true,
+        exclude: [`/404`, `/404.html`],
+      },
+    },
   ],
 }

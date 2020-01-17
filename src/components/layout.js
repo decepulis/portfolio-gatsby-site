@@ -1,8 +1,13 @@
 import React from "react"
 
 import { Link } from "gatsby"
+import { Breadcrumb } from "gatsby-plugin-breadcrumb"
 
-export default ({ children }) => {
+export default ({ children, pageContext }) => {
+  const {
+    breadcrumb: { crumbs },
+  } = pageContext
+
   return (
     <>
       <header>
@@ -10,7 +15,7 @@ export default ({ children }) => {
           <Link to="/">Darius Cepulis</Link>
         </h1>
       </header>
-      <p>
+      <nav>
         <label>
           Theme:
           <select>
@@ -21,7 +26,20 @@ export default ({ children }) => {
             <option value="2019">2019</option>
           </select>
         </label>
-      </p>
+        <Breadcrumb
+          crumbs={crumbs}
+          crumbWrapperStyle={{}}
+          crumbStyle={{
+            textDecoration: "",
+            fontSize: "",
+            color: "",
+          }}
+          crumbActiveStyle={{
+            color: "",
+          }}
+          crumbSeparator=" / "
+        />
+      </nav>
       <main>{children}</main>
     </>
   )

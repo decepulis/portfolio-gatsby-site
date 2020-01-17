@@ -7,7 +7,7 @@ import PostPreview from "../components/PostPreview"
 
 export default ({ data, pageContext }) => {
   return (
-    <Layout>
+    <Layout pageContext={pageContext}>
       <header>
         <h1>{pageContext.slug}</h1>
       </header>
