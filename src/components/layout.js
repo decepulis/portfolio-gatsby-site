@@ -1,9 +1,12 @@
-import React from "react"
+import React, { useContext } from "react"
+import ThemeContext from "../context/ThemeContext"
 
 import { Link } from "gatsby"
 import { Breadcrumb } from "gatsby-plugin-breadcrumb"
 
 export default ({ children, pageContext, pageTitle }) => {
+  const [theme, setTheme] = useContext(ThemeContext)
+
   const {
     breadcrumb: { crumbs },
   } = pageContext
@@ -18,12 +21,12 @@ export default ({ children, pageContext, pageTitle }) => {
       <nav>
         <label>
           Theme:
-          <select>
-            <option value="rad">Rad</option>
-            <option value="paper">Print</option>
-            <option value="editor">Editor</option>
+          <select value={theme} onChange={e => setTheme(e.target.value)}>
             <option value="1989">1989</option>
             <option value="2019">2019</option>
+            <option value="paper">Print</option>
+            <option value="rad">Rad</option>
+            <option value="editor">Editor</option>
           </select>
         </label>
         <Breadcrumb
