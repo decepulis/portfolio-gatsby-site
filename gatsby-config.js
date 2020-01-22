@@ -8,6 +8,7 @@ module.exports = {
   plugins: [
     `gatsby-plugin-netlify-cms`,
     `gatsby-transformer-remark`,
+    `gatsby-plugin-styled-components`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -18,7 +19,6 @@ module.exports = {
     {
       resolve: `gatsby-plugin-breadcrumb`,
       options: {
-        // useAutoGen: required 'true' to use autogen
         useAutoGen: true,
         exclude: [`/404`, `/404.html`],
       },

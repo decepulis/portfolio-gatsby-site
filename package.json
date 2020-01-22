@@ -14,14 +14,18 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "dependencies": {
+    "babel-plugin-styled-components": "^1.10.6",
     "gatsby": "^2.18.12",
     "gatsby-plugin-breadcrumb": "^6.3.0",
     "gatsby-plugin-netlify-cms": "^4.1.37",
+    "gatsby-plugin-styled-components": "^3.1.18",
     "gatsby-source-filesystem": "^2.1.46",
     "gatsby-transformer-remark": "^2.6.48",
     "netlify-cms-app": "^2.11.5",
+    "normalize.css": "^8.0.1",
     "react": "^16.12.0",
-    "react-dom": "^16.12.0"
+    "react-dom": "^16.12.0",
+    "styled-components": "^5.0.0"
   },
   "devDependencies": {
     "prettier": "^1.19.1"
