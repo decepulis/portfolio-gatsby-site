@@ -7,7 +7,8 @@ import { StyledLayout, StyledHeader, StyledMain } from "./layout.styles"
 
 import { Link } from "gatsby"
 
-const initialThemeId = localStorage.getItem("themeId") ?? "mono"
+const initialThemeId =
+  typeof window !== "undefined" && (localStorage.getItem("themeId") ?? "mono")
 
 export default ({ children }) => {
   const [selectedThemeId, setSelectedThemeId] = useState(initialThemeId)
@@ -23,17 +24,19 @@ export default ({ children }) => {
           <h1>
             <Link to="/">Darius Cepulis</Link>
           </h1>
-          <label>
-            Theme&ensp;
-            {/* eslint-disable-next-line */}
-            <select value={selectedThemeId} onChange={changeThemeId}>
-              {Object.entries(themes).map(([themeId, themeAttributes]) => (
-                <option key={themeId} value={themeId}>
-                  {themeAttributes.label}
-                </option>
-              ))}
-            </select>
-          </label>
+          {selectedThemeId && (
+            <label>
+              Theme&ensp;
+              {/* eslint-disable-next-line */}
+              <select value={selectedThemeId} onChange={changeThemeId}>
+                {Object.entries(themes).map(([themeId, themeAttributes]) => (
+                  <option key={themeId} value={themeId}>
+                    {themeAttributes.label}
+                  </option>
+                ))}
+              </select>
+            </label>
+          )}
         </StyledHeader>
         <StyledMain>{children}</StyledMain>
       </StyledLayout>
