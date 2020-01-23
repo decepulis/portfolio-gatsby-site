@@ -1,5 +1,10 @@
 import React from "react"
 
+import {
+  StyledNavbar,
+  StyledNavList,
+} from "../components/pages.index.styles.js"
+
 import Layout from "../components/layout"
 
 import About from "../components/resume/About"
@@ -9,38 +14,37 @@ import Skills from "../components/resume/Skills"
 import Projects from "../components/resume/Projects"
 import Contact from "../components/resume/Contact"
 
-export default ({ pageContext }) => (
-  <Layout pageContext={pageContext}>
-    <nav>
-      <ul>
-        <li>
-          <a href="#about">About</a>
-        </li>
-        <li>
-          <a href="#positions">Positions</a>
-        </li>
-        <li>
-          <a href="#education">Education</a>
-        </li>
-        <li>
-          <a href="#skills">Skills</a>
-        </li>
-        <li>
-          <a href="#projects">Side Projects</a>
-        </li>
-        <li>
-          <a href="#contact">Contact</a>
-        </li>
-      </ul>
-    </nav>
-
-    <section>
+export default () => (
+  <Layout>
+    <article>
       <About />
+      <StyledNavbar>
+        <StyledNavList>
+          <li>
+            <a href="#about">About</a>
+          </li>
+          <li>
+            <a href="#positions">Positions</a>
+          </li>
+          <li>
+            <a href="#education">Education</a>
+          </li>
+          <li>
+            <a href="#skills">Skills</a>
+          </li>
+          <li>
+            <a href="#projects">Side&nbsp;Projects</a>
+          </li>
+          <li>
+            <a href="#contact">Contact</a>
+          </li>
+        </StyledNavList>
+      </StyledNavbar>
       <Positions />
       <Education />
       <Skills />
       <Projects />
       <Contact />
-    </section>
+    </article>
   </Layout>
 )

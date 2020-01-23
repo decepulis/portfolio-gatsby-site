@@ -1,39 +1,42 @@
 import React from "react"
 
+import {
+  StyledSection,
+  StyledContainer,
+  StyledHeader,
+  StyledLead,
+  StyledProfile,
+  StyledWave,
+} from "./About.styles"
+
 export default function About() {
   return (
-    <section id="about">
-      <header>
-        <h2>About Me</h2>
-      </header>
-      <img
-        id="headshot"
-        src="/assets/headshot-bw-web.jpg"
-        alt="Yep. That's my face, gazing into the camera. Black and white. I thought I had a pretty nice haircut here, too."
-        align="right"
-        width="300"
-        height="300"
-      />
-      <p>I am a Full-Stack Web Developer at Microsensor Labs</p>
-      <p>
-        In my professional and academic experience, I've discovered my
-        enthusiasm for applying my computer software and hardware skills to
-        unique problems that push the envelope. I'm at home when I'm faced with
-        fresh and interesting problems that I get to work out every day.
-      </p>
-      <p>
-        I've also discovered the value of developing strong communication and
-        design skills. These skills represent to me the spark that an
-        engineering solution needs to make it into the real world. After all,
-        what is a new technology if no one can explain it, or if people don't
-        know how to use it?
-      </p>
-      <p>
-        I want to keep learning new things and developing my skills and applying
-        them to exciting problems to build something new.
-      </p>
+    <>
+      <StyledSection>
+        <StyledContainer>
+          <StyledHeader>
+            <h2>About Me</h2>
+          </StyledHeader>
+          <StyledProfile
+            id="headshot"
+            src="/assets/headshot-bw-web.jpg"
+            alt="Yep. That's my face, gazing into the camera. Black and white. I thought I had a pretty nice haircut here, too."
+          />
+          <div>
+            <StyledLead>
+              I am a Full-Stack Web Developer from Chicago, IL.
+            </StyledLead>
+            <p>
+              I specialize in Front-End, ready to get deep into UI/UX,
+              architecture, and tooling.
+            </p>
+            <p>
+              Maybe I could add another paragraph here, too, but I should keep
+              it short and sweet.
+            </p>
+          </div>
 
-      <section>
+          {/* <section>
         <header>
           <h3>More About Me...</h3>
         </header>
@@ -43,7 +46,7 @@ export default function About() {
           <dt>Micro-Obsessions</dt>
           <dd>
             home automation,{" "}
-            <a href="https://www.instagram.com/__dardarbinks/">photography</a>,
+            <a href="https://www.instagram.com/_dardarbinks_/">photography</a>,
             watching every{" "}
             <a href="https://www.youtube.com/user/patrickhwillems">last</a>{" "}
             <a href="https://www.youtube.com/user/everyframeapainting">video</a>{" "}
@@ -83,7 +86,20 @@ export default function About() {
             , <a href="https://www.thisamericanlife.org">This American Life</a>
           </dd>
         </dl>
-      </section>
-    </section>
+      </section> */}
+        </StyledContainer>
+        <StyledWave
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1440 126"
+          aria-hidden="true"
+          hidden=""
+        >
+          <path
+            fill="#fff"
+            d="M1440,21.2101911 L1440,120 L0,120 L0,21.2101911 C120,35.0700637 240,42 360,42 C480,42 600,35.0700637 720,21.2101911 C808.32779,12.416393 874.573633,6.87702029 918.737528,4.59207306 C972.491685,1.8109458 1026.24584,0.420382166 1080,0.420382166 C1200,0.420382166 1320,7.35031847 1440,21.2101911 Z"
+          ></path>
+        </StyledWave>
+      </StyledSection>
+    </>
   )
 }
