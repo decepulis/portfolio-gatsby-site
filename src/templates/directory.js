@@ -9,7 +9,7 @@ export default ({ data, pageContext }) => {
   const pageTitle = pageContext.slug.replace(/\//g, "")
 
   return (
-    <Layout pageContext={pageContext} pageTitle={pageTitle}>
+    <Layout>
       <header>
         <h1 style={{ textTransform: "capitalize" }}>{pageTitle}</h1>
       </header>

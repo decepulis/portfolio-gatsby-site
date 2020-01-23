@@ -16,12 +16,5 @@ module.exports = {
         path: `${__dirname}/src/posts`,
       },
     },
-    {
-      resolve: `gatsby-plugin-breadcrumb`,
-      options: {
-        useAutoGen: true,
-        exclude: [`/404`, `/404.html`],
-      },
-    },
   ],
 }
