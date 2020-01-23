@@ -38,7 +38,7 @@ exports.createPages = async ({ graphql, actions }) => {
   resultDirectories.data.allDirectory.edges.forEach(({ node }) => {
     createPage({
       path: node.fields.slug,
-      component: path.resolve(`./src/templates/directory.js`),
+      component: path.resolve(`./src/templates/directory.jsx`),
       context: {
         slug: node.fields.slug,
       },
@@ -62,7 +62,7 @@ exports.createPages = async ({ graphql, actions }) => {
   resultMarkdown.data.allMarkdownRemark.edges.forEach(({ node }) => {
     createPage({
       path: node.fields.slug,
-      component: path.resolve(`./src/templates/post.js`),
+      component: path.resolve(`./src/templates/post.jsx`),
       context: {
         slug: node.fields.slug,
       },
