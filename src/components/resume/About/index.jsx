@@ -9,7 +9,7 @@ import {
   StyledWave,
   StyledCompanies,
   StyledLogos,
-} from "./About.styles"
+} from "./styles"
 
 import headshot from "./headshot-web.jpg"
 import microsensor from "./logo-microsensor.svg"
