@@ -49,3 +49,22 @@ export const StyledNavList = styled.ul`
     }
   }};
 `
+
+export const StyledArticle = styled.article`
+  ${props => {
+    switch (props.theme.id) {
+      case "2019":
+        return css`
+          h2 {
+            font-size: 3rem;
+            text-align: center;
+          }
+          & > section {
+            margin: 4rem 0;
+          }
+        `
+      default:
+        return
+    }
+  }};
+`

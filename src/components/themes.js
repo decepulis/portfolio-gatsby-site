@@ -7,7 +7,8 @@ export default {
     containerWidth: "60rem",
     containerPadding: "1rem",
     containerHalfWidthMinusPadding: "29rem",
-    boxShadow: "0 0 0 1px rgba(255,255,255,.1),0 2px 4px 0 rgba(14,30,37,.12);",
+    boxShadow:
+      "0 0 0 1px rgba(255,255,255,.1),0 5px 10px 0 rgba(14,30,37,.12);",
     boxShadowLg:
       "0 30px 60px -12px rgba(50,50,93,.25),0 18px 36px -18px rgba(0,0,0,.3),0 -12px 36px -8px rgba(0,0,0,.025);",
     cardRadius: "1em",

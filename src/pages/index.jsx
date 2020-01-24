@@ -3,6 +3,7 @@ import React from "react"
 import {
   StyledNavbar,
   StyledNavList,
+  StyledArticle,
 } from "../components/pages.index.styles.js"
 
 import Layout from "../components/layout"
@@ -16,8 +17,8 @@ import Contact from "../components/resume/Contact"
 
 export default () => (
   <Layout>
-    <article>
-      <About />
+    <About />
+    <StyledArticle>
       <StyledNavbar>
         <StyledNavList>
           <li>
@@ -45,6 +46,6 @@ export default () => (
       <Skills />
       <Projects />
       <Contact />
-    </article>
+    </StyledArticle>
   </Layout>
 )

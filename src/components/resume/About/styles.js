@@ -120,6 +120,50 @@ export const StyledLead = styled.p`
   }};
 `
 
+export const StyledCompanies = styled.div`
+  display: none;
+
+  ${props => {
+    switch (props.theme.id) {
+      case "2019":
+        return css`
+          display: initial;
+          text-align: center;
+
+          p {
+            font-size: 1.5rem;
+            font-weight: bolder;
+            color: ${props => props.theme.white1};
+          }
+        `
+      default:
+        return
+    }
+  }}
+`
+export const StyledLogos = styled.div`
+  ${props => {
+    switch (props.theme.id) {
+      case "2019":
+        return css`
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+          justify-content: space-around;
+
+          background-color: white;
+
+          img {
+            padding: 1rem;
+            height: 100px;
+          }
+        `
+      default:
+        return
+    }
+  }}
+`
+
 export const StyledWave = styled.svg`
   display: none;
 
