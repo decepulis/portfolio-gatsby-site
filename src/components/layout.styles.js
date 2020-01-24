@@ -45,9 +45,7 @@ export const StyledHeader = styled.header`
           justify-content: space-between;
           align-items: center;
 
-          max-width: ${props => props.theme.containerWidth};
-          margin: 0 auto;
-          padding: 0 ${props => props.theme.containerPadding};
+          ${props => props.theme.containerCss};
 
           color: ${props => props.theme.white2};
           a {
@@ -83,11 +81,7 @@ export const StyledMain = styled.main`
   ${props => {
     switch (props.theme.id) {
       case "2019":
-        return css`
-          max-width: ${props => props.theme.containerWidth};
-          margin: 0 auto;
-          padding: 0 ${props => props.theme.containerPadding};
-        `
+        return css``
       default:
         return
     }

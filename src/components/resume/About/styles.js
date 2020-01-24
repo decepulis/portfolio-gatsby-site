@@ -8,63 +8,17 @@ export const StyledSection = styled.section`
           color: ${props => props.theme.white3};
           position: relative;
 
-          // wave padding
-          padding-bottom: 2.618rem;
-          @media (min-width: 32em) {
-            padding-bottom: 4.236em;
-          }
-          @media (min-width: 60em) {
-            padding-bottom: 6.854em;
-          }
+          overflow-x: hidden;
 
-          // background
-          &:before {
-            content: "";
-            position: absolute;
+          margin-top: -10rem;
+          padding-top: 10rem;
+          z-index: -1;
 
-            top: -10rem;
-            left: -${props => props.theme.containerPadding};
-            right: -${props => props.theme.containerPadding};
-            @media (min-width: ${props => props.theme.containerWidth}) {
-              left: calc(
-                -50vw + ${props => props.theme.containerHalfWidthMinusPadding}
-              );
-              right: calc(
-                -50vw + ${props => props.theme.containerHalfWidthMinusPadding}
-              );
-            }
-            bottom: 0;
-            z-index: -1;
-            background: linear-gradient(
-              155.89deg,
-              ${props => props.theme.primaryDark} 12.21%,
-              ${props => props.theme.primary} 99.84%
-            );
-          }
-        `
-      default:
-        return
-    }
-  }};
-`
-
-export const StyledContainer = styled.div`
-  ${props => {
-    switch (props.theme.id) {
-      case "2019":
-        return css`
-          display: grid;
-          grid-template-columns: 1fr 3fr;
-          grid-gap: 3rem;
-          align-items: center;
-
-          padding: 2em 0;
-          @media (min-width: 32em) {
-            padding: 3.5em 0;
-          }
-          @media (min-width: 60em) {
-            padding: 5em 0;
-          }
+          background-image: linear-gradient(
+            155.89deg,
+            ${props => props.theme.primaryDark} 12.21%,
+            ${props => props.theme.primary} 99.84%
+          );
         `
       default:
         return
@@ -85,6 +39,45 @@ export const StyledHeader = styled.header`
   }};
 `
 
+export const StyledContainer = styled.div`
+  ${props => {
+    switch (props.theme.id) {
+      case "2019":
+        return css`
+          ${props => props.theme.containerCss};
+
+          display: grid;
+
+          grid-template-columns: 1fr 3fr;
+          grid-template-rows: auto;
+          align-items: center;
+
+          grid-template-areas:
+            "profile profile"
+            "text text"
+            "companies companies";
+          grid-gap: 2rem;
+          padding: 2em ${props => props.theme.containerPadding};
+
+          @media (min-width: 32em) {
+            padding: 3.5em ${props => props.theme.containerPadding};
+          }
+          @media (min-width: 48em) {
+            grid-gap: 3rem;
+            grid-template-areas:
+              "profile text"
+              "companies companies";
+          }
+          @media (min-width: 60em) {
+            padding: 5em ${props => props.theme.containerPadding};
+          }
+        `
+      default:
+        return
+    }
+  }};
+`
+
 export const StyledProfile = styled.img`
   width: 300px;
   height: 300px;
@@ -93,11 +86,27 @@ export const StyledProfile = styled.img`
     switch (props.theme.id) {
       case "2019":
         return css`
-          border-radius: ${props => props.theme.cardRadius};
+          grid-column: profile;
+
+          border-radius: 50%;
           border: 0.5rem solid white;
           width: 100%;
+          max-width: 300px;
           height: auto;
           box-shadow: ${props => props.theme.boxShadowLg};
+        `
+      default:
+        return
+    }
+  }};
+`
+
+export const StyledHeroText = styled.div`
+  ${props => {
+    switch (props.theme.id) {
+      case "2019":
+        return css`
+          grid-column: text;
         `
       default:
         return
@@ -129,6 +138,8 @@ export const StyledCompanies = styled.div`
         return css`
           display: initial;
           text-align: center;
+
+          grid-column: companies;
 
           p {
             font-size: 1.5rem;
@@ -164,26 +175,33 @@ export const StyledLogos = styled.div`
   }}
 `
 
-export const StyledWave = styled.svg`
+export const StyledWave = styled.div`
   display: none;
 
   ${props => {
     switch (props.theme.id) {
       case "2019":
         return css`
-          display: initial;
-          position: absolute;
-          left: -${props => props.theme.containerPadding};
-          right: -${props => props.theme.containerPadding};
-          @media (min-width: ${props => props.theme.containerWidth}) {
-            left: calc(
-              -50vw + ${props => props.theme.containerHalfWidthMinusPadding}
-            );
-            right: calc(
-              -50vw + ${props => props.theme.containerHalfWidthMinusPadding}
-            );
+          display: block;
+
+          position: relative;
+          width: 102vw;
+          left: 50%;
+          transform: translateX(-51%);
+          overflow: hidden;
+          user-select: none;
+          height: 70px;
+          min-width: 1000px;
+          @media (min-width: 48em) {
+            height: 140px;
+            min-width: 1920px;
           }
-          bottom: -1em;
+
+          svg {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+          }
         `
       default:
         return

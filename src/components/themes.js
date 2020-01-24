@@ -7,6 +7,12 @@ export default {
     containerWidth: "60rem",
     containerPadding: "1rem",
     containerHalfWidthMinusPadding: "29rem",
+    containerCss: `
+      max-width: 60rem;
+      margin: 0 auto;
+      padding: 0 1rem;
+    `,
+
     boxShadow:
       "0 0 0 1px rgba(255,255,255,.1),0 5px 10px 0 rgba(14,30,37,.12);",
     boxShadowLg:

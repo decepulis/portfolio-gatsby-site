@@ -6,7 +6,7 @@ export const StyledNavbar = styled.nav`
       case "2019":
         return css`
           position: sticky;
-          top: 0;
+          top: 1em;
           z-index: 5;
 
           margin: 0 -1rem;
@@ -55,6 +55,7 @@ export const StyledArticle = styled.article`
     switch (props.theme.id) {
       case "2019":
         return css`
+          ${props => props.theme.containerCss};
           h2 {
             font-size: 3rem;
             text-align: center;
