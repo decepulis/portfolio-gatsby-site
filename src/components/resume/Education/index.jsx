@@ -1,16 +1,18 @@
 import React from "react"
 import { graphql, useStaticQuery, Link } from "gatsby"
-import PostPreview from "../PostPreview"
+import PostPreview from "../../PostPreview"
 
-export default function Projects({ id }) {
+import { StyledEducation } from "./styles"
+
+export default function Education({ id }) {
   const data = useStaticQuery(
     graphql`
       query {
         articles: allMarkdownRemark(
-          limit: 4
+          limit: 2
           sort: { fields: [frontmatter___date], order: DESC }
           filter: {
-            fileAbsolutePath: { regex: "/(projects)/" }
+            fileAbsolutePath: { regex: "/(education)/" }
             frontmatter: { featuredpost: { eq: true } }
           }
         ) {
@@ -30,7 +32,7 @@ export default function Projects({ id }) {
           }
         }
         totalCount: allMarkdownRemark(
-          filter: { fileAbsolutePath: { regex: "/(projects)/" } }
+          filter: { fileAbsolutePath: { regex: "/(education)/" } }
         ) {
           totalCount
         }
@@ -39,25 +41,27 @@ export default function Projects({ id }) {
   )
 
   return (
-    <section id={id}>
+    <StyledEducation id={id}>
       <header>
-        <h2>Projects</h2>
+        <h2>Education</h2>
       </header>
-      {data.articles.edges.map(({ node }) => (
-        <PostPreview
-          key={node.id}
-          title={node.frontmatter.title}
-          subtitle={node.frontmatter.subtitle}
-          date={node.frontmatter.date}
-          description={node.frontmatter.description}
-          slug={node.fields.slug}
-        />
-      ))}
+      <section>
+        {data.articles.edges.map(({ node }) => (
+          <PostPreview
+            key={node.id}
+            title={node.frontmatter.title}
+            subtitle={node.frontmatter.subtitle}
+            date={node.frontmatter.date}
+            description={node.frontmatter.description}
+            slug={node.fields.slug}
+          />
+        ))}
+      </section>
       <p>
-        <Link to="/projects/">
+        <Link to="/education/">
           View All {data.totalCount.totalCount} Entries &rarr;
         </Link>
       </p>
-    </section>
+    </StyledEducation>
   )
 }

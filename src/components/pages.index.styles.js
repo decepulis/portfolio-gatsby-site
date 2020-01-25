@@ -57,11 +57,11 @@ export const StyledArticle = styled.article`
         return css`
           ${props => props.theme.containerCss};
           h2 {
-            font-size: 3rem;
+            font-size: 2.5rem;
             text-align: center;
           }
           & > section {
-            margin: 4rem 0;
+            margin: ${props => props.theme.sectionMargin} 0;
           }
         `
       default:

@@ -41,8 +41,11 @@ export default ({ path }) => (
           </li>
         </StyledNavList>
       </StyledNavbar>
+      {/* // blobs */}
       <Positions id="positions" />
+      {/* // svg characters */}
       <Education id="education" />
+      {/* // cards */}
       <Projects id="projects" />
       <Skills id="skills" />
       <Contact id="contact" />

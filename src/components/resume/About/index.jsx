@@ -39,7 +39,7 @@ export default function About({ id }) {
           />
           <StyledHeroText>
             <StyledLead>
-              I am a Full-Stack Web Developer from Chicago, IL.
+              I am a Full-Stack Web Developer from Chicago,&nbsp;IL.
             </StyledLead>
             <p>
               I specialize in Front-End, ready to get deep into UI/UX,
@@ -50,30 +50,49 @@ export default function About({ id }) {
               it short and sweet.
             </p>
           </StyledHeroText>
-          <StyledActionButton role="button" href="#contact">
+          <StyledActionButton
+            className="ignore-global-style"
+            role="button"
+            href="#contact"
+          >
             Contact Now &rarr;
           </StyledActionButton>
           {theme.id === "2019" && (
             <StyledCompanies>
               <p>At least 5 companies/educational institutions trust Darius</p>
               <StyledLogos>
-                <StyledLogoContainerLink to="/positions/2018_microsensor">
+                <StyledLogoContainerLink
+                  to="/positions/2018_microsensor"
+                  className="ignore-global-style"
+                >
                   <div className="mask microsensor" />
                   <img src={microsensor} alt="Microsensor Labs" />
                 </StyledLogoContainerLink>
-                <StyledLogoContainerLink to="/positions/2015_bmw/">
+                <StyledLogoContainerLink
+                  to="/positions/2015_bmw/"
+                  className="ignore-global-style"
+                >
                   <div className="mask bmw" />
                   <img src={bmw} alt="BMW" />
                 </StyledLogoContainerLink>
-                <StyledLogoContainerLink to="/positions/2017_bosch/">
+                <StyledLogoContainerLink
+                  to="/positions/2017_bosch/"
+                  className="ignore-global-style"
+                >
                   <div className="mask bosch" />
                   <img src={bosch} alt="Bosch" />
                 </StyledLogoContainerLink>
-                <StyledLogoContainerLink to="/projects/2019_mmb_site/">
+                <StyledLogoContainerLink
+                  to="/projects/2019_mmb_site/"
+                  className="ignore-global-style"
+                >
                   <div className="mask midwest" />
                   <img src={midwest} alt="Midwest Microbio" />
                 </StyledLogoContainerLink>
-                <StyledLogoContainerLink to="/projects/2018_thesis/">
+                <StyledLogoContainerLink
+                  to="/projects/2018_thesis/"
+                  className="ignore-global-style"
+                >
                   <div className="mask uc" />
                   <img src={uc} alt="University of Cincinnati" />
                 </StyledLogoContainerLink>

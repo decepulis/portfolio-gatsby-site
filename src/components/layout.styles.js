@@ -35,8 +35,12 @@ ${props => {
           h5,
           h6 {
             font-weight: 800;
+            letter-spacing: -0.015em;
           }
           scroll-behavior: smooth;
+          a:not(.ignore-global-style) {
+            color: ${props => props.theme.secondary};
+          }
         }
       `
     default:
@@ -61,7 +65,8 @@ export const StyledHeader = styled.header`
 
           color: ${props =>
             props.path === "/" ? props.theme.white2 : props.theme.black1};
-          a {
+          && a {
+            // using the ol ampersand trick to increase specificity
             color: ${props =>
               props.path === "/" ? props.theme.white1 : props.theme.black1};
             text-decoration: none;

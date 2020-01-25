@@ -12,6 +12,7 @@ export default {
       margin: 0 auto;
       padding: 0 1rem;
     `,
+    sectionMargin: "4em",
 
     boxShadowSm: "0 5px 10px rgba(0,0,0,0.12);",
     boxShadow: "0 8px 30px rgba(0,0,0,0.12);",
@@ -19,7 +20,10 @@ export default {
     cardRadius: "1em",
     primaryDark: "#000758",
     primary: "#109b9b",
+    secondary: "#0051C1",
     black1: "#0e1e25",
+    black2: "#333",
+    black3: "#666",
     white1: "hsla(0,0%,100%,100%)",
     white2: "hsla(0,0%,100%,90%)",
     white3: "hsla(0,0%,100%,80%)",
