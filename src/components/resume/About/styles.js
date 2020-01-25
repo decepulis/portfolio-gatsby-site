@@ -4,6 +4,7 @@ import microsensor from "./logo-microsensor.svg"
 import bosch from "./logo-bosch.svg"
 import bmw from "./logo-bmw-mask.svg"
 import midwest from "./logo-midwest.svg"
+import { Link } from "gatsby"
 
 export const StyledSection = styled.section`
   ${props => {
@@ -165,40 +166,75 @@ export const StyledLogos = styled.div`
           flex-wrap: wrap;
           align-items: center;
           justify-content: space-around;
+        `
+      default:
+        return
+    }
+  }}
+`
 
-          div {
-            width: 200px;
-            height: 100px;
+export const StyledLogoContainerLink = styled(Link)`
+  ${props => {
+    switch (props.theme.id) {
+      case "2019":
+        return css`
+          // Size In Gric
+          position: relative;
 
-            mask-repeat: no-repeat;
-            mask-position: center center;
-            mask-size: contain;
+          width: 150px;
+          height: 75px;
 
-            background-color: ${props => props.theme.white3};
+          // Position of Children
+          .mask,
+          img {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            top: 0;
+            left: 0;
+          }
 
-            img {
-              width: 100%;
-              height: 100%;
+          // Establishing Masks
+          @supports (mask-size: contain) {
+            .mask {
+              mask-repeat: no-repeat;
+              mask-position: center center;
+              mask-size: contain;
 
-              transition: opacity 0.2s ease-in-out;
-              opacity: 0;
-              &:hover {
-                opacity: 1;
+              background-color: ${props => props.theme.white3};
+
+              &.microsensor {
+                mask-image: url(${microsensor});
+              }
+              &.bosch {
+                mask-image: url(${bosch});
+              }
+              &.bmw {
+                mask-image: url(${bmw});
+              }
+              &.midwest {
+                mask-image: url(${midwest});
               }
             }
-          }
 
-          .microsensor {
-            mask-image: url(${microsensor});
-          }
-          .bosch {
-            mask-image: url(${bosch});
-          }
-          .bmw {
-            mask-image: url(${bmw});
-          }
-          .midwest {
-            mask-image: url(${midwest});
+            // Hover Animation
+            img,
+            .mask {
+              transition: opacity 0.2s ease-in-out;
+            }
+
+            img {
+              opacity: 0;
+            }
+
+            &:hover {
+              img {
+                opacity: 1;
+              }
+              .mask {
+                opacity: 0;
+              }
+            }
           }
         `
       default:

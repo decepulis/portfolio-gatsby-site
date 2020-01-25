@@ -1,4 +1,6 @@
-import React from "react"
+import React, { useContext } from "react"
+
+import { ThemeContext } from "styled-components"
 
 import {
   StyledSection,
@@ -9,6 +11,7 @@ import {
   StyledWave,
   StyledCompanies,
   StyledLogos,
+  StyledLogoContainerLink,
   StyledHeroText,
 } from "./styles"
 
@@ -19,6 +22,8 @@ import bmw from "./logo-bmw.svg"
 import midwest from "./logo-midwest.svg"
 
 export default function About() {
+  const theme = useContext(ThemeContext)
+
   return (
     <>
       <StyledSection>
@@ -43,81 +48,74 @@ export default function About() {
               it short and sweet.
             </p>
           </StyledHeroText>
-          <StyledCompanies>
-            <p>
-              More than 4 companies
-              <br />
-              and at least some coworkers trust Darius
-            </p>
-            <StyledLogos>
-              <div className="microsensor">
-                <img src={microsensor} alt="Microsensor Labs" />
-              </div>
-              <div className="bosch">
-                <img src={bosch} alt="Bosch" />
-              </div>
-              <div className="bmw">
-                <img src={bmw} alt="BMW" />
-              </div>
-              <div className="midwest">
-                <img src={midwest} alt="Midwest Microbio" />
-              </div>
-            </StyledLogos>
-          </StyledCompanies>
+          {theme.id === "2019" && (
+            <StyledCompanies>
+              <p>Join the companies that trust Darius</p>
+              <StyledLogos>
+                <StyledLogoContainerLink to="/positions/2018_microsensor">
+                  <div className="mask microsensor" />
+                  <img src={microsensor} alt="Microsensor Labs" />
+                </StyledLogoContainerLink>
+                <StyledLogoContainerLink to="/positions/2017_bosch/">
+                  <div className="mask bosch" />
+                  <img src={bosch} alt="Bosch" />
+                </StyledLogoContainerLink>
+                <StyledLogoContainerLink to="/positions/2015_bmw/">
+                  <div className="mask bmw" />
+                  <img src={bmw} alt="BMW" />
+                </StyledLogoContainerLink>
+                <StyledLogoContainerLink to="/projects/2019_mmb_site/">
+                  <div className="mask midwest" />
+                  <img src={midwest} alt="Midwest Microbio" />
+                </StyledLogoContainerLink>
+              </StyledLogos>
+            </StyledCompanies>
+          )}
         </StyledContainer>
-        <StyledWave>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            preserveAspectRatio="none"
-            viewBox="0 0 1920 170"
-          >
-            <defs>
-              <linearGradient
-                x1="49.253%"
-                y1="85.804%"
-                x2="49.253%"
-                y2="43.074%"
-                id="a"
-              >
-                <stop stopColor="#FFF" offset="0%"></stop>
-                <stop stopColor="#FFF" offset="100%"></stop>
-              </linearGradient>
-            </defs>
-            <g fill="none">
-              <path
-                d="M1920 4.719v69.5c-362.63 60.036-692.797 55.536-990.5-13.5C565.833-23.615 256 12.813 0 170L1 4.719h1919z"
-                fill="url(#a)"
-                transform="rotate(180 960.5 87.36)"
-              ></path>
-              <path
-                d="M1 170V99c269.033-70.44 603.533-66.44 1003.5 12C1494 207 1921 4.719 1921 4.719L1920 170H1z"
-                fillOpacity=".3"
-                fill="#FFF"
-              ></path>
-              <path
-                d="M1 170.75V99C373.115 4.216 705.281-4.951 997.5 71.5c365.667 95.667 673.5 73.406 923.5-66.781l-1 166.031H1z"
-                fillOpacity=".3"
-                fill="#FFF"
-              ></path>
-              <path
-                d="M1 170v-67C400.333-1.333 744.167-19 1032.5 50c432.5 103.5 754 19.219 888.5-45.281l-1 166.031L1 170z"
-                fillOpacity=".35"
-                fill="#FFF"
-              ></path>
-            </g>
-          </svg>
-        </StyledWave>
-        {/* <StyledWave
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 1440 126"
-          aria-hidden="true"
-          hidden=""
-        >
-          <path
-            fill="#fff"
-            d="M1440,21.2101911 L1440,120 L0,120 L0,21.2101911 C120,35.0700637 240,42 360,42 C480,42 600,35.0700637 720,21.2101911 C808.32779,12.416393 874.573633,6.87702029 918.737528,4.59207306 C972.491685,1.8109458 1026.24584,0.420382166 1080,0.420382166 C1200,0.420382166 1320,7.35031847 1440,21.2101911 Z"
-          ></path>
-        </StyledWave> */}
+        {theme.id === "2019" && (
+          <StyledWave aria-hidden="true" hidden="">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              preserveAspectRatio="none"
+              viewBox="0 0 1920 170"
+            >
+              <defs>
+                <linearGradient
+                  x1="49.253%"
+                  y1="85.804%"
+                  x2="49.253%"
+                  y2="43.074%"
+                  id="a"
+                >
+                  <stop stopColor="#FFF" offset="0%"></stop>
+                  <stop stopColor="#FFF" offset="100%"></stop>
+                </linearGradient>
+              </defs>
+              <g fill="none">
+                <path
+                  d="M1920 4.719v69.5c-362.63 60.036-692.797 55.536-990.5-13.5C565.833-23.615 256 12.813 0 170L1 4.719h1919z"
+                  fill="url(#a)"
+                  transform="rotate(180 960.5 87.36)"
+                ></path>
+                <path
+                  d="M1 170V99c269.033-70.44 603.533-66.44 1003.5 12C1494 207 1921 4.719 1921 4.719L1920 170H1z"
+                  fillOpacity=".3"
+                  fill="#FFF"
+                ></path>
+                <path
+                  d="M1 170.75V99C373.115 4.216 705.281-4.951 997.5 71.5c365.667 95.667 673.5 73.406 923.5-66.781l-1 166.031H1z"
+                  fillOpacity=".3"
+                  fill="#FFF"
+                ></path>
+                <path
+                  d="M1 170v-67C400.333-1.333 744.167-19 1032.5 50c432.5 103.5 754 19.219 888.5-45.281l-1 166.031L1 170z"
+                  fillOpacity=".35"
+                  fill="#FFF"
+                ></path>
+              </g>
+            </svg>
+          </StyledWave>
+        )}
       </StyledSection>
     </>
   )
