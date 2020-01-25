@@ -1,8 +1,8 @@
 import React from "react"
 
-export default function Contact() {
+export default function Contact({ id }) {
   return (
-    <section id="contact">
+    <section id={id}>
       <header>
         <h2>Contact</h2>
       </header>

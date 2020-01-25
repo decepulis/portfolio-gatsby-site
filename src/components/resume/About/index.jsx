@@ -22,12 +22,12 @@ import uc from "./logo-uc.svg"
 import bmw from "./logo-bmw.svg"
 import midwest from "./logo-midwest.svg"
 
-export default function About() {
+export default function About({ id }) {
   const theme = useContext(ThemeContext)
 
   return (
     <>
-      <StyledSection>
+      <StyledSection id={id}>
         <StyledContainer>
           <StyledHeader>
             <h2>About Me</h2>

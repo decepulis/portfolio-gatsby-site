@@ -1,9 +1,9 @@
 import React from "react"
 
-export default function Skills() {
+export default function Skills({ id }) {
   // todo: pull _this_ information from the cms
   return (
-    <section id="skills">
+    <section id={id}>
       <header>
         <h2>Skills</h2>
       </header>

@@ -4,6 +4,7 @@ title: Thesis & Publication
 description: Creating Socio-Technical Patches for Information Foraging - A Requirements Traceability Case Study
 date: 2018-08-01T00:00:00.000Z
 datetimeformat: MM-YYYY
+featuredpost: true
 ---
 
 In my thesis, titled "Creating Socio-Technical Patches for Information Foraging - A Requirements Traceability Case Study", I explored applications of [Information Foraging Theory](https://en.wikipedia.org/wiki/Information_foraging). We hunt for information in the exact same way that we've evolved to hunt for food. How long do we spend in one place before we move on? How do we estimate how much food that place will have? If we understand that human behavior better, maybe we can make the Software Engineering process better. Can we make developing more efficient by making good information easier to reach, identify, and navigate?

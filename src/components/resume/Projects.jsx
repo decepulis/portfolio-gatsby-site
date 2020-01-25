@@ -2,16 +2,18 @@ import React from "react"
 import { graphql, useStaticQuery, Link } from "gatsby"
 import PostPreview from "../PostPreview"
 
-export default function Projects() {
+export default function Projects({ id }) {
   const data = useStaticQuery(
     graphql`
       query {
-        allMarkdownRemark(
+        articles: allMarkdownRemark(
           limit: 4
           sort: { fields: [frontmatter___date], order: DESC }
-          filter: { fileAbsolutePath: { regex: "/(projects)/" } }
+          filter: {
+            fileAbsolutePath: { regex: "/(projects)/" }
+            frontmatter: { featuredpost: { eq: true } }
+          }
         ) {
-          totalCount
           edges {
             node {
               id
@@ -27,16 +29,21 @@ export default function Projects() {
             }
           }
         }
+        totalCount: allMarkdownRemark(
+          filter: { fileAbsolutePath: { regex: "/(projects)/" } }
+        ) {
+          totalCount
+        }
       }
     `
   )
 
   return (
-    <section id="projects">
+    <section id={id}>
       <header>
         <h2>Projects</h2>
       </header>
-      {data.allMarkdownRemark.edges.map(({ node }) => (
+      {data.articles.edges.map(({ node }) => (
         <PostPreview
           key={node.id}
           title={node.frontmatter.title}
@@ -48,7 +55,7 @@ export default function Projects() {
       ))}
       <p>
         <Link to="/projects/">
-          View All {data.allMarkdownRemark.totalCount} Entries &rarr;
+          View All {data.totalCount.totalCount} Entries &rarr;
         </Link>
       </p>
     </section>

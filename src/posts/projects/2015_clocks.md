@@ -3,6 +3,7 @@ templateKey: post
 title: Word Clocks
 description: A custom Christmas present, with Arduino and LEDs
 date: 2015-12-01T00:00:00.000Z
+featuredpost: false
 ---
 
 I thought I'd solved the yearly struggle of coming up with an individualized thoughtful Christmas present for everyone in the family pretty nicely in 2015! For my Lithuanian family, I made clocks, based off of individually-addressable LEDs (I have an obsession with lighting) driven by an Arduino, which spell out the time in plain English&mdash;er&mdash;Lithuanian. "It is 12 'o clock".

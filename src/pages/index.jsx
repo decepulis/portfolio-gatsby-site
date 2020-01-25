@@ -17,7 +17,7 @@ import Contact from "../components/resume/Contact"
 
 export default () => (
   <Layout>
-    <About />
+    <About id="about" />
     <StyledArticle>
       <StyledNavbar>
         <StyledNavList>
@@ -31,21 +31,21 @@ export default () => (
             <a href="#education">Education</a>
           </li>
           <li>
-            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
           </li>
           <li>
-            <a href="#projects">Side&nbsp;Projects</a>
+            <a href="#skills">Skills</a>
           </li>
           <li>
             <a href="#contact">Contact</a>
           </li>
         </StyledNavList>
       </StyledNavbar>
-      <Positions />
-      <Education />
-      <Skills />
-      <Projects />
-      <Contact />
+      <Positions id="positions" />
+      <Education id="education" />
+      <Projects id="projects" />
+      <Skills id="skills" />
+      <Contact id="contact" />
     </StyledArticle>
   </Layout>
 )
