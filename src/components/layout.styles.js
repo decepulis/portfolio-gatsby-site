@@ -1,21 +1,29 @@
-import styled, { css } from "styled-components"
+import styled, { css, createGlobalStyle } from "styled-components"
 
-export const StyledLayout = styled.div`
-  *,
-  *:before,
-  *:after {
-    box-sizing: border-box;
-  }
+export const GlobalStyle = createGlobalStyle`
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
 
-  ${props => {
-    switch (props.theme.id) {
-      case "1989":
-        return css`
+html, body {
+  min-width: 300px;
+}
+${props => {
+  switch (props.theme.id) {
+    case "1989":
+      return css`
+        html,
+        body {
           margin-left: 8px;
           margin-right: 8px;
-        `
-      case "2019":
-        return css`
+        }
+      `
+    case "2019":
+      return css`
+        html,
+        body {
           font-family: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI",
             Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
             "Segoe UI Symbol";
@@ -28,11 +36,13 @@ export const StyledLayout = styled.div`
           h6 {
             font-weight: 800;
           }
-        `
-      default:
-        return
-    }
-  }};
+          scroll-behavior: smooth;
+        }
+      `
+    default:
+      return
+  }
+}};
 `
 
 export const StyledHeader = styled.header`
