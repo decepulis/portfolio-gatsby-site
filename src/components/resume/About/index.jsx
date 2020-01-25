@@ -18,6 +18,7 @@ import {
 import headshot from "./headshot-bw-web.jpg"
 import microsensor from "./logo-microsensor.svg"
 import bosch from "./logo-bosch.svg"
+import uc from "./logo-uc.svg"
 import bmw from "./logo-bmw.svg"
 import midwest from "./logo-midwest.svg"
 
@@ -50,23 +51,27 @@ export default function About() {
           </StyledHeroText>
           {theme.id === "2019" && (
             <StyledCompanies>
-              <p>Join the companies that trust Darius</p>
+              <p>At least 5 companies/educational institutions trust Darius</p>
               <StyledLogos>
                 <StyledLogoContainerLink to="/positions/2018_microsensor">
                   <div className="mask microsensor" />
                   <img src={microsensor} alt="Microsensor Labs" />
                 </StyledLogoContainerLink>
-                <StyledLogoContainerLink to="/positions/2017_bosch/">
-                  <div className="mask bosch" />
-                  <img src={bosch} alt="Bosch" />
-                </StyledLogoContainerLink>
                 <StyledLogoContainerLink to="/positions/2015_bmw/">
                   <div className="mask bmw" />
                   <img src={bmw} alt="BMW" />
                 </StyledLogoContainerLink>
+                <StyledLogoContainerLink to="/positions/2017_bosch/">
+                  <div className="mask bosch" />
+                  <img src={bosch} alt="Bosch" />
+                </StyledLogoContainerLink>
                 <StyledLogoContainerLink to="/projects/2019_mmb_site/">
                   <div className="mask midwest" />
                   <img src={midwest} alt="Midwest Microbio" />
+                </StyledLogoContainerLink>
+                <StyledLogoContainerLink to="/projects/2018_thesis/">
+                  <div className="mask uc" />
+                  <img src={uc} alt="University of Cincinnati" />
                 </StyledLogoContainerLink>
               </StyledLogos>
             </StyledCompanies>

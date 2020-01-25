@@ -2,6 +2,7 @@ import styled, { css } from "styled-components"
 
 import microsensor from "./logo-microsensor.svg"
 import bosch from "./logo-bosch.svg"
+import uc from "./logo-uc.svg"
 import bmw from "./logo-bmw-mask.svg"
 import midwest from "./logo-midwest.svg"
 import { Link } from "gatsby"
@@ -143,6 +144,7 @@ export const StyledCompanies = styled.div`
         return css`
           display: initial;
           text-align: center;
+          max-width: 100%;
 
           grid-column: companies;
 
@@ -162,10 +164,15 @@ export const StyledLogos = styled.div`
     switch (props.theme.id) {
       case "2019":
         return css`
+          // display: grid;
+          // grid-template-columns: repeat(auto-fit, minmax(8em, 1fr));
+          // grid-row-gap: 1.5em;
+          // justify-items: center;
+          // align-items: center;
+
           display: flex;
-          flex-wrap: wrap;
-          align-items: center;
           justify-content: space-around;
+          flex-wrap: wrap;
         `
       default:
         return
@@ -181,8 +188,10 @@ export const StyledLogoContainerLink = styled(Link)`
           // Size In Gric
           position: relative;
 
-          width: 150px;
-          height: 75px;
+          width: 8em;
+          height: 3em;
+          flex: 0 0 8em;
+          margin: 0 0.75em 1.5em;
 
           // Position of Children
           .mask,
@@ -192,6 +201,7 @@ export const StyledLogoContainerLink = styled(Link)`
             width: 100%;
             top: 0;
             left: 0;
+            margin-bottom: 1em;
           }
 
           // Establishing Masks
@@ -205,6 +215,9 @@ export const StyledLogoContainerLink = styled(Link)`
 
               &.microsensor {
                 mask-image: url(${microsensor});
+              }
+              &.uc {
+                mask-image: url(${uc});
               }
               &.bosch {
                 mask-image: url(${bosch});
