@@ -1,5 +1,10 @@
 import styled, { css } from "styled-components"
 
+import microsensor from "./logo-microsensor.svg"
+import bosch from "./logo-bosch.svg"
+import bmw from "./logo-bmw-mask.svg"
+import midwest from "./logo-midwest.svg"
+
 export const StyledSection = styled.section`
   ${props => {
     switch (props.theme.id) {
@@ -12,7 +17,6 @@ export const StyledSection = styled.section`
 
           margin-top: -10rem;
           padding-top: 10rem;
-          z-index: -1;
 
           background-image: linear-gradient(
             155.89deg,
@@ -162,11 +166,39 @@ export const StyledLogos = styled.div`
           align-items: center;
           justify-content: space-around;
 
-          background-color: white;
-
-          img {
-            padding: 1rem;
+          div {
+            width: 200px;
             height: 100px;
+
+            mask-repeat: no-repeat;
+            mask-position: center center;
+            mask-size: contain;
+
+            background-color: ${props => props.theme.white3};
+
+            img {
+              width: 100%;
+              height: 100%;
+
+              transition: opacity 0.2s ease-in-out;
+              opacity: 0;
+              &:hover {
+                opacity: 1;
+              }
+            }
+          }
+
+          .microsensor {
+            mask-image: url(${microsensor});
+          }
+          .bosch {
+            mask-image: url(${bosch});
+          }
+          .bmw {
+            mask-image: url(${bmw});
+          }
+          .midwest {
+            mask-image: url(${midwest});
           }
         `
       default:

@@ -50,11 +50,18 @@ export default function About() {
               and at least some coworkers trust Darius
             </p>
             <StyledLogos>
-              {/* todo: turn these into clip paths or something? or just do the zeit method */}
-              <img src={microsensor} alt="Microsensor Labs" />
-              <img src={bosch} alt="Bosch" />
-              <img src={bmw} alt="BMW" />
-              <img src={midwest} alt="Midwest Microbio" />
+              <div className="microsensor">
+                <img src={microsensor} alt="Microsensor Labs" />
+              </div>
+              <div className="bosch">
+                <img src={bosch} alt="Bosch" />
+              </div>
+              <div className="bmw">
+                <img src={bmw} alt="BMW" />
+              </div>
+              <div className="midwest">
+                <img src={midwest} alt="Midwest Microbio" />
+              </div>
             </StyledLogos>
           </StyledCompanies>
         </StyledContainer>

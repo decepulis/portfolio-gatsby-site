@@ -41,7 +41,6 @@ const styledSectionTheme = {
         right: calc(-50vw + 29rem);
       }
       bottom: 0;
-      z-index: -1;
       background: linear-gradient(155.89deg,#000758 12.21%,#109b9b 99.84%);
     }
   `,

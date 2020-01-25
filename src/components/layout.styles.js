@@ -45,6 +45,8 @@ export const StyledHeader = styled.header`
           justify-content: space-between;
           align-items: center;
 
+          z-index: 5;
+
           ${props => props.theme.containerCss};
 
           color: ${props => props.theme.white2};
