@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 
 import { ThemeProvider } from "styled-components"
 import themes from "./themes"
@@ -11,7 +11,14 @@ const initialThemeId =
   typeof window !== "undefined" && (localStorage.getItem("themeId") ?? "mono")
 
 export default ({ children }) => {
-  const [selectedThemeId, setSelectedThemeId] = useState(initialThemeId)
+  const [selectedThemeId, setSelectedThemeId] = useState()
+  useEffect(() => {
+    // We have to do this after first paint;
+    // Otherwise, all we see is gatsby's pre-rendered HTML
+    // TODO: fix the FOUC this causes
+    setSelectedThemeId(initialThemeId)
+  }, [setSelectedThemeId])
+
   const changeThemeId = e => {
     localStorage.setItem("themeId", e.target.value)
     setSelectedThemeId(e.target.value)
