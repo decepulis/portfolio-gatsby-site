@@ -13,10 +13,9 @@ export default {
       padding: 0 1rem;
     `,
 
-    boxShadow:
-      "0 0 0 1px rgba(255,255,255,.1),0 5px 10px 0 rgba(14,30,37,.12);",
-    boxShadowLg:
-      "0 30px 60px -12px rgba(50,50,93,.25),0 18px 36px -18px rgba(0,0,0,.3),0 -12px 36px -8px rgba(0,0,0,.025);",
+    boxShadowSm: "0 5px 10px rgba(0,0,0,0.12);",
+    boxShadow: "0 8px 30px rgba(0,0,0,0.12);",
+    boxShadowLg: "0 30px 60px rgba(0,0,0,0.12);",
     cardRadius: "1em",
     primaryDark: "#000758",
     primary: "#109b9b",

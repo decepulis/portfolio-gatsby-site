@@ -13,6 +13,7 @@ import {
   StyledLogos,
   StyledLogoContainerLink,
   StyledHeroText,
+  StyledActionButton,
 } from "./styles"
 
 import headshot from "./headshot-bw-web.jpg"
@@ -49,6 +50,9 @@ export default function About({ id }) {
               it short and sweet.
             </p>
           </StyledHeroText>
+          <StyledActionButton role="button" href="#contact">
+            Contact Now &rarr;
+          </StyledActionButton>
           {theme.id === "2019" && (
             <StyledCompanies>
               <p>At least 5 companies/educational institutions trust Darius</p>

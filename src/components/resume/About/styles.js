@@ -61,6 +61,7 @@ export const StyledContainer = styled.div`
           grid-template-areas:
             "profile profile"
             "text text"
+            "button button"
             "companies companies";
           grid-gap: 2rem;
           padding: 2em ${props => props.theme.containerPadding};
@@ -69,9 +70,11 @@ export const StyledContainer = styled.div`
             padding: 3.5em ${props => props.theme.containerPadding};
           }
           @media (min-width: 48em) {
-            grid-gap: 3rem;
+            grid-column-gap: 3rem;
+            grid-row-gap: 5rem;
             grid-template-areas:
               "profile text"
+              "button button"
               "companies companies";
           }
           @media (min-width: 60em) {
@@ -99,6 +102,7 @@ export const StyledProfile = styled.img`
           width: 100%;
           max-width: 300px;
           height: auto;
+          margin: 0 auto;
           box-shadow: ${props => props.theme.boxShadowLg};
         `
       default:
@@ -164,12 +168,6 @@ export const StyledLogos = styled.div`
     switch (props.theme.id) {
       case "2019":
         return css`
-          // display: grid;
-          // grid-template-columns: repeat(auto-fit, minmax(8em, 1fr));
-          // grid-row-gap: 1.5em;
-          // justify-items: center;
-          // align-items: center;
-
           display: flex;
           justify-content: space-around;
           flex-wrap: wrap;
@@ -249,6 +247,40 @@ export const StyledLogoContainerLink = styled(Link)`
               }
             }
           }
+        `
+      default:
+        return
+    }
+  }}
+`
+
+export const StyledActionButton = styled.a`
+  ${props => {
+    switch (props.theme.id) {
+      case "2019":
+        return css`
+          grid-column: button;
+
+          font-size: 1.1em;
+          width: 12em;
+          min-height: 2em;
+          margin: 0 auto;
+          padding: 0.5em 0;
+
+          border-radius: ${props => props.theme.cardRadius};
+          background-color: ${props => props.theme.primary};
+          text-decoration: none;
+          color: ${props => props.theme.white1};
+          transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
+          box-shadow: ${props => props.theme.boxShadowSm};
+          &:hover {
+            box-shadow: ${props => props.theme.boxShadow};
+            transform: translateY(-0.1em);
+          }
+
+          display: flex;
+          justify-content: center;
+          align-items: center;
         `
       default:
         return
