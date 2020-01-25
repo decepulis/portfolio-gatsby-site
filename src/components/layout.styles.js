@@ -49,9 +49,11 @@ export const StyledHeader = styled.header`
 
           ${props => props.theme.containerCss};
 
-          color: ${props => props.theme.white2};
+          color: ${props =>
+            props.path === "/" ? props.theme.white2 : props.theme.black1};
           a {
-            color: ${props => props.theme.white1};
+            color: ${props =>
+              props.path === "/" ? props.theme.white1 : props.theme.black1};
             text-decoration: none;
             text-transform: lowercase;
           }

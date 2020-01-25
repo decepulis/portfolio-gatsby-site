@@ -4,25 +4,28 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 
 import PostPreview from "../components/PostPreview"
+import { StyledArticle } from "./directory.styles"
 
 export default ({ data, pageContext }) => {
   const pageTitle = pageContext.slug.replace(/\//g, "")
 
   return (
     <Layout>
-      <header>
-        <h1 style={{ textTransform: "capitalize" }}>{pageTitle}</h1>
-      </header>
-      {data.allMarkdownRemark.edges.map(({ node }) => (
-        <PostPreview
-          key={node.id}
-          title={node.frontmatter.title}
-          subtitle={node.frontmatter.subtitle}
-          date={node.frontmatter.date}
-          description={node.frontmatter.description}
-          slug={node.fields.slug}
-        />
-      ))}
+      <StyledArticle>
+        <header>
+          <h1 style={{ textTransform: "capitalize" }}>{pageTitle}</h1>
+        </header>
+        {data.allMarkdownRemark.edges.map(({ node }) => (
+          <PostPreview
+            key={node.id}
+            title={node.frontmatter.title}
+            subtitle={node.frontmatter.subtitle}
+            date={node.frontmatter.date}
+            description={node.frontmatter.description}
+            slug={node.fields.slug}
+          />
+        ))}
+      </StyledArticle>
     </Layout>
   )
 }

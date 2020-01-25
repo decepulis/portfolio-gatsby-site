@@ -15,8 +15,8 @@ import Skills from "../components/resume/Skills"
 import Projects from "../components/resume/Projects"
 import Contact from "../components/resume/Contact"
 
-export default () => (
-  <Layout>
+export default ({ path }) => (
+  <Layout path={path}>
     <About id="about" />
     <StyledArticle>
       <StyledNavbar>
