@@ -8,21 +8,26 @@ export const StyledProjects = styled.section`
           position: relative;
           overflow: hidden;
 
-          /* background color! */
+          /* background color */
           && {
-            --x-padding: 1em;
-            --y-padding: ${props => props.theme.sectionMargin};
+            --x-padding: ${props => props.theme.containerPadding};
+            --y-padding: ${props => props.theme.typography.rhythm(3)};
             --x-margin: calc(-1 * var(--x-padding));
             --y-margin: calc(-1 * var(--y-padding));
 
             @media (min-width: ${props => props.theme.containerWidth}) {
               --x-padding: calc(
-                50vw - ${props.theme.containerHalfWidthMinusPadding}
+                50vw - ${props => props.theme.containerHalfWidthMinusPadding}
               );
             }
 
             padding: var(--y-padding) var(--x-padding);
             margin: var(--y-margin) var(--x-margin);
+
+            & > header,
+            & > p a {
+              color: white;
+            }
 
             &:after {
               content: "";
@@ -31,7 +36,7 @@ export const StyledProjects = styled.section`
               left: 0;
               right: 0;
               bottom: 3em;
-              transform: skewY(-2deg);
+              transform: skewY(-1deg);
               z-index: -1;
               background: #4e025a;
               background-image: linear-gradient(
@@ -44,26 +49,16 @@ export const StyledProjects = styled.section`
           }
 
           /* Cards */
-          header,
-          && > p a {
-            color: ${props => props.theme.white1};
-          }
           & > section {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
             grid-gap: 2em;
-
+            margin-bottom: ${props => props.theme.typography.rhythm(1)};
             section {
-              background: white;
-              padding: 1rem;
               border-radius: ${props => props.theme.cardRadius};
               box-shadow: ${props => props.theme.boxShadowLg};
-              header {
-                p {
-                  margin: 0;
-                  color: ${props => props.theme.black3};
-                }
-              }
+              background-color: white;
+              padding: ${props => props.theme.typography.rhythm(1)};
             }
           }
         `

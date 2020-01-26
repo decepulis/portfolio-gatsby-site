@@ -1,9 +1,23 @@
+import Typography from "typography"
+
 export default {
   "1989": {
     label: "1989",
   },
   "2019": {
     label: "2019",
+    typography: new Typography({
+      headerFontFamily: ["Roboto", "sans-serif"],
+      bodyFontFamily: ["Roboto", "sans-serif"],
+      includeNormalize: false,
+      googleFonts: [
+        {
+          name: "Roboto",
+          styles: ["400", "700"],
+        },
+      ],
+    }),
+
     containerWidth: "60rem",
     containerPadding: "1rem",
     containerHalfWidthMinusPadding: "29rem",
@@ -12,7 +26,6 @@ export default {
       margin: 0 auto;
       padding: 0 1rem;
     `,
-    sectionMargin: "4em",
 
     boxShadowSm: "0 5px 10px rgba(0,0,0,0.12);",
     boxShadow: "0 8px 30px rgba(0,0,0,0.12);",

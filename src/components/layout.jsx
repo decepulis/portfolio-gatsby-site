@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 
 import { ThemeProvider } from "styled-components"
 import themes from "./themes"
+
+import { GoogleFont } from "react-typography"
 
 import { GlobalStyle, StyledHeader, StyledMain } from "./layout.styles"
 
@@ -18,27 +20,34 @@ export default ({ children, path }) => {
   }
 
   return (
-    <ThemeProvider theme={{ id: selectedThemeId, ...themes[selectedThemeId] }}>
-      <GlobalStyle />
-      <StyledHeader path={path}>
-        <h1>
-          <Link to="/">Darius Cepulis</Link>
-        </h1>
-        {selectedThemeId && (
-          <label>
-            Theme&ensp;
-            {/* eslint-disable-next-line */}
-            <select value={selectedThemeId} onChange={changeThemeId}>
-              {Object.entries(themes).map(([themeId, themeAttributes]) => (
-                <option key={themeId} value={themeId}>
-                  {themeAttributes.label}
-                </option>
-              ))}
-            </select>
-          </label>
-        )}
-      </StyledHeader>
-      <StyledMain>{children}</StyledMain>
-    </ThemeProvider>
+    <>
+      {themes[selectedThemeId]?.typography && (
+        <GoogleFont typography={themes[selectedThemeId].typography} />
+      )}
+      <ThemeProvider
+        theme={{ id: selectedThemeId, ...themes[selectedThemeId] }}
+      >
+        <GlobalStyle />
+        <StyledHeader path={path}>
+          <h1>
+            <Link to="/">Darius Cepulis</Link>
+          </h1>
+          {selectedThemeId && (
+            <label>
+              Theme&ensp;
+              {/* eslint-disable-next-line */}
+              <select value={selectedThemeId} onChange={changeThemeId}>
+                {Object.entries(themes).map(([themeId, themeAttributes]) => (
+                  <option key={themeId} value={themeId}>
+                    {themeAttributes.label}
+                  </option>
+                ))}
+              </select>
+            </label>
+          )}
+        </StyledHeader>
+        <StyledMain>{children}</StyledMain>
+      </ThemeProvider>
+    </>
   )
 }

@@ -18,8 +18,6 @@ export const StyledPositions = styled.section`
               flex: 1;
               min-width: 300px;
               max-width: 300px;
-              padding: 0 1em;
-              margin: 1em 0;
 
               background-repeat: no-repeat;
               background-position: center center;
@@ -33,13 +31,6 @@ export const StyledPositions = styled.section`
               }
               &:nth-of-type(3) {
                 background-image: url(${blob3});
-              }
-
-              header {
-                p {
-                  margin: 0;
-                  color: ${props => props.theme.black3};
-                }
               }
             }
           }

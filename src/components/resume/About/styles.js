@@ -12,13 +12,14 @@ export const StyledSection = styled.section`
     switch (props.theme.id) {
       case "2019":
         return css`
-          color: ${props => props.theme.white3};
           position: relative;
 
           overflow-x: hidden;
 
           margin-top: -10rem;
           padding-top: 10rem;
+
+          color: ${props => "rgba(255, 255, 255, 0.8)"};
 
           background-image: linear-gradient(
             155.89deg,
@@ -63,22 +64,17 @@ export const StyledContainer = styled.div`
             "text text"
             "button button"
             "companies companies";
-          grid-gap: 2rem;
-          padding: 2em ${props => props.theme.containerPadding};
 
-          @media (min-width: 32em) {
-            padding: 3.5em ${props => props.theme.containerPadding};
-          }
+          --grid-space: ${props => props.theme.typography.rhythm(2)};
+          padding: var(--grid-space) ${props => props.theme.containerPadding};
+          grid-gap: var(--grid-space);
+
           @media (min-width: 48em) {
-            grid-column-gap: 3rem;
-            grid-row-gap: 5rem;
+            --grid-space: ${props => props.theme.typography.rhythm(3)};
+
             grid-template-areas:
-              "profile text"
-              "button button"
+              "profile text" "button button"
               "companies companies";
-          }
-          @media (min-width: 60em) {
-            padding: 5em ${props => props.theme.containerPadding};
           }
         `
       default:
@@ -88,8 +84,8 @@ export const StyledContainer = styled.div`
 `
 
 export const StyledProfile = styled.img`
-  width: 300px;
-  height: 300px;
+  width: 200px;
+  height: 200px;
 
   ${props => {
     switch (props.theme.id) {
@@ -100,7 +96,7 @@ export const StyledProfile = styled.img`
           border-radius: 50%;
           border: 0.5rem solid white;
           width: 100%;
-          max-width: 300px;
+          max-width: 200px;
           height: auto;
           margin: 0 auto;
           box-shadow: ${props => props.theme.boxShadowLg};
@@ -129,9 +125,11 @@ export const StyledLead = styled.p`
     switch (props.theme.id) {
       case "2019":
         return css`
-          font-weight: bolder;
-          font-size: 2rem;
-          color: ${props => props.theme.white2};
+          ${props => props.theme.typography.scale(4 / 5)}
+          line-height: ${props =>
+            props.theme.typography.options.headerLineHeight};
+          font-weight: ${props => props.theme.typography.options.headerWeight};
+          color: white;
         `
       default:
         return
@@ -153,9 +151,12 @@ export const StyledCompanies = styled.div`
           grid-column: companies;
 
           p {
-            font-size: 1.5rem;
-            font-weight: bolder;
-            color: ${props => props.theme.white1};
+            ${props => props.theme.typography.scale(2 / 5)}
+            line-height: ${props =>
+              props.theme.typography.options.headerLineHeight};
+            font-weight: ${props =>
+              props.theme.typography.options.headerWeight};
+            color: white;
           }
         `
       default:
@@ -183,15 +184,16 @@ export const StyledLogoContainerLink = styled(Link)`
     switch (props.theme.id) {
       case "2019":
         return css`
-          // Size In Gric
+          /* Size In Grid */
           position: relative;
 
           width: 8em;
           height: 3em;
           flex: 0 0 8em;
-          margin: 0 0.75em 1.5em;
+          margin: 0 ${props => props.theme.typography.rhythm(0.25)}
+            ${props => props.theme.typography.rhythm(0.5)};
 
-          // Position of Children
+          /* Position of Children */
           .mask,
           img {
             position: absolute;
@@ -199,17 +201,16 @@ export const StyledLogoContainerLink = styled(Link)`
             width: 100%;
             top: 0;
             left: 0;
-            margin-bottom: 1em;
           }
 
-          // Establishing Masks
+          /* Establishing Masks */
           @supports (mask-size: contain) {
             .mask {
               mask-repeat: no-repeat;
               mask-position: center center;
               mask-size: contain;
 
-              background-color: ${props => props.theme.white3};
+              background-color: rgba(255, 255, 255, 0.8);
 
               &.microsensor {
                 mask-image: url(${microsensor});
@@ -254,33 +255,36 @@ export const StyledLogoContainerLink = styled(Link)`
   }}
 `
 
-export const StyledActionButton = styled.a`
+export const StyledActionButton = styled.p`
   ${props => {
     switch (props.theme.id) {
       case "2019":
         return css`
           grid-column: button;
 
-          font-size: 1.1em;
           width: 12em;
-          min-height: 2em;
-          margin: 0 auto;
-          padding: 0.5em 0;
+          margin-left: auto;
+          margin-right: auto;
 
           border-radius: ${props => props.theme.cardRadius};
           background-color: ${props => props.theme.primary};
-          text-decoration: none;
-          color: ${props => props.theme.white1};
           transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
           box-shadow: ${props => props.theme.boxShadowSm};
+
           &:hover {
             box-shadow: ${props => props.theme.boxShadow};
             transform: translateY(-0.1em);
           }
 
-          display: flex;
-          justify-content: center;
-          align-items: center;
+          a {
+            display: block;
+            text-align: center;
+            width: 100%;
+            height: 100%;
+            line-height: ${props => props.theme.typography.rhythm(1.5)};
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+          }
         `
       default:
         return

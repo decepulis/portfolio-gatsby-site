@@ -6,16 +6,13 @@ export const StyledNavbar = styled.nav`
       case "2019":
         return css`
           position: sticky;
-          top: 1em;
+          top: ${props => props.theme.typography.rhythm(1 / 2)};
           z-index: 5;
 
-          margin: 0 -1rem;
-          padding: 0 1rem;
-
           border-radius: ${props => props.theme.cardRadius};
-          background-color: ${props => props.theme.white1};
           box-shadow: ${props => props.theme.boxShadow};
           overflow-x: scroll;
+          background-color: white;
         `
       default:
         return
@@ -33,15 +30,15 @@ export const StyledNavList = styled.ul`
           align-items: center;
 
           list-style-type: none;
-          padding: 0;
-
+          margin: 0;
           li {
-            padding: 0 1em;
+            margin: 0;
+            padding: ${props => props.theme.typography.rhythm(1 / 2)}
+              ${props => props.theme.typography.rhythm(1)};
           }
 
           a {
             text-decoration: none;
-            color: black;
           }
         `
       default:
@@ -57,11 +54,15 @@ export const StyledArticle = styled.article`
         return css`
           ${props => props.theme.containerCss};
           h2 {
-            font-size: 2.5rem;
             text-align: center;
+            ${props => props.theme.typography.scale(1.25)}
+            margin-bottom: ${props => props.theme.typography.rhythm(2.5)};
+            line-height: ${props =>
+              props.theme.typography.options.headerLineHeight};
           }
           & > section {
-            margin: ${props => props.theme.sectionMargin} 0;
+            overflow-y: auto;
+            margin: ${props => props.theme.typography.rhythm(2.5)} 0;
           }
         `
       default:

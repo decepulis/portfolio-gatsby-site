@@ -11,14 +11,6 @@ export const StyledEducation = styled.section`
           & > section {
             overflow-y: auto;
             section {
-              margin: 1em 0;
-              header {
-                p {
-                  margin: 0;
-                  color: ${props => props.theme.black3};
-                }
-              }
-
               /* SVG Background */
               position: relative;
 

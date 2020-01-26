@@ -50,12 +50,11 @@ export default function About({ id }) {
               it short and sweet.
             </p>
           </StyledHeroText>
-          <StyledActionButton
-            className="ignore-global-style"
-            role="button"
-            href="#contact"
-          >
-            Contact Now &rarr;
+
+          <StyledActionButton>
+            <a className="ignore-global-style" role="button" href="#contact">
+              Contact Now &rarr;
+            </a>
           </StyledActionButton>
           {theme.id === "2019" && (
             <StyledCompanies>

@@ -24,22 +24,13 @@ ${props => {
       return css`
         html,
         body {
-          font-family: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI",
-            Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-            "Segoe UI Symbol";
-          color: ${props => props.theme.black1};
-          h1,
-          h2,
-          h3,
-          h4,
-          h5,
-          h6 {
-            font-weight: 800;
-            letter-spacing: -0.015em;
-          }
+          ${props => props.theme.typography.toString()}
+
           scroll-behavior: smooth;
+
           a:not(.ignore-global-style) {
             color: ${props => props.theme.secondary};
+            text-decoration: none;
           }
         }
       `
@@ -64,13 +55,21 @@ export const StyledHeader = styled.header`
           ${props => props.theme.containerCss};
 
           color: ${props =>
-            props.path === "/" ? props.theme.white2 : props.theme.black1};
-          && a {
-            // using the ol ampersand trick to increase specificity
-            color: ${props =>
-              props.path === "/" ? props.theme.white1 : props.theme.black1};
-            text-decoration: none;
-            text-transform: lowercase;
+            props.path === "/"
+              ? "rgba(255, 255, 255, 0.9)"
+              : props.theme.typography.options.bodyColor};
+
+          && h1 {
+            /* using the ol ampersand trick to increase specificity */
+            margin: ${props.theme.typography.rhythm(1)} 0;
+            a {
+              color: ${props =>
+                props.path === "/"
+                  ? "white"
+                  : props.theme.typography.options.headerColor};
+              text-decoration: none;
+              text-transform: lowercase;
+            }
           }
 
           &::after {
