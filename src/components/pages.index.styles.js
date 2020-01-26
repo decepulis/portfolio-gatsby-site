@@ -9,6 +9,9 @@ export const StyledNavbar = styled.nav`
           top: ${props => props.theme.typography.rhythm(1 / 2)};
           z-index: 5;
 
+          margin: 0 -${props.theme.containerPadding};
+          padding: 0 ${props.theme.containerPadding};
+
           border-radius: ${props => props.theme.cardRadius};
           box-shadow: ${props => props.theme.boxShadow};
           overflow-x: scroll;
@@ -37,8 +40,13 @@ export const StyledNavList = styled.ul`
               ${props => props.theme.typography.rhythm(1)};
           }
 
-          a {
+          && a {
+            font-size: 1.1em;
             text-decoration: none;
+            color: ${props => props.theme.typography.options.bodyColor};
+            &.active {
+              color: ${props => props.theme.primary};
+            }
           }
         `
       default:

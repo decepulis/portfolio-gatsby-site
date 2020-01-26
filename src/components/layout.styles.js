@@ -31,6 +31,9 @@ ${props => {
           a:not(.ignore-global-style) {
             color: ${props => props.theme.secondary};
             text-decoration: none;
+            &:hover {
+              text-decoration: underline;
+            }
           }
         }
       `

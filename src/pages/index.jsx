@@ -1,4 +1,11 @@
-import React from "react"
+import React, {
+  useCallback,
+  useRef,
+  useState,
+  useEffect,
+  useContext,
+} from "react"
+import useEventListener from "../components/utilities/useEventListener"
 
 import {
   StyledNavbar,
@@ -15,40 +22,132 @@ import Skills from "../components/resume/Skills"
 import Projects from "../components/resume/Projects"
 import Contact from "../components/resume/Contact"
 
-export default ({ path }) => (
-  <Layout path={path}>
-    <About id="about" />
-    <StyledArticle>
-      <StyledNavbar>
-        <StyledNavList>
-          <li>
-            <a href="#about">About</a>
-          </li>
-          <li>
-            <a href="#positions">Positions</a>
-          </li>
-          <li>
-            <a href="#education">Education</a>
-          </li>
-          <li>
-            <a href="#projects">Projects</a>
-          </li>
-          <li>
-            <a href="#skills">Skills</a>
-          </li>
-          <li>
-            <a href="#contact">Contact</a>
-          </li>
-        </StyledNavList>
-      </StyledNavbar>
-      {/* // blobs */}
-      <Positions id="positions" />
-      {/* // svg characters */}
-      <Education id="education" />
-      {/* // cards */}
-      <Projects id="projects" />
-      <Skills id="skills" />
-      <Contact id="contact" />
-    </StyledArticle>
-  </Layout>
-)
+// TODO: move themeprovider up so I can access it in pages
+// import { ThemeContext } from "styled-components"
+
+// TODO: make this more... react.
+// less references in the dom, maybe move behavior into element
+const scrollElementToHref = (scrollElement, targetHref) => {
+  if (!targetHref || !scrollElement || !window) {
+    return
+  }
+
+  const targetElement = scrollElement.querySelector(`a[href="${targetHref}"]`)
+  if (!targetElement) {
+    return
+  }
+
+  const { left: elLeft, width: elWidth } = targetElement.getBoundingClientRect()
+  const halfway = window.innerWidth / 2
+  const navLoc = elLeft + elWidth / 2
+  const offset = navLoc - halfway
+
+  scrollElement.scrollBy({ left: offset, behavior: "smooth" })
+}
+
+export default ({ path }) => {
+  const aboutRef = useRef()
+  const positionsRef = useRef()
+  const educationRef = useRef()
+  const projectsRef = useRef()
+  const skillsRef = useRef()
+  const contactRef = useRef()
+  const navRef = useRef()
+
+  const [activeNav, setActiveNav] = useState()
+
+  const onScroll = useCallback(() => {
+    let topRef = contactRef
+
+    if (
+      typeof window !== "undefined" &&
+      typeof document !== "undefined" &&
+      window.pageYOffset + 50 <
+        document.documentElement.scrollHeight - window.innerHeight
+    ) {
+      const refArray = [
+        contactRef,
+        skillsRef,
+        projectsRef,
+        educationRef,
+        positionsRef,
+        aboutRef,
+      ]
+      topRef = refArray.find(ref => {
+        return ref.current.getBoundingClientRect().top < 10
+      })
+    }
+    setActiveNav(topRef?.current?.id)
+  }, [setActiveNav])
+
+  useEventListener("scroll", onScroll)
+
+  useEffect(() => {
+    scrollElementToHref(navRef.current, `#${activeNav}`)
+  }, [activeNav])
+
+  return (
+    <Layout path={path}>
+      <About id="about" ref={aboutRef} />
+      <StyledArticle>
+        <StyledNavbar ref={navRef}>
+          <StyledNavList>
+            <li>
+              <a
+                href="#about"
+                className={activeNav === "about" ? "active" : ""}
+              >
+                About
+              </a>
+            </li>
+            <li>
+              <a
+                href="#positions"
+                className={activeNav === "positions" ? "active" : ""}
+              >
+                Positions
+              </a>
+            </li>
+            <li>
+              <a
+                href="#education"
+                className={activeNav === "education" ? "active" : ""}
+              >
+                Education
+              </a>
+            </li>
+            <li>
+              <a
+                href="#projects"
+                className={activeNav === "projects" ? "active" : ""}
+              >
+                Projects
+              </a>
+            </li>
+            <li>
+              <a
+                href="#skills"
+                className={activeNav === "skills" ? "active" : ""}
+              >
+                Skills
+              </a>
+            </li>
+            <li>
+              <a
+                href="#contact"
+                className={activeNav === "contact" ? "active" : ""}
+              >
+                Contact
+              </a>
+            </li>
+          </StyledNavList>
+        </StyledNavbar>
+        <Positions id="positions" ref={positionsRef} />
+        <Education id="education" ref={educationRef} />
+        <Projects id="projects" ref={projectsRef} />
+        <Skills id="skills" ref={skillsRef} />
+        <Contact id="contact" ref={contactRef} />
+      </StyledArticle>
+    </Layout>
+  )
+}

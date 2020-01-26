@@ -4,7 +4,7 @@ import PostPreview from "../../PostPreview"
 
 import { StyledProjects } from "./styles"
 
-export default function Projects({ id }) {
+const Projects = React.forwardRef(({ id }, ref) => {
   const data = useStaticQuery(
     graphql`
       query {
@@ -41,7 +41,7 @@ export default function Projects({ id }) {
   )
 
   return (
-    <StyledProjects id={id}>
+    <StyledProjects id={id} ref={ref}>
       <header>
         <h2>Projects</h2>
       </header>
@@ -64,4 +64,6 @@ export default function Projects({ id }) {
       </p>
     </StyledProjects>
   )
-}
+})
+
+export default Projects
