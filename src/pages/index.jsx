@@ -1,5 +1,13 @@
-import React, { useCallback, useRef, useState, useEffect } from "react"
+import React, {
+  useCallback,
+  useRef,
+  useState,
+  useEffect,
+  useContext,
+} from "react"
 import useEventListener from "../components/utilities/useEventListener"
+
+import { ThemeContext } from "styled-components"
 
 import {
   StyledNavbar,
@@ -14,8 +22,7 @@ import Skills from "../components/resume/Skills"
 import Projects from "../components/resume/Projects"
 import Contact from "../components/resume/Contact"
 
-// TODO: use theme context to determine whether to waste cycles on scroll animation
-// import { ThemeContext } from "styled-components"
+import { throttle } from "lodash"
 
 // TODO: make this more... react.
 // less references in the dom, maybe move behavior into element
@@ -37,7 +44,9 @@ const scrollElementToHref = (scrollElement, targetHref) => {
   scrollElement.scrollBy({ left: offset, behavior: "smooth" })
 }
 
-export default ({ path }) => {
+export default () => {
+  const theme = useContext(ThemeContext)
+
   const aboutRef = useRef()
   const positionsRef = useRef()
   const educationRef = useRef()
@@ -52,8 +61,10 @@ export default ({ path }) => {
     let topRef = contactRef
 
     if (
+      // SSR protection
       typeof window !== "undefined" &&
       typeof document !== "undefined" &&
+      // when we're at the bottom of the page, we just default to contactRef
       window.pageYOffset + 50 <
         document.documentElement.scrollHeight - window.innerHeight
     ) {
@@ -65,14 +76,20 @@ export default ({ path }) => {
         positionsRef,
         aboutRef,
       ]
+      // The ref'd element to have most recently crossed the top of the screen
+      // will be the first to return a negative top value in this .find() fn
       topRef = refArray.find(ref => {
         return ref.current.getBoundingClientRect().top < 10
       })
     }
+
     setActiveNav(topRef?.current?.id)
   }, [setActiveNav])
 
-  useEventListener("scroll", onScroll)
+  useEventListener(
+    "scroll",
+    theme.highlightNavOnScroll ? throttle(onScroll, 250) : () => {}
+  )
 
   useEffect(() => {
     scrollElementToHref(navRef.current, `#${activeNav}`)

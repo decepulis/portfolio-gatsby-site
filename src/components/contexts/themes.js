@@ -16,6 +16,7 @@ export default {
         },
       ],
     }),
+    highlightNavOnScroll: true,
 
     containerWidth: "60rem",
     containerPadding: "1rem",
