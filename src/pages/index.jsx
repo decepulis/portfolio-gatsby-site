@@ -7,8 +7,6 @@ import {
   StyledArticle,
 } from "../components/pages.index.styles.js"
 
-import Layout from "../components/layout"
-
 import About from "../components/resume/About"
 import Positions from "../components/resume/Positions"
 import Education from "../components/resume/Education"
@@ -81,7 +79,7 @@ export default ({ path }) => {
   }, [activeNav])
 
   return (
-    <Layout path={path}>
+    <>
       <About id="about" ref={aboutRef} />
       <StyledArticle>
         <StyledNavbar ref={navRef}>
@@ -142,6 +140,6 @@ export default ({ path }) => {
         <Skills id="skills" ref={skillsRef} />
         <Contact id="contact" ref={contactRef} />
       </StyledArticle>
-    </Layout>
+    </>
   )
 }
