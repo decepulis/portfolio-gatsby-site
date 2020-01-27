@@ -8,6 +8,7 @@ import { GoogleFont } from "react-typography"
 import { GlobalStyle, StyledHeader, StyledMain } from "./layout.styles"
 
 import { Link } from "gatsby"
+import Helmet from "react-helmet"
 
 const initialThemeId =
   typeof window !== "undefined" && (localStorage.getItem("themeId") ?? "mono")
@@ -21,9 +22,18 @@ export default ({ children, path }) => {
 
   return (
     <>
+      {/* Insert typography into head */}
       {themes[selectedThemeId]?.typography && (
-        <GoogleFont typography={themes[selectedThemeId].typography} />
+        <>
+          <Helmet>
+            <style id="typography.js" type="text/css">
+              {themes[selectedThemeId].typography.toString()}
+            </style>
+          </Helmet>
+        </>
       )}
+
+      {/* Wrap pages in theme provider & header */}
       <ThemeProvider
         theme={{ id: selectedThemeId, ...themes[selectedThemeId] }}
       >
@@ -48,6 +58,9 @@ export default ({ children, path }) => {
         </StyledHeader>
         <StyledMain>{children}</StyledMain>
       </ThemeProvider>
+      {themes[selectedThemeId]?.typography && (
+        <GoogleFont typography={themes[selectedThemeId].typography} />
+      )}
     </>
   )
 }

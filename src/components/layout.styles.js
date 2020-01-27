@@ -24,8 +24,6 @@ ${props => {
       return css`
         html,
         body {
-          ${props => props.theme.typography.toString()}
-
           scroll-behavior: smooth;
 
           a:not(.ignore-global-style) {
