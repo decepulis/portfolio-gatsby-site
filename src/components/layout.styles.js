@@ -12,14 +12,6 @@ html, body {
 }
 ${props => {
   switch (props.theme.id) {
-    case "1989":
-      return css`
-        html,
-        body {
-          margin-left: 8px;
-          margin-right: 8px;
-        }
-      `
     case "2019":
       return css`
         html,

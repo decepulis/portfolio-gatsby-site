@@ -1,10 +1,4 @@
-import React, {
-  useCallback,
-  useRef,
-  useState,
-  useEffect,
-  useContext,
-} from "react"
+import React, { useCallback, useRef, useState, useEffect } from "react"
 import useEventListener from "../components/utilities/useEventListener"
 
 import {
@@ -22,7 +16,7 @@ import Skills from "../components/resume/Skills"
 import Projects from "../components/resume/Projects"
 import Contact from "../components/resume/Contact"
 
-// TODO: move themeprovider up so I can access it in pages
+// TODO: use theme context to determine whether to waste cycles on scroll animation
 // import { ThemeContext } from "styled-components"
 
 // TODO: make this more... react.

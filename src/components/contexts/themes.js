@@ -9,7 +9,6 @@ export default {
     typography: new Typography({
       headerFontFamily: ["Roboto", "sans-serif"],
       bodyFontFamily: ["Roboto", "sans-serif"],
-      includeNormalize: false,
       googleFonts: [
         {
           name: "Roboto",
