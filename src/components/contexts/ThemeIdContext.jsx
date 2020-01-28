@@ -44,7 +44,7 @@ export const ThemeIdProvider = ({ children }) => {
   // https://github.com/styled-components/styled-components/issues/2629
   useEffect(() => {
     setAndStoreThemeId(initThemeId)
-  }, [setThemeId])
+  }, [setAndStoreThemeId])
 
   // memoize the provider values.
   // just for fun.
