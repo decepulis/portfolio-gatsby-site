@@ -1,19 +1,31 @@
 const { createFilePath } = require(`gatsby-source-filesystem`)
 const path = require(`path`)
+const _ = require(`lodash`)
+
+const getDirFromSlug = slug => {
+  // turns "/education/ms/" into ["", "education" "ms", ""] ...
+  const slugArr = slug.split("/")
+  // ... into ["", "education", ""] and then "/education/""
+  return slugArr.filter((s, idx) => idx !== slugArr.length - 2).join("/")
+}
 
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions
 
   // Create slug for every MarkdownRemark
-  if (
-    node.internal.type === `MarkdownRemark` ||
-    node.internal.type === `Directory`
-  ) {
+  if (node.internal.type === `MarkdownRemark`) {
     const slug = createFilePath({ node, getNode, basePath: `pages` })
+    const directory = getDirFromSlug(slug)
+
     createNodeField({
       node,
       name: `slug`,
       value: slug,
+    })
+    createNodeField({
+      node,
+      name: `directory`,
+      value: directory,
     })
   }
 }
@@ -21,10 +33,24 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
 
-  // Create page for each folder
-  const resultDirectories = await graphql(`
+  // Create page for each directory, tag, and MarkdownRemark
+  const resultMarkdown = await graphql(`
     query {
-      allDirectory(filter: { fields: { slug: { ne: "/" } } }) {
+      directoryGroup: allMarkdownRemark {
+        group(field: fields___directory) {
+          fieldValue
+        }
+      }
+
+      tagsGroup: allMarkdownRemark {
+        group(field: frontmatter___tags) {
+          fieldValue
+        }
+      }
+
+      postsRemark: allMarkdownRemark(
+        sort: { order: DESC, fields: [frontmatter___date] }
+      ) {
         edges {
           node {
             fields {
@@ -35,31 +61,28 @@ exports.createPages = async ({ graphql, actions }) => {
       }
     }
   `)
-  resultDirectories.data.allDirectory.edges.forEach(({ node }) => {
+
+  resultMarkdown.data.directoryGroup.group.forEach(directory => {
     createPage({
-      path: node.fields.slug,
+      path: `${directory.fieldValue}`,
       component: path.resolve(`./src/templates/directory.jsx`),
       context: {
-        slug: node.fields.slug,
+        slug: `${directory.fieldValue}`,
       },
     })
   })
 
-  // Create page for each MarkdownRemark
-  const resultMarkdown = await graphql(`
-    query {
-      allMarkdownRemark {
-        edges {
-          node {
-            fields {
-              slug
-            }
-          }
-        }
-      }
-    }
-  `)
-  resultMarkdown.data.allMarkdownRemark.edges.forEach(({ node }) => {
+  resultMarkdown.data.tagsGroup.group.forEach(tag => {
+    createPage({
+      path: `/tags/${_.kebabCase(tag.fieldValue)}/`,
+      component: path.resolve(`./src/templates/tags.jsx`),
+      context: {
+        tag: tag.fieldValue,
+      },
+    })
+  })
+
+  resultMarkdown.data.postsRemark.edges.forEach(({ node }) => {
     createPage({
       path: node.fields.slug,
       component: path.resolve(`./src/templates/post.jsx`),

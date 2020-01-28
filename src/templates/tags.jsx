@@ -5,12 +5,10 @@ import PostPreview from "../components/PostPreview"
 import { JustAStyledContainer } from "../components/layout.styles"
 
 export default ({ data, pageContext }) => {
-  const pageTitle = pageContext.slug.replace(/\//g, " ")
-
   return (
     <JustAStyledContainer>
       <header>
-        <h1 style={{ textTransform: "capitalize" }}>{pageTitle}</h1>
+        <h1 style={{ textTransform: "capitalize" }}>{pageContext.tag}</h1>
       </header>
       {data.allMarkdownRemark.edges.map(({ node }) => (
         <PostPreview
@@ -26,11 +24,11 @@ export default ({ data, pageContext }) => {
   )
 }
 
-export const query = graphql`
-  query($slug: String!) {
+export const pageQuery = graphql`
+  query($tag: String) {
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { fields: { directory: { eq: $slug } } }
+      filter: { frontmatter: { tags: { in: [$tag] } } }
     ) {
       totalCount
       edges {

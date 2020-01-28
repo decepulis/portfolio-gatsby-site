@@ -5,4 +5,5 @@ description: Recreating the awesome parallax effect from firewatchgame.com for a
 date: 2019-06-01T00:00:00.000Z
 datetimeformat: MM-YYYY
 featuredpost: true
+tags: ["svg", "parallax", "html", "css", "javascript/es6", "netlify"]
 ---

@@ -98,3 +98,16 @@ export const StyledMain = styled.main`
     }
   }};
 `
+
+export const JustAStyledContainer = styled.div`
+  ${props => {
+    switch (props.theme.id) {
+      case "2019":
+        return css`
+          ${props => props.theme.containerCss}
+        `
+      default:
+        return
+    }
+  }};
+`
