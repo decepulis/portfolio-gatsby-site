@@ -19,7 +19,7 @@ export const StyledSection = styled.section`
           margin-top: -10rem;
           padding-top: 10rem;
 
-          color: ${props => "rgba(255, 255, 255, 0.8)"};
+          color: rgba(255, 255, 255, 0.8);
 
           background-image: linear-gradient(
             155.89deg,
@@ -62,7 +62,6 @@ export const StyledContainer = styled.div`
           grid-template-areas:
             "profile profile"
             "text text"
-            "button button"
             "companies companies";
 
           --grid-space: ${props => props.theme.typography.rhythm(2)};
@@ -73,7 +72,7 @@ export const StyledContainer = styled.div`
             --grid-space: ${props => props.theme.typography.rhythm(3)};
 
             grid-template-areas:
-              "profile text" "button button"
+              "profile text"
               "companies companies";
           }
         `
@@ -125,7 +124,10 @@ export const StyledLead = styled.p`
     switch (props.theme.id) {
       case "2019":
         return css`
-          ${props => props.theme.typography.scale(4 / 5)}
+          ${props => props.theme.typography.scale(1)}
+          @media (min-width: 48em) {
+            ${props => props.theme.typography.scale(7 / 5)}
+          }
           line-height: ${props =>
             props.theme.typography.options.headerLineHeight};
           font-weight: ${props => props.theme.typography.options.headerWeight};
@@ -151,12 +153,12 @@ export const StyledCompanies = styled.div`
           grid-column: companies;
 
           p {
+            color: rgba(255, 255, 255, 0.8);
             ${props => props.theme.typography.scale(2 / 5)}
             line-height: ${props =>
               props.theme.typography.options.headerLineHeight};
             font-weight: ${props =>
               props.theme.typography.options.headerWeight};
-            color: white;
           }
         `
       default:
@@ -255,16 +257,12 @@ export const StyledLogoContainerLink = styled(Link)`
   }}
 `
 
-export const StyledActionButton = styled.p`
+export const StyledActionButton = styled.div`
   ${props => {
     switch (props.theme.id) {
       case "2019":
         return css`
-          grid-column: button;
-
           width: 12em;
-          margin-left: auto;
-          margin-right: auto;
 
           border-radius: ${props => props.theme.cardRadius};
           background-color: ${props => props.theme.primary};
@@ -281,7 +279,7 @@ export const StyledActionButton = styled.p`
             text-align: center;
             width: 100%;
             height: 100%;
-            line-height: ${props => props.theme.typography.rhythm(1.5)};
+            line-height: ${props => props.theme.typography.rhythm(8 / 5)};
             color: rgba(255, 255, 255, 0.9);
             text-decoration: none;
           }

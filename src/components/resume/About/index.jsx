@@ -42,19 +42,15 @@ const About = React.forwardRef(({ id }, ref) => {
           </StyledLead>
           <p>
             I specialize in Front-End, ready to get deep into UI/UX,
-            architecture, and tooling.
+            architecture, and tooling. I learn quickly and stuff.
           </p>
-          <p>
-            Maybe I could add another paragraph here, too, but I should keep it
-            short and sweet.
-          </p>
+          <StyledActionButton>
+            <a className="ignore-global-style" role="button" href="#contact">
+              Contact Now &rarr;
+            </a>
+          </StyledActionButton>
         </StyledHeroText>
 
-        <StyledActionButton>
-          <a className="ignore-global-style" role="button" href="#contact">
-            Contact Now &rarr;
-          </a>
-        </StyledActionButton>
         {theme.id === "2019" && (
           <StyledCompanies>
             <p>At least 5 companies/educational institutions trust Darius</p>

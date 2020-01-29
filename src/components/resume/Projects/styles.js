@@ -1,5 +1,7 @@
 import styled, { css } from "styled-components"
 
+import pattern from "./circuit-board.svg"
+
 export const StyledProjects = styled.section`
   ${props => {
     switch (props.theme.id) {
@@ -11,7 +13,7 @@ export const StyledProjects = styled.section`
           /* background color */
           && {
             --x-padding: ${props => props.theme.containerPadding};
-            --y-padding: ${props => props.theme.typography.rhythm(3)};
+            --y-padding: ${props => props.theme.typography.rhythm(2)};
             --x-margin: calc(-1 * var(--x-padding));
             --y-margin: calc(-1 * var(--y-padding));
 
@@ -24,6 +26,9 @@ export const StyledProjects = styled.section`
             padding: var(--y-padding) var(--x-padding);
             margin: var(--y-margin) var(--x-margin);
 
+            & > header {
+              padding-top: var(--y-padding);
+            }
             & > header,
             & > p a {
               color: white;
@@ -39,12 +44,13 @@ export const StyledProjects = styled.section`
               transform: skewY(-1deg);
               z-index: -1;
               background: #4e025a;
-              background-image: linear-gradient(
-                155.89deg,
-                rgba(3, 6, 36, 0.7) 12.21%,
-                rgba(3, 6, 36, 0.4) 50%,
-                rgba(3, 6, 36, 0) 99.84%
-              );
+              background-image: url(${pattern}),
+                linear-gradient(
+                  155.89deg,
+                  rgba(3, 6, 36, 0.7) 12.21%,
+                  rgba(3, 6, 36, 0.4) 50%,
+                  rgba(3, 6, 36, 0) 99.84%
+                );
             }
           }
 

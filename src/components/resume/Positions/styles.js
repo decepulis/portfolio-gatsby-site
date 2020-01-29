@@ -23,6 +23,8 @@ export const StyledPositions = styled.section`
               background-position: center center;
               background-size: contain;
 
+              margin-bottom: ${props => props.theme.typography.rhythm(1)};
+
               &:nth-of-type(1) {
                 background-image: url(${blob1});
               }

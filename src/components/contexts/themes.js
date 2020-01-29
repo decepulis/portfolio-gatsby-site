@@ -31,15 +31,10 @@ export default {
     boxShadow: "0 8px 30px rgba(0,0,0,0.12);",
     boxShadowLg: "0 30px 60px rgba(0,0,0,0.12);",
     cardRadius: "1em",
+
     primaryDark: "#000758",
     primary: "#109b9b",
     secondary: "#0051C1",
-    black1: "#0e1e25",
-    black2: "#333",
-    black3: "#666",
-    white1: "hsla(0,0%,100%,100%)",
-    white2: "hsla(0,0%,100%,90%)",
-    white3: "hsla(0,0%,100%,80%)",
   },
   rad: {
     label: "Rad",
