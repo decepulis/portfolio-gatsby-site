@@ -61,8 +61,8 @@ export const StyledContainer = styled.div`
           align-items: center;
 
           grid-template-areas:
-            "text text"
             "profile profile"
+            "text text"
             "companies companies";
 
           --grid-space: ${props => props.theme.typography.rhythm(2)};
@@ -98,7 +98,7 @@ export const StyledProfile = styled.img`
           border-radius: 50%;
           border: 0.5rem solid white;
           width: 100%;
-          max-width: 150px;
+          max-width: 125px;
           height: auto;
           margin: 0 auto;
           box-shadow: ${props => props.theme.boxShadowLg};
@@ -200,11 +200,16 @@ export const StyledLogoContainerLink = styled(Link)`
           /* Size In Grid */
           position: relative;
 
-          width: 8em;
-          height: 3em;
-          flex: 0 0 8em;
+          width: 5em;
+          height: 2em;
+          flex: 0 0 5em;
           margin: 0 ${props => props.theme.typography.rhythm(0.25)}
             ${props => props.theme.typography.rhythm(0.5)};
+          @media (min-width: 48em) {
+            width: 8em;
+            height: 3em;
+            flex: 0 0 8em;
+          }
 
           /* Position of Children */
           .mask,

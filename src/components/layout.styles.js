@@ -100,16 +100,13 @@ export const StyledMain = styled.main`
   }};
 `
 
-export const StyledLabel = styled.label`
+export const StyledSelect = styled.select`
   ${props => {
     switch (props.theme.id) {
       case "2019":
         return css`
-          max-width: 50%;
           text-align: right;
-          select {
-            max-width: 75%;
-          }
+          max-width: 33%;
         `
       default:
         return

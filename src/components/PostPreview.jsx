@@ -1,8 +1,10 @@
 import React from "react"
 import { Link } from "gatsby"
 
+import { StyledPostPreview } from "./PostPreview.styles"
+
 export default ({ title, subtitle, date, description, slug }) => (
-  <section>
+  <StyledPostPreview>
     <header>
       {title && (
         <h3>
@@ -13,5 +15,5 @@ export default ({ title, subtitle, date, description, slug }) => (
       {date && <p>{date}</p>}
     </header>
     {description && <p>{description}</p>}
-  </section>
+  </StyledPostPreview>
 )

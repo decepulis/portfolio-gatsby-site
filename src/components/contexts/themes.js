@@ -23,8 +23,10 @@ export default {
     containerHalfWidthMinusPadding: "29rem",
     containerCss: `
       max-width: 60rem;
-      margin: 0 auto;
-      padding: 0 1rem;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 1rem;
+      padding-right: 1rem;
     `,
 
     boxShadowSm: "0 5px 10px rgba(0,0,0,0.12);",

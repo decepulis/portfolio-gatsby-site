@@ -9,8 +9,11 @@ export const StyledNavbar = styled.nav`
           top: ${props => props.theme.typography.rhythm(1 / 2)};
           z-index: 5;
 
-          margin: 0 -${props.theme.containerPadding};
-          padding: 0 ${props.theme.containerPadding};
+          max-width: calc(
+            ${props => props.theme.containerWidth} +
+              calc(2 * ${props => props.theme.containerPadding})
+          );
+          margin: 0 auto;
 
           border-radius: ${props => props.theme.cardRadius};
           box-shadow: ${props => props.theme.boxShadow};
@@ -60,7 +63,6 @@ export const StyledArticle = styled.article`
     switch (props.theme.id) {
       case "2019":
         return css`
-          ${props => props.theme.containerCss};
           h2 {
             text-align: center;
             ${props => props.theme.typography.scale(1.25)}
@@ -68,9 +70,10 @@ export const StyledArticle = styled.article`
             line-height: ${props =>
               props.theme.typography.options.headerLineHeight};
           }
+          /* Each section has its own context, and its own big margins */
           & > section {
-            overflow-y: auto;
-            margin: ${props => props.theme.typography.rhythm(2.5)} 0;
+            padding-top: ${props => props.theme.typography.rhythm(2.5)};
+            padding-bottom: ${props => props.theme.typography.rhythm(2.5)};
           }
         `
       default:

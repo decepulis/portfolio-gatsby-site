@@ -35,7 +35,7 @@ const About = React.forwardRef(({ id }, ref) => {
 
         <StyledProfile
           src={headshot}
-          alt="Yep. That's my face, gazing into the camera. I thought I had a pretty nice haircut here, too."
+          alt="Yep. That's my face, gazing into the camera. I thought I had a pretty nice haircut here."
         />
 
         <StyledHeroText>
@@ -43,8 +43,8 @@ const About = React.forwardRef(({ id }, ref) => {
             I am a Full-Stack Web&nbsp;Developer from Chicago,&nbsp;IL.
           </StyledLead>
           <p>
-            I specialize in Front-End, ready to get deep into UI/UX,
-            architecture, and tooling. I learn quickly and stuff.
+            I specialize in Front-End applications and sites, ready to get deep
+            into UI/UX, architecture, and tooling. I learn quickly and stuff.
           </p>
           <StyledActionButton>
             <a className="ignore-global-style" role="button" href="#contact">
