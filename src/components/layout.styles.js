@@ -16,7 +16,13 @@ ${props => {
       return css`
         html,
         body {
-          scroll-behavior: smooth;
+          ${"" /* scroll-behavior: smooth; */}
+          --scroll-behavior: smooth;
+          @media (prefers-reduced-motion: reduce) {
+            html {
+              --scroll-behavior: auto;
+            }
+          }
 
           a:not(.ignore-global-style) {
             color: ${props => props.theme.secondary};

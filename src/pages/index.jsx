@@ -23,6 +23,16 @@ import Projects from "../components/resume/Projects"
 import Contact from "../components/resume/Contact"
 
 import { throttle } from "lodash"
+import smoothscroll from "smoothscroll-polyfill"
+import smoothscrollAnchor from "smoothscroll-anchor-polyfill"
+
+// establish smooth scroll polyfill... on all browsers
+// because Chrome has a smoothscroll bug
+if (typeof window !== "undefined") {
+  window.__forceSmoothScrollPolyfill__ = true
+}
+smoothscroll.polyfill()
+smoothscrollAnchor.polyfill({ force: true })
 
 // TODO: make this more... react.
 // less references in the dom, maybe move behavior into element
@@ -57,6 +67,7 @@ export default () => {
 
   const [activeNav, setActiveNav] = useState()
 
+  // Scroll listener to manage nav bar
   const onScroll = useCallback(() => {
     let topRef = contactRef
 
@@ -85,12 +96,10 @@ export default () => {
 
     setActiveNav(topRef?.current?.id)
   }, [setActiveNav])
-
   useEventListener(
     "scroll",
     theme.highlightNavOnScroll ? throttle(onScroll, 250) : () => {}
   )
-
   useEffect(() => {
     scrollElementToHref(navRef.current, `#${activeNav}`)
   }, [activeNav])
