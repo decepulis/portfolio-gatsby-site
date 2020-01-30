@@ -2,7 +2,7 @@ import React, { useContext } from "react"
 
 import { ThemeIdContext } from "./contexts/ThemeIdContext"
 
-import { StyledHeader, StyledMain } from "./layout.styles"
+import { StyledHeader, StyledMain, StyledLabel } from "./layout.styles"
 
 import { Link } from "gatsby"
 
@@ -15,7 +15,7 @@ export default ({ children, path }) => {
         <h1>
           <Link to="/">Darius Cepulis</Link>
         </h1>
-        <label>
+        <StyledLabel>
           Theme&ensp;
           {/* eslint-disable-next-line */}
           <select value={themeId} onChange={e => setThemeId(e.target.value)}>
@@ -25,7 +25,7 @@ export default ({ children, path }) => {
               </option>
             ))}
           </select>
-        </label>
+        </StyledLabel>
       </StyledHeader>
       <StyledMain>{children}</StyledMain>
     </>

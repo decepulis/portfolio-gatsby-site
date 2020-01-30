@@ -55,6 +55,7 @@ export const StyledHeader = styled.header`
           && h1 {
             /* using the ol ampersand trick to increase specificity */
             margin: ${props.theme.typography.rhythm(1)} 0;
+            margin-right: ${props.theme.typography.rhythm(1)};
             a {
               color: ${props =>
                 props.path === "/"
@@ -93,6 +94,23 @@ export const StyledMain = styled.main`
     switch (props.theme.id) {
       case "2019":
         return css``
+      default:
+        return
+    }
+  }};
+`
+
+export const StyledLabel = styled.label`
+  ${props => {
+    switch (props.theme.id) {
+      case "2019":
+        return css`
+          max-width: 50%;
+          text-align: right;
+          select {
+            max-width: 75%;
+          }
+        `
       default:
         return
     }

@@ -19,7 +19,7 @@ export const StyledSection = styled.section`
           margin-top: -10rem;
           padding-top: 10rem;
 
-          color: rgba(255, 255, 255, 0.8);
+          color: rgba(255, 255, 255, 0.9);
 
           background-image: linear-gradient(
             155.89deg,
@@ -55,25 +55,28 @@ export const StyledContainer = styled.div`
 
           display: grid;
 
-          grid-template-columns: 1fr 3fr;
+          grid-template-columns: 3fr 1fr;
           grid-template-rows: auto;
+          grid-auto-flow: row dense;
           align-items: center;
 
           grid-template-areas:
-            "profile profile"
             "text text"
+            "profile profile"
             "companies companies";
 
           --grid-space: ${props => props.theme.typography.rhythm(2)};
           padding: var(--grid-space) ${props => props.theme.containerPadding};
           grid-gap: var(--grid-space);
 
+          @media (min-width: 34em) {
+            padding: var(--grid-space);
+            grid-template-areas:
+              "text profile"
+              "companies companies";
+          }
           @media (min-width: 48em) {
             --grid-space: ${props => props.theme.typography.rhythm(3)};
-
-            grid-template-areas:
-              "profile text"
-              "companies companies";
           }
         `
       default:
@@ -90,15 +93,19 @@ export const StyledProfile = styled.img`
     switch (props.theme.id) {
       case "2019":
         return css`
-          grid-column: profile;
+          grid-area: profile;
 
           border-radius: 50%;
           border: 0.5rem solid white;
           width: 100%;
-          max-width: 200px;
+          max-width: 150px;
           height: auto;
           margin: 0 auto;
           box-shadow: ${props => props.theme.boxShadowLg};
+
+          @media (min-width: 34em) {
+            max-width: initial;
+          }
         `
       default:
         return
@@ -111,7 +118,11 @@ export const StyledHeroText = styled.div`
     switch (props.theme.id) {
       case "2019":
         return css`
-          grid-column: text;
+          grid-area: text;
+          text-align: center;
+          @media (min-width: 34em) {
+            text-align: left;
+          }
         `
       default:
         return
@@ -150,10 +161,10 @@ export const StyledCompanies = styled.div`
           text-align: center;
           max-width: 100%;
 
-          grid-column: companies;
+          grid-area: companies;
 
           p {
-            color: rgba(255, 255, 255, 0.8);
+            color: white;
             ${props => props.theme.typography.scale(2 / 5)}
             line-height: ${props =>
               props.theme.typography.options.headerLineHeight};
@@ -272,6 +283,11 @@ export const StyledActionButton = styled.div`
           &:hover {
             box-shadow: ${props => props.theme.boxShadow};
             transform: translateY(-0.1em);
+          }
+
+          margin: 0 auto;
+          @media (min-width: 34em) {
+            margin: 0;
           }
 
           a {

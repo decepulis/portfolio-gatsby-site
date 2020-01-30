@@ -32,13 +32,15 @@ const About = React.forwardRef(({ id }, ref) => {
         <StyledHeader>
           <h2>About Me</h2>
         </StyledHeader>
+
         <StyledProfile
           src={headshot}
           alt="Yep. That's my face, gazing into the camera. I thought I had a pretty nice haircut here, too."
         />
+
         <StyledHeroText>
           <StyledLead>
-            I am a Full-Stack Web Developer from Chicago,&nbsp;IL.
+            I am a Full-Stack Web&nbsp;Developer from Chicago,&nbsp;IL.
           </StyledLead>
           <p>
             I specialize in Front-End, ready to get deep into UI/UX,
@@ -53,7 +55,11 @@ const About = React.forwardRef(({ id }, ref) => {
 
         {theme.id === "2019" && (
           <StyledCompanies>
-            <p>At least 5 companies/educational institutions trust Darius</p>
+            <p>
+              At least 5 companies/
+              <wbr />
+              educational&nbsp;institutions trust Darius
+            </p>
             <StyledLogos>
               <StyledLogoContainerLink
                 to="/positions/2018_microsensor"
