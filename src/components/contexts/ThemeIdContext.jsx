@@ -15,17 +15,37 @@ import Helmet from "react-helmet"
 
 import themes from "./themes"
 
+// note: smoothscroll requires window, so it isn't imported at build time
+//       see gatsby-node.js for details
+import smoothscroll from "smoothscroll-polyfill"
+import smoothscrollAnchor from "smoothscroll-anchor-polyfill"
+
+// Establish our smoothscroll polyfills
+// note that I polyfill chrome here, too, because it has a bug
+// where two smooth scrolls can't occur simultaneously
+const isWindow = typeof window !== "undefined"
+const isChrome =
+  isWindow && navigator?.userAgent.toLowerCase().indexOf("chrome") > -1
+
+if (isWindow) {
+  window.__forceSmoothScrollPolyfill__ = isChrome
+}
+
+smoothscroll?.polyfill?.()
+smoothscrollAnchor.polyfill({ force: isChrome })
+
+// End Smoothscroll Nonsense
+
 const themeOptions = Object.entries(themes).map(([themeKey, themeValue]) => [
   themeKey,
   themeValue.label,
 ])
 
-const initThemeId =
-  typeof window !== "undefined"
-    ? // theme should be retrieved from localstorage or default to 1989
-      localStorage.getItem("themeId") ?? "1989"
-    : // ssr should generate 1989 pages
-      "1989"
+const initThemeId = isWindow
+  ? // theme should be retrieved from localstorage or default to 1989
+    localStorage.getItem("themeId") ?? "1989"
+  : // ssr should generate 1989 pages
+    "1989"
 
 export const ThemeIdContext = createContext()
 
@@ -84,7 +104,7 @@ export const GlobalThemeWrapper = ({ children }) => {
         </>
       )}
       {/* Allow styled components to do its thing */}
-      <GlobalStyle />
+      <GlobalStyle isChrome={isChrome} />
       {/* And Add Google Fonts to the end of whatever */}
       {children}
       {theme?.typography && <GoogleFont typography={theme.typography} />}

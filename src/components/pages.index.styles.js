@@ -19,6 +19,8 @@ export const StyledNavbar = styled.nav`
           box-shadow: ${props => props.theme.boxShadow};
           overflow-x: scroll;
           background-color: white;
+
+          scrollbar-width: thin;
         `
       default:
         return

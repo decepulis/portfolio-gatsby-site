@@ -16,8 +16,10 @@ ${props => {
       return css`
         html,
         body {
-          ${"" /* scroll-behavior: smooth; */}
           --scroll-behavior: smooth;
+          scroll-behavior: ${props =>
+            props.isChrome ? "auto" : "var(--scroll-behavior)"};
+
           @media (prefers-reduced-motion: reduce) {
             html {
               --scroll-behavior: auto;

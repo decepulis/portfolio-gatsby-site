@@ -2,6 +2,23 @@ const { createFilePath } = require(`gatsby-source-filesystem`)
 const path = require(`path`)
 const _ = require(`lodash`)
 
+// Webpack Configuration
+exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
+  if (stage === "build-html") {
+    actions.setWebpackConfig({
+      module: {
+        rules: [
+          {
+            test: /smoothscroll-polyfill/,
+            use: loaders.null(),
+          },
+        ],
+      },
+    })
+  }
+}
+
+// Page Creation
 const getDirFromSlug = slug => {
   // turns "/education/ms/" into ["", "education" "ms", ""] ...
   const slugArr = slug.split("/")
