@@ -24,8 +24,6 @@ import Contact from "../components/resume/Contact"
 
 import { throttle } from "lodash"
 
-// TODO: make this more... react.
-// less references in the dom, maybe move behavior into element
 let scrollTimeout
 const scrollElementToHref = (scrollElement, targetHref) => {
   if (!targetHref || !scrollElement || !window) {
@@ -37,11 +35,8 @@ const scrollElementToHref = (scrollElement, targetHref) => {
     return
   }
 
-  console.log(`scrolling to ${targetElement}?`)
-  console.log(`should I clear ${scrollTimeout}?`)
   clearTimeout(scrollTimeout)
   scrollTimeout = setTimeout(() => {
-    console.log(`scrolling to ${targetElement}`)
     const {
       left: elLeft,
       width: elWidth,
@@ -52,7 +47,6 @@ const scrollElementToHref = (scrollElement, targetHref) => {
 
     scrollElement.scrollBy({ left: offset, behavior: "smooth" })
   }, 350)
-  console.log(`I created ${scrollTimeout}?`)
 }
 
 export default () => {
