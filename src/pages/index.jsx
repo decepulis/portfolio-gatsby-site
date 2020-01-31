@@ -26,6 +26,7 @@ import { throttle } from "lodash"
 
 // TODO: make this more... react.
 // less references in the dom, maybe move behavior into element
+let scrollTimeout
 const scrollElementToHref = (scrollElement, targetHref) => {
   if (!targetHref || !scrollElement || !window) {
     return
@@ -36,12 +37,22 @@ const scrollElementToHref = (scrollElement, targetHref) => {
     return
   }
 
-  const { left: elLeft, width: elWidth } = targetElement.getBoundingClientRect()
-  const halfway = window.innerWidth / 2
-  const navLoc = elLeft + elWidth / 2
-  const offset = navLoc - halfway
+  console.log(`scrolling to ${targetElement}?`)
+  console.log(`should I clear ${scrollTimeout}?`)
+  clearTimeout(scrollTimeout)
+  scrollTimeout = setTimeout(() => {
+    console.log(`scrolling to ${targetElement}`)
+    const {
+      left: elLeft,
+      width: elWidth,
+    } = targetElement.getBoundingClientRect()
+    const halfway = window.innerWidth / 2
+    const navLoc = elLeft + elWidth / 2
+    const offset = navLoc - halfway
 
-  scrollElement.scrollBy({ left: offset, behavior: "smooth" })
+    scrollElement.scrollBy({ left: offset, behavior: "smooth" })
+  }, 350)
+  console.log(`I created ${scrollTimeout}?`)
 }
 
 export default () => {
