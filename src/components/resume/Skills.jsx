@@ -1,9 +1,9 @@
 import React from "react"
-import { JustAStyledContainer } from "../layout.styles"
+import { JustAStyledHomeContainer } from "../layout.styles"
 // todo: pull _this_ information from the cms
 const Skills = React.forwardRef(({ id }, ref) => (
   <section ref={ref} id={id}>
-    <JustAStyledContainer>
+    <JustAStyledHomeContainer>
       <header>
         <h2>Skills</h2>
       </header>
@@ -98,7 +98,7 @@ const Skills = React.forwardRef(({ id }, ref) => (
           </li>
         </ul>
       </section>
-    </JustAStyledContainer>
+    </JustAStyledHomeContainer>
   </section>
 ))
 

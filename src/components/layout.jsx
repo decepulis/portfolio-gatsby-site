@@ -2,7 +2,7 @@ import React, { useContext } from "react"
 
 import { ThemeIdContext } from "./contexts/ThemeIdContext"
 
-import { StyledHeader, StyledMain, StyledSelect } from "./layout.styles"
+import { StyledHeader, StyledSelect } from "./layout.styles"
 
 import { Link } from "gatsby"
 
@@ -32,7 +32,7 @@ export default ({ children, path }) => {
           ))}
         </StyledSelect>
       </StyledHeader>
-      <StyledMain>{children}</StyledMain>
+      {children}
     </>
   )
 }

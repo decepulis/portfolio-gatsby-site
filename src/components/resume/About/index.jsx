@@ -3,7 +3,7 @@ import React, { useContext } from "react"
 import { ThemeContext } from "styled-components"
 
 import {
-  StyledSection,
+  StyledAside,
   StyledContainer,
   StyledHeader,
   StyledLead,
@@ -27,7 +27,7 @@ const About = React.forwardRef(({ id }, ref) => {
   const theme = useContext(ThemeContext)
 
   return (
-    <StyledSection id={id} ref={ref}>
+    <StyledAside id={id} ref={ref}>
       <StyledContainer>
         <StyledHeader>
           <h2>About Me</h2>
@@ -144,7 +144,7 @@ const About = React.forwardRef(({ id }, ref) => {
           </svg>
         </StyledWave>
       )}
-    </StyledSection>
+    </StyledAside>
   )
 })
 

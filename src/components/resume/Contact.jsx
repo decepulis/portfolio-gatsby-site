@@ -1,11 +1,11 @@
 import React from "react"
 
 import { StyledContactSection } from "./Contact.styles"
-import { JustAStyledContainer } from "../layout.styles"
+import { JustAStyledHomeContainer } from "../layout.styles"
 
 const Contact = React.forwardRef(({ id }, ref) => (
   <StyledContactSection id={id} ref={ref}>
-    <JustAStyledContainer>
+    <JustAStyledHomeContainer>
       <header>
         <h2>Contact</h2>
       </header>
@@ -45,7 +45,7 @@ const Contact = React.forwardRef(({ id }, ref) => (
           </a>
         </dd>
       </dl>
-    </JustAStyledContainer>
+    </JustAStyledHomeContainer>
   </StyledContactSection>
 ))
 

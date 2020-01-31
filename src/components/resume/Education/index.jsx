@@ -3,7 +3,7 @@ import { graphql, useStaticQuery, Link } from "gatsby"
 import PostPreview from "../../PostPreview"
 
 import { StyledEducationPosts } from "./styles"
-import { JustAStyledContainer } from "../../layout.styles"
+import { JustAStyledHomeContainer } from "../../layout.styles"
 
 const Education = React.forwardRef(({ id }, ref) => {
   const data = useStaticQuery(
@@ -43,7 +43,7 @@ const Education = React.forwardRef(({ id }, ref) => {
 
   return (
     <section id={id} ref={ref}>
-      <JustAStyledContainer>
+      <JustAStyledHomeContainer>
         <header>
           <h2>Education</h2>
         </header>
@@ -64,7 +64,7 @@ const Education = React.forwardRef(({ id }, ref) => {
             View All {data.totalCount.totalCount} Entries &rarr;
           </Link>
         </p>
-      </JustAStyledContainer>
+      </JustAStyledHomeContainer>
     </section>
   )
 })

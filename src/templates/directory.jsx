@@ -2,13 +2,13 @@ import React from "react"
 import { graphql } from "gatsby"
 
 import PostPreview from "../components/PostPreview"
-import { JustAStyledContainer } from "../components/layout.styles"
+import { JustAStyledContentMain } from "../components/layout.styles"
 
 export default ({ data, pageContext }) => {
   const pageTitle = pageContext.slug.replace(/\//g, " ")
 
   return (
-    <JustAStyledContainer>
+    <JustAStyledContentMain>
       <header>
         <h1 style={{ textTransform: "capitalize" }}>{pageTitle}</h1>
       </header>
@@ -22,7 +22,7 @@ export default ({ data, pageContext }) => {
           slug={node.fields.slug}
         />
       ))}
-    </JustAStyledContainer>
+    </JustAStyledContentMain>
   )
 }
 

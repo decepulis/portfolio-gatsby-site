@@ -9,7 +9,7 @@ export const StyledEducationPosts = styled.section`
       case "2019":
         return css`
           overflow-y: auto;
-          section {
+          article {
             /* SVG Background */
             position: relative;
 
@@ -38,7 +38,7 @@ export const StyledEducationPosts = styled.section`
               }
             }
           }
-          section:nth-child(1) {
+          article:nth-child(1) {
             @media (min-width: 750px) {
               padding-right: calc(400px + 1em);
             }
@@ -51,7 +51,7 @@ export const StyledEducationPosts = styled.section`
               }
             }
           }
-          section:nth-child(2) {
+          article:nth-child(2) {
             @media (min-width: 750px) {
               padding-left: calc(400px + 1em);
             }

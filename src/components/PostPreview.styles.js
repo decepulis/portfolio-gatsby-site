@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components"
 
-export const StyledPostPreview = styled.section`
+export const StyledPostPreview = styled.article`
   ${props => {
     switch (props.theme.id) {
       case "2019":

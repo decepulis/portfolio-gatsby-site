@@ -18,11 +18,13 @@ export const StyledProjects = styled.section`
           &:after {
             content: "";
             position: absolute;
-            top: ${props => props.theme.typography.rhythm(1)};
+            /* top: ${props => props.theme.typography.rhythm(1)}; */
+            top: 0;
             left: 0;
             right: 0;
-            bottom: ${props => props.theme.typography.rhythm(1)};
-            transform: skewY(-1deg);
+            /* bottom: ${props => props.theme.typography.rhythm(1)}; */
+            bottom: 0;
+            ${"" /* transform: skewY(-1deg); */}
             z-index: -1;
             background: #4e025a;
             background-image: url(${pattern}),
@@ -49,7 +51,7 @@ export const StyledProjectPosts = styled.section`
           grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
           grid-gap: 2em;
           margin-bottom: ${props => props.theme.typography.rhythm(1)};
-          section {
+          article {
             color: ${props => props.theme.typography.options.bodyColor};
             border-radius: ${props => props.theme.cardRadius};
             box-shadow: ${props => props.theme.boxShadowLg};

@@ -12,7 +12,7 @@ import { ThemeContext } from "styled-components"
 import {
   StyledNavbar,
   StyledNavList,
-  StyledArticle,
+  StyledMain,
 } from "../components/pages.index.styles.js"
 
 import About from "../components/resume/About"
@@ -97,7 +97,7 @@ export default () => {
   return (
     <>
       <About id="about" ref={aboutRef} />
-      <StyledArticle>
+      <StyledMain>
         <StyledNavbar ref={navRef}>
           <StyledNavList>
             <li>
@@ -155,7 +155,7 @@ export default () => {
         <Projects id="projects" ref={projectsRef} />
         <Skills id="skills" ref={skillsRef} />
         <Contact id="contact" ref={contactRef} />
-      </StyledArticle>
+      </StyledMain>
     </>
   )
 }

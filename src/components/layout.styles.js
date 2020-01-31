@@ -54,6 +54,7 @@ export const StyledHeader = styled.header`
           z-index: 5;
 
           ${props => props.theme.containerCss};
+          ${props => props.path !== "/" && "max-width: 40rem;"}
 
           color: ${props =>
             props.path === "/"
@@ -97,17 +98,6 @@ export const StyledHeader = styled.header`
   }};
 `
 
-export const StyledMain = styled.main`
-  ${props => {
-    switch (props.theme.id) {
-      case "2019":
-        return css``
-      default:
-        return
-    }
-  }};
-`
-
 export const StyledSelect = styled.select`
   ${props => {
     switch (props.theme.id) {
@@ -122,12 +112,30 @@ export const StyledSelect = styled.select`
   }};
 `
 
-export const JustAStyledContainer = styled.div`
+export const JustAStyledHomeContainer = styled.div`
   ${props => {
     switch (props.theme.id) {
       case "2019":
         return css`
           ${props => props.theme.containerCss}
+        `
+      default:
+        return
+    }
+  }};
+`
+export const JustAStyledContentMain = styled.main`
+  ${props => {
+    switch (props.theme.id) {
+      case "2019":
+        return css`
+          font-size: 1.125rem;
+
+          max-width: 40rem;
+          margin-left: auto;
+          margin-right: auto;
+          padding-left: 1rem;
+          padding-right: 1rem;
         `
       default:
         return

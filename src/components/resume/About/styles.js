@@ -7,7 +7,7 @@ import bmw from "./logo-bmw-mask.svg"
 import midwest from "./logo-midwest.svg"
 import { Link } from "gatsby"
 
-export const StyledSection = styled.section`
+export const StyledAside = styled.aside`
   ${props => {
     switch (props.theme.id) {
       case "2019":

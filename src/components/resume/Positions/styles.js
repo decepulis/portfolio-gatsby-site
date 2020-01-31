@@ -13,7 +13,7 @@ export const StyledPosts = styled.section`
           flex-wrap: wrap;
           justify-content: space-around;
 
-          section {
+          article {
             flex: 0 1 300px;
 
             background-repeat: no-repeat;
