@@ -1,12 +1,5 @@
 import styled, { css } from "styled-components"
 
-import microsensor from "./logo-microsensor.svg"
-import bosch from "./logo-bosch.svg"
-import uc from "./logo-uc.svg"
-import bmw from "./logo-bmw-mask.svg"
-import midwest from "./logo-midwest.svg"
-import { Link } from "gatsby"
-
 export const StyledAside = styled.aside`
   ${props => {
     switch (props.theme.id) {
@@ -62,8 +55,7 @@ export const StyledContainer = styled.div`
 
           grid-template-areas:
             "profile profile"
-            "text text"
-            "companies companies";
+            "text text";
 
           --grid-space: ${props => props.theme.typography.rhythm(2)};
           padding: var(--grid-space) ${props => props.theme.containerPadding};
@@ -71,9 +63,7 @@ export const StyledContainer = styled.div`
 
           @media (min-width: 34em) {
             padding: var(--grid-space);
-            grid-template-areas:
-              "text profile"
-              "companies companies";
+            grid-template-areas: "text profile";
           }
           @media (min-width: 48em) {
             --grid-space: ${props => props.theme.typography.rhythm(3)};
@@ -148,129 +138,6 @@ export const StyledLead = styled.p`
         return
     }
   }};
-`
-
-export const StyledCompanies = styled.div`
-  display: none;
-
-  ${props => {
-    switch (props.theme.id) {
-      case "2019":
-        return css`
-          display: initial;
-          text-align: center;
-          max-width: 100%;
-
-          grid-area: companies;
-
-          p {
-            color: white;
-            ${props => props.theme.typography.scale(2 / 5)}
-            line-height: ${props =>
-              props.theme.typography.options.headerLineHeight};
-            font-weight: ${props =>
-              props.theme.typography.options.headerWeight};
-          }
-        `
-      default:
-        return
-    }
-  }}
-`
-export const StyledLogos = styled.div`
-  ${props => {
-    switch (props.theme.id) {
-      case "2019":
-        return css`
-          display: flex;
-          justify-content: space-around;
-          flex-wrap: wrap;
-        `
-      default:
-        return
-    }
-  }}
-`
-
-export const StyledLogoContainerLink = styled(Link)`
-  ${props => {
-    switch (props.theme.id) {
-      case "2019":
-        return css`
-          /* Size In Grid */
-          position: relative;
-
-          width: 5em;
-          height: 2em;
-          flex: 0 0 5em;
-          margin: 0 ${props => props.theme.typography.rhythm(0.25)}
-            ${props => props.theme.typography.rhythm(0.5)};
-          @media (min-width: 48em) {
-            width: 8em;
-            height: 3em;
-            flex: 0 0 8em;
-          }
-
-          /* Position of Children */
-          .mask,
-          img {
-            position: absolute;
-            height: 100%;
-            width: 100%;
-            top: 0;
-            left: 0;
-          }
-
-          /* Establishing Masks */
-          @supports (mask-size: contain) {
-            .mask {
-              mask-repeat: no-repeat;
-              mask-position: center center;
-              mask-size: contain;
-
-              background-color: rgba(255, 255, 255, 0.8);
-
-              &.microsensor {
-                mask-image: url(${microsensor});
-              }
-              &.uc {
-                mask-image: url(${uc});
-              }
-              &.bosch {
-                mask-image: url(${bosch});
-              }
-              &.bmw {
-                mask-image: url(${bmw});
-              }
-              &.midwest {
-                mask-image: url(${midwest});
-              }
-            }
-
-            // Hover Animation
-            img,
-            .mask {
-              transition: opacity 0.2s ease-in-out;
-            }
-
-            img {
-              opacity: 0;
-            }
-
-            &:hover {
-              img {
-                opacity: 1;
-              }
-              .mask {
-                opacity: 0;
-              }
-            }
-          }
-        `
-      default:
-        return
-    }
-  }}
 `
 
 export const StyledActionButton = styled.div`

@@ -1,5 +1,6 @@
 import React from "react"
-import { JustAStyledHomeContainer } from "../layout.styles"
+import { JustAStyledHomeContainer } from "../../layout.styles"
+
 // todo: pull _this_ information from the cms
 const Skills = React.forwardRef(({ id }, ref) => (
   <section ref={ref} id={id}>
@@ -8,7 +9,7 @@ const Skills = React.forwardRef(({ id }, ref) => (
         <h2>Skills</h2>
       </header>
 
-      <section>
+      <article>
         <header>
           <h3>Front-End Web</h3>
         </header>
@@ -26,9 +27,9 @@ const Skills = React.forwardRef(({ id }, ref) => (
           <dt>Favorite Topics</dt>
           <dd>Gamification, SVGs, Load Times, Accessibility</dd>
         </dl>
-      </section>
+      </article>
 
-      <section>
+      <article>
         <header>
           <h3>Back-End Web</h3>
         </header>
@@ -40,9 +41,9 @@ const Skills = React.forwardRef(({ id }, ref) => (
           <dt>Databases</dt>
           <dd>I've got the basics down pretty well.</dd>
         </dl>
-      </section>
+      </article>
 
-      <section>
+      <article>
         <header>
           <h3>Cloud Computing, Networking &amp; Infrastructure</h3>
         </header>
@@ -52,9 +53,9 @@ const Skills = React.forwardRef(({ id }, ref) => (
           <dt>Servers</dt>
           <dd>Well, I've configured Apache before.</dd>
         </dl>
-      </section>
+      </article>
 
-      <section>
+      <article>
         <header>
           <h3>I could also hold a conversation about...</h3>
         </header>
@@ -72,8 +73,8 @@ const Skills = React.forwardRef(({ id }, ref) => (
             and Electronics courses
           </dd>
         </dl>
-      </section>
-      <section>
+      </article>
+      <article>
         <header>
           <h3>Language</h3>
         </header>
@@ -97,7 +98,7 @@ const Skills = React.forwardRef(({ id }, ref) => (
             </a>
           </li>
         </ul>
-      </section>
+      </article>
     </JustAStyledHomeContainer>
   </section>
 ))

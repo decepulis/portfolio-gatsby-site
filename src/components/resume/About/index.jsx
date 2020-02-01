@@ -9,19 +9,11 @@ import {
   StyledLead,
   StyledProfile,
   StyledWave,
-  StyledCompanies,
-  StyledLogos,
-  StyledLogoContainerLink,
   StyledHeroText,
   StyledActionButton,
 } from "./styles"
 
 import headshot from "./headshot-bw-web.jpg"
-import microsensor from "./logo-microsensor.svg"
-import bosch from "./logo-bosch.svg"
-import uc from "./logo-uc.svg"
-import bmw from "./logo-bmw.svg"
-import midwest from "./logo-midwest.svg"
 
 const About = React.forwardRef(({ id }, ref) => {
   const theme = useContext(ThemeContext)
@@ -52,53 +44,6 @@ const About = React.forwardRef(({ id }, ref) => {
             </a>
           </StyledActionButton>
         </StyledHeroText>
-
-        {theme.id === "2019" && (
-          <StyledCompanies>
-            <p>
-              At least 5 companies/
-              <wbr />
-              educational&nbsp;institutions trust Darius
-            </p>
-            <StyledLogos>
-              <StyledLogoContainerLink
-                to="/positions/2018_microsensor"
-                className="ignore-global-style"
-              >
-                <div className="mask microsensor" />
-                <img src={microsensor} alt="Microsensor Labs" />
-              </StyledLogoContainerLink>
-              <StyledLogoContainerLink
-                to="/positions/2015_bmw/"
-                className="ignore-global-style"
-              >
-                <div className="mask bmw" />
-                <img src={bmw} alt="BMW" />
-              </StyledLogoContainerLink>
-              <StyledLogoContainerLink
-                to="/positions/2017_bosch/"
-                className="ignore-global-style"
-              >
-                <div className="mask bosch" />
-                <img src={bosch} alt="Bosch" />
-              </StyledLogoContainerLink>
-              <StyledLogoContainerLink
-                to="/projects/2019_mmb_site/"
-                className="ignore-global-style"
-              >
-                <div className="mask midwest" />
-                <img src={midwest} alt="Midwest Microbio" />
-              </StyledLogoContainerLink>
-              <StyledLogoContainerLink
-                to="/projects/2018_thesis/"
-                className="ignore-global-style"
-              >
-                <div className="mask uc" />
-                <img src={uc} alt="University of Cincinnati" />
-              </StyledLogoContainerLink>
-            </StyledLogos>
-          </StyledCompanies>
-        )}
       </StyledContainer>
       {theme.id === "2019" && (
         <StyledWave aria-hidden="true" hidden="">
