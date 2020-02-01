@@ -9,14 +9,32 @@ export const StyledPosts = styled.section`
     switch (props.theme.id) {
       case "2019":
         return css`
-          /* &:nth-of-type(1) {
-            background-image: url(${blob1});
+          article {
+            dl {
+              display: grid;
+              grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+              grid-gap: ${({ theme }) => theme.typography.rhythm(1)};
+
+              dd {
+                margin-bottom: 0;
+              }
+
+              section {
+              }
+            }
+
+            /* background-repeat: no-repeat;
+            background-position: center center;
+            background-size: contain;
+
+            &:nth-of-type(1) {
+              background-image: url(${blob1});
             }
             &:nth-of-type(2) {
-            background-image: url(${blob2});
+              background-image: url(${blob2});
             }
             &:nth-of-type(3) {
-            background-image: url(${blob3});
+              background-image: url(${blob3});
             } */
           }
         `

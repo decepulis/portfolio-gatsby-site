@@ -6,5 +6,16 @@ date: 2020-01-01T00:00:00.000Z
 datetimeformat: MM-YYYY
 featuredpost: true
 tags:
-  ["gatsby", "styled-components", "react", "hooks", "netlify", "javascript/es6"]
+  [
+    "gatsby",
+    "styled-components",
+    "react",
+    "hooks",
+    "netlify",
+    "javascript/es6",
+    "markdown",
+    "nunjucks",
+    "11ty",
+    "load times",
+  ]
 ---

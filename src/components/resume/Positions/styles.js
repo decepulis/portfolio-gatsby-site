@@ -11,11 +11,6 @@ export const StyledPosts = styled.section`
 
           article {
             flex: 0 1 300px;
-
-            background-repeat: no-repeat;
-            background-position: center center;
-            background-size: contain;
-
             margin-bottom: ${props => props.theme.typography.rhythm(1)};
           }
         `

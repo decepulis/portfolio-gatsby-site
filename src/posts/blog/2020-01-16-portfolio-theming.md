@@ -5,6 +5,7 @@ date: 2020-01-16T20:24:09.204Z
 description: >-
   Do existing CSS Theme patterns work for such radically different themes?
 featuredpost: false
+tags: ["styled-components", "accessibility", "gatsby", "react", "load times"]
 ---
 
 ## Requirements

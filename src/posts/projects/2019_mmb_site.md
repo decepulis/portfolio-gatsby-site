@@ -15,5 +15,6 @@ tags:
     "chart.js",
     "parallax",
     "netlify",
+    "load times",
   ]
 ---
