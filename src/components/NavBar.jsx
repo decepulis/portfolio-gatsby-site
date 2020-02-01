@@ -11,7 +11,7 @@ import { ThemeContext } from "styled-components"
 
 import { StyledNavbar, StyledNavList, StyledNavLink } from "./NavBar.styles"
 
-import { throttle, capitalize } from "lodash"
+import { throttle } from "lodash"
 
 let scrollTimeout
 const scrollElementLeftToHref = (scrollElement, targetHref) => {
@@ -86,19 +86,42 @@ export default function NavBar({ sectionRefs }) {
   return (
     <StyledNavbar ref={navRef}>
       <StyledNavList>
-        {sectionRefs.map(
-          ({ current }) =>
-            current?.id && (
-              <li key={current.id}>
-                <StyledNavLink
-                  href={`#${current.id}`}
-                  active={activeSection === current.id}
-                >
-                  {capitalize(current.id)}
-                </StyledNavLink>
-              </li>
-            )
-        )}
+        <li>
+          <StyledNavLink href="#about" active={activeSection === "about"}>
+            About
+          </StyledNavLink>
+        </li>
+        <li>
+          <StyledNavLink
+            href="#positions"
+            active={activeSection === "positions"}
+          >
+            Positions
+          </StyledNavLink>
+        </li>
+        <li>
+          <StyledNavLink
+            href="#education"
+            active={activeSection === "education"}
+          >
+            Education
+          </StyledNavLink>
+        </li>
+        <li>
+          <StyledNavLink href="#projects" active={activeSection === "projects"}>
+            Projects
+          </StyledNavLink>
+        </li>
+        <li>
+          <StyledNavLink href="#skills" active={activeSection === "skills"}>
+            Skills
+          </StyledNavLink>
+        </li>
+        <li>
+          <StyledNavLink href="#contact" active={activeSection === "contact"}>
+            Contact
+          </StyledNavLink>
+        </li>
       </StyledNavList>
     </StyledNavbar>
   )
