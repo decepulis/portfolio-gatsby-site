@@ -1,5 +1,7 @@
 import styled, { css } from "styled-components"
 
+import wave from "./wave.svg"
+
 export const StyledAside = styled.aside`
   ${props => {
     switch (props.theme.id) {
@@ -9,16 +11,45 @@ export const StyledAside = styled.aside`
 
           overflow-x: hidden;
 
-          margin-top: -10rem;
-          padding-top: 10rem;
-
+          /* background! */
           color: rgba(255, 255, 255, 0.9);
-
           background-image: linear-gradient(
             155.89deg,
             ${props => props.theme.primaryDark} 12.21%,
             ${props => props.theme.primary} 99.84%
           );
+
+          /* overflow background into header */
+          margin-top: -10rem;
+          padding-top: 10rem;
+
+          /* wave */
+          padding-bottom: 70px;
+          @media (min-width: 48em) {
+            padding-bottom: 140px;
+          }
+          &:after {
+            content: "";
+
+            background-image: url(${wave});
+            background-repeat: no-repeat;
+            background-size: 100% 105%;
+
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-51%);
+
+            height: 70px;
+            width: 102vw;
+            min-width: 1000px;
+            @media (min-width: 48em) {
+              height: 140px;
+              min-width: 1920px;
+            }
+
+            overflow: hidden;
+          }
         `
       default:
         return
@@ -176,38 +207,4 @@ export const StyledActionButton = styled.div`
         return
     }
   }}
-`
-
-export const StyledWave = styled.div`
-  display: none;
-
-  ${props => {
-    switch (props.theme.id) {
-      case "2019":
-        return css`
-          display: block;
-
-          position: relative;
-          width: 102vw;
-          left: 50%;
-          transform: translateX(-51%);
-          overflow: hidden;
-          user-select: none;
-          height: 70px;
-          min-width: 1000px;
-          @media (min-width: 48em) {
-            height: 140px;
-            min-width: 1920px;
-          }
-
-          svg {
-            position: absolute;
-            width: 100%;
-            height: 105%;
-          }
-        `
-      default:
-        return
-    }
-  }};
 `

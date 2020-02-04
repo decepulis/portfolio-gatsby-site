@@ -1,6 +1,8 @@
 import styled, { css } from "styled-components"
 
 import pattern from "./circuit-board.svg"
+import t1 from "./t1.svg"
+import t2 from "./t2.svg"
 import { Link } from "gatsby"
 
 export const StyledProjects = styled.section`
@@ -14,28 +16,44 @@ export const StyledProjects = styled.section`
           /* background color */
           color: white;
           position: relative;
+          background: #4e025a;
+          background-image: url(${pattern}),
+            linear-gradient(
+              155.89deg,
+              rgba(3, 6, 36, 0.7) 12.21%,
+              rgba(3, 6, 36, 0.4) 50%,
+              rgba(3, 6, 36, 0) 99.84%
+            );
 
-          &:after {
+          /* background diagonals */
+          --d-height: 4vw;
+          @media (min-width: 60em) {
+            --d-height: 2vw;
+          }
+          &:before {
             content: "";
+            background-image: url(${t1});
+            background-repeat: no-repeat;
+            background-size: 100% 102%;
             position: absolute;
-            /* top: ${props => props.theme.typography.rhythm(1)}; */
+            width: 100%;
+            height: var(--d-height);
             top: 0;
             left: 0;
-            right: 0;
-            /* bottom: ${props => props.theme.typography.rhythm(1)}; */
+          }
+          &:after {
+            content: "";
+            background-image: url(${t2});
+            background-repeat: no-repeat;
+            background-size: 100% 102%;
+            position: absolute;
+            width: 100%;
+            height: var(--d-height);
             bottom: 0;
-            ${"" /* transform: skewY(-1deg); */}
-            z-index: -1;
-            background: #4e025a;
-            background-image: url(${pattern}),
-              linear-gradient(
-                155.89deg,
-                rgba(3, 6, 36, 0.7) 12.21%,
-                rgba(3, 6, 36, 0.4) 50%,
-                rgba(3, 6, 36, 0) 99.84%
-              );
+            left: 0;
           }
         `
+
       default:
         return
     }
