@@ -16,10 +16,12 @@ export const StyledPosts = styled.section`
               grid-gap: ${({ theme }) => theme.typography.rhythm(1)};
 
               dd {
+                display: inline-block;
                 margin-bottom: 0;
-              }
-
-              section {
+                &:not(:last-of-type):after {
+                  content: ", ";
+                  white-space: pre;
+                }
               }
             }
 
