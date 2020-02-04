@@ -1,6 +1,4 @@
-import React, { useContext } from "react"
-
-import { ThemeContext } from "styled-components"
+import React from "react"
 
 import {
   StyledAside,
@@ -15,8 +13,6 @@ import {
 import headshot from "./headshot-bw-web.jpg"
 
 const About = React.forwardRef(({ id }, ref) => {
-  const theme = useContext(ThemeContext)
-
   return (
     <StyledAside id={id} ref={ref}>
       <StyledContainer>
