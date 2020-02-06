@@ -59,7 +59,7 @@ const Skills = React.forwardRef(({ id }, ref) => (
               </dd>
             </div>
             <div>
-              <dt>Frameworks & Favorite Libraries</dt>
+              <dt>Frameworks & Favorite&nbsp;Libraries</dt>
               <dd>
                 <Link to="/tags/react">React (Hooks, Context, Router)</Link>
               </dd>
@@ -71,9 +71,6 @@ const Skills = React.forwardRef(({ id }, ref) => (
               </dd>
               <dd>
                 <Link to="/tags/xstate">XState</Link>
-              </dd>
-              <dd>
-                <Link to="/tags/recharts">Recharts</Link>
               </dd>
             </div>
             <div>
@@ -92,18 +89,18 @@ const Skills = React.forwardRef(({ id }, ref) => (
               </dd>
             </div>
             <div>
-              <dt>Favorite Topics</dt>
+              <dt>Related Topics</dt>
               <dd>
-                <Link to="/tags/gamification">Gamification</Link>
+                <Link to="/tags/ui-ux">UI/UX Design</Link>
+              </dd>
+              <dd>
+                <Link to="/tags/marketing">Marketing</Link>
               </dd>
               <dd>
                 <Link to="/tags/load-times">Load Times</Link>
               </dd>
               <dd>
                 <Link to="/tags/accessibility">Accessibility</Link>
-              </dd>
-              <dd>
-                <Link to="/tags/svg">SVGs</Link>
               </dd>
               <dd>
                 <Link to="/tags/parallax">Parallax</Link>
@@ -114,7 +111,9 @@ const Skills = React.forwardRef(({ id }, ref) => (
 
         <article>
           <header>
-            <h3>Back-End Web, Cloud Computing, &amp; Infrastructure</h3>
+            <h3>
+              Back-End Web, Cloud&nbsp;Computing, &amp;&nbsp;Infrastructure
+            </h3>
           </header>
           <dl>
             <div>
@@ -176,9 +175,54 @@ const Skills = React.forwardRef(({ id }, ref) => (
 
         <article>
           <header>
-            <h3>I could also hold a conversation about...</h3>
+            <h3>You can also ask me about...</h3>
           </header>
           <dl>
+            <div>
+              <dt>People Skills</dt>
+              <dd>
+                <Link to="/tags/teaching">Teaching</Link>
+              </dd>
+              <dd>
+                <Link to="/tags/public-speaking">Public Speaking</Link>
+              </dd>
+              <dd>
+                <Link to="/tags/research">Research</Link>
+              </dd>
+              <dd>
+                <Link to="/tags/requirements">Requirements</Link>
+              </dd>
+            </div>
+            <div>
+              <dt>Language</dt>
+              <dd>
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href="https://en.wikipedia.org/wiki/Common_European_Framework_of_Reference_for_Languages#Common_reference_levels"
+                >
+                  English (C2)
+                </a>
+              </dd>
+              <dd>
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href="https://en.wikipedia.org/wiki/Common_European_Framework_of_Reference_for_Languages#Common_reference_levels"
+                >
+                  Lithuanian (C1)
+                </a>
+              </dd>
+              <dd>
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href="https://en.wikipedia.org/wiki/Common_European_Framework_of_Reference_for_Languages#Common_reference_levels"
+                >
+                  German (A2)
+                </a>
+              </dd>
+            </div>
             <div>
               <dt>Code</dt>
               <dd>
@@ -198,30 +242,12 @@ const Skills = React.forwardRef(({ id }, ref) => (
               </dd>
             </div>
             <div>
-              <dt>Design &amp; Creative Tools</dt>
-              <dd>
-                <Link to="/tags/ui-ux">UI/UX</Link>
-              </dd>
-              <dd>
-                <Link to="/tags/photoshop">Photoshop</Link>
-              </dd>
-              <dd>
-                <Link to="/tags/illustrator">Illustrator</Link>
-              </dd>
-              <dd>
-                <Link to="/tags/final-cut">Final Cut Pro</Link>
-              </dd>
-            </div>
-            <div>
               <dt>Hardware</dt>
               <dd>
                 <Link to="/tags/arduino">Arduino</Link>
               </dd>
               <dd>
                 <Link to="/tags/raspberry-pi">Raspberry Pi</Link>
-              </dd>
-              <dd>
-                <Link to="/tags/ble">BLE</Link>
               </dd>
               <dd>
                 <Link to="/tags/electronics">Electronics</Link>
@@ -231,49 +257,15 @@ const Skills = React.forwardRef(({ id }, ref) => (
               </dd>
             </div>
             <div>
-              <dt>Real Life</dt>
+              <dt>Creative Tools</dt>
               <dd>
-                <Link to="/tags/teaching">Teaching</Link>
+                <Link to="/tags/photoshop">Photoshop</Link>
               </dd>
               <dd>
-                <Link to="/tags/public-speaking">Public Speaking</Link>
+                <Link to="/tags/illustrator">Illustrator</Link>
               </dd>
               <dd>
-                <Link to="/tags/research">Research</Link>
-              </dd>
-              <dd>
-                <Link to="/tags/requirements">Requirements</Link>
-              </dd>
-            </div>
-          </dl>
-        </article>
-        <article>
-          <header>
-            <h3>Language</h3>
-          </header>
-          <dl>
-            <div>
-              <dt>English</dt>
-              <dd>
-                <a href="https://en.wikipedia.org/wiki/Common_European_Framework_of_Reference_for_Languages#Common_reference_levels">
-                  (C2)
-                </a>
-              </dd>
-            </div>
-            <div>
-              <dt>Lithuanian</dt>
-              <dd>
-                <a href="https://en.wikipedia.org/wiki/Common_European_Framework_of_Reference_for_Languages#Common_reference_levels">
-                  (C2)
-                </a>
-              </dd>
-            </div>
-            <div>
-              <dt>German</dt>
-              <dd>
-                <a href="https://en.wikipedia.org/wiki/Common_European_Framework_of_Reference_for_Languages#Common_reference_levels">
-                  (A2)
-                </a>
+                <Link to="/tags/final-cut">Final Cut Pro</Link>
               </dd>
             </div>
           </dl>

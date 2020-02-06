@@ -16,7 +16,6 @@ tags:
     "jquery",
     "node.js",
     "raspberry pi",
-    "ble",
     "influxdb",
     "requirements",
     "ui/ux",
