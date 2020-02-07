@@ -2,7 +2,7 @@ import styled, { css } from "styled-components"
 
 import wave from "./wave.svg"
 
-export const StyledAside = styled.aside`
+export const StyledAbout = styled.section`
   ${props => {
     switch (props.theme.id) {
       case "2019":

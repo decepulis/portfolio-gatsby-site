@@ -1,7 +1,7 @@
 import React from "react"
 
 import {
-  StyledAside,
+  StyledAbout,
   StyledContainer,
   StyledHeader,
   StyledLead,
@@ -14,7 +14,7 @@ import headshot from "./headshot-bw-web.jpg"
 
 const About = React.forwardRef(({ id }, ref) => {
   return (
-    <StyledAside id={id} ref={ref}>
+    <StyledAbout id={id} ref={ref}>
       <StyledContainer>
         <StyledHeader>
           <h2>About Me</h2>
@@ -40,7 +40,7 @@ const About = React.forwardRef(({ id }, ref) => {
           </StyledActionButton>
         </StyledHeroText>
       </StyledContainer>
-    </StyledAside>
+    </StyledAbout>
   )
 })
 
