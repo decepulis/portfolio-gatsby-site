@@ -1,19 +1,17 @@
 import React from "react"
 import { graphql } from "gatsby"
 
-import { JustAStyledContentMain } from "../components/layout.styles"
-
 export default ({ data }) => {
   const post = data.markdownRemark
   return (
-    <JustAStyledContentMain>
+    <main>
       <header>
         <h1>{post.frontmatter.title}</h1>
         <p>{post.frontmatter.subtitle}</p>
         <p>{post.frontmatter.date}</p>
       </header>
       <section dangerouslySetInnerHTML={{ __html: post.html }} />
-    </JustAStyledContentMain>
+    </main>
   )
 }
 

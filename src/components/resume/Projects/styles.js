@@ -11,46 +11,46 @@ export const StyledProjects = styled.section`
       case "2019":
         return css`
           position: relative;
-          overflow: hidden;
+
+          color: white;
 
           /* background color */
-          color: white;
-          position: relative;
-          background: #4e025a;
-          background-image: url(${pattern}),
-            linear-gradient(
-              155.89deg,
-              rgba(3, 6, 36, 0.7) 12.21%,
-              rgba(3, 6, 36, 0.4) 50%,
-              rgba(3, 6, 36, 0) 99.84%
-            );
+          &:before {
+            content: "";
+
+            position: absolute;
+            left: calc(-50vw + 50%);
+            right: calc(-50vw + 50%);
+            height: 100%;
+            top: 0;
+            z-index: -1;
+
+            background: #4e025a;
+            background-image: url(${pattern}),
+              linear-gradient(
+                155.89deg,
+                rgba(3, 6, 36, 0.7) 12.21%,
+                rgba(3, 6, 36, 0.4) 50%,
+                rgba(3, 6, 36, 0) 99.84%
+              );
+          }
 
           /* background diagonals */
           --d-height: 4vw;
           @media (min-width: 60em) {
             --d-height: 2vw;
           }
-          &:before {
-            content: "";
-            background-image: url(${t1});
-            background-repeat: no-repeat;
-            background-size: 100% 102%;
-            position: absolute;
-            width: 100%;
-            height: var(--d-height);
-            top: 0;
-            left: 0;
-          }
           &:after {
             content: "";
-            background-image: url(${t2});
+            background-image: url(${t1}), url(${t2});
+            background-position: center top, center bottom;
             background-repeat: no-repeat;
-            background-size: 100% 102%;
+            background-size: 102% var(--d-height);
             position: absolute;
-            width: 100%;
-            height: var(--d-height);
-            bottom: 0;
-            left: 0;
+            height: calc(100% + 2px);
+            top: -1px;
+            left: calc(-50vw + 49%);
+            right: calc(-50vw + 49%);
           }
         `
 
@@ -69,6 +69,7 @@ export const StyledProjectPosts = styled.section`
           grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
           grid-gap: 2em;
           margin-bottom: ${props => props.theme.typography.rhythm(1)};
+
           article {
             color: ${props => props.theme.typography.options.bodyColor};
             border-radius: ${props => props.theme.cardRadius};

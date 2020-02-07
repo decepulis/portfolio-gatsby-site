@@ -16,6 +16,8 @@ ${props => {
       return css`
         html,
         body {
+          overflow-x: hidden;
+
           --scroll-behavior: smooth;
           scroll-behavior: ${props =>
             props.isChrome ? "auto" : "var(--scroll-behavior)"};
@@ -41,6 +43,21 @@ ${props => {
 }};
 `
 
+export const StyledLayout = styled.div`
+  ${props => {
+    switch (props.theme.id) {
+      case "2019":
+        return css`
+          max-width: ${props => (props.path === "/" ? "60em" : "40em")};
+          margin: 0 auto;
+          padding: 0 ${props => props.theme.typography.rhythm(1)};
+        `
+      default:
+        return
+    }
+  }}
+`
+
 export const StyledHeader = styled.header`
   ${props => {
     switch (props.theme.id) {
@@ -52,9 +69,6 @@ export const StyledHeader = styled.header`
           align-items: center;
 
           z-index: 5;
-
-          ${props => props.theme.containerCss};
-          ${props => props.path !== "/" && "max-width: 40rem;"}
 
           color: ${props =>
             props.path === "/"
@@ -105,37 +119,6 @@ export const StyledSelect = styled.select`
         return css`
           text-align: right;
           max-width: 33%;
-        `
-      default:
-        return
-    }
-  }};
-`
-
-export const JustAStyledHomeContainer = styled.div`
-  ${props => {
-    switch (props.theme.id) {
-      case "2019":
-        return css`
-          ${props => props.theme.containerCss}
-        `
-      default:
-        return
-    }
-  }};
-`
-export const JustAStyledContentMain = styled.main`
-  ${props => {
-    switch (props.theme.id) {
-      case "2019":
-        return css`
-          font-size: 1.125rem;
-
-          max-width: 40rem;
-          margin-left: auto;
-          margin-right: auto;
-          padding-left: 1rem;
-          padding-right: 1rem;
         `
       default:
         return

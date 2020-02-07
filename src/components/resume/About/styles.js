@@ -8,20 +8,25 @@ export const StyledAbout = styled.section`
       case "2019":
         return css`
           position: relative;
-
-          overflow-x: hidden;
+          color: rgba(255, 255, 255, 0.9);
 
           /* background! */
-          color: rgba(255, 255, 255, 0.9);
-          background-image: linear-gradient(
-            155.89deg,
-            ${props => props.theme.primaryDark} 12.21%,
-            ${props => props.theme.primary} 99.84%
-          );
+          &:before {
+            content: "";
+            position: absolute;
 
-          /* overflow background into header */
-          margin-top: -10rem;
-          padding-top: 10rem;
+            left: calc(-50vw + 50%);
+            right: calc(-50vw + 50%);
+            height: calc(100% + 10em);
+            top: -10em;
+            z-index: -1;
+
+            background-image: linear-gradient(
+              155.89deg,
+              ${props => props.theme.primaryDark} 12.21%,
+              ${props => props.theme.primary} 99.84%
+            );
+          }
 
           /* wave */
           padding-bottom: 70px;

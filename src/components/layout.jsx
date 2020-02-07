@@ -2,7 +2,7 @@ import React, { useContext } from "react"
 
 import { ThemeIdContext } from "./contexts/ThemeIdContext"
 
-import { StyledHeader, StyledSelect } from "./layout.styles"
+import { StyledLayout, StyledHeader, StyledSelect } from "./layout.styles"
 
 import { Link } from "gatsby"
 
@@ -10,7 +10,7 @@ export default ({ children, path }) => {
   const [themeId, setThemeId, themeOptions] = useContext(ThemeIdContext)
 
   return (
-    <>
+    <StyledLayout path={path}>
       <StyledHeader path={path}>
         <h1>
           <Link to="/">Darius Cepulis</Link>
@@ -33,6 +33,6 @@ export default ({ children, path }) => {
         </StyledSelect>
       </StyledHeader>
       {children}
-    </>
+    </StyledLayout>
   )
 }

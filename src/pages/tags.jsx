@@ -4,14 +4,12 @@ import kebabCase from "lodash/kebabCase"
 
 import { Link, graphql } from "gatsby"
 
-import { JustAStyledHomeContainer } from "../components/layout.styles"
-
 const TagsPage = ({
   data: {
     allMarkdownRemark: { group },
   },
 }) => (
-  <JustAStyledHomeContainer>
+  <main>
     <h1>Tags</h1>
     <ul>
       {group.map(tag => (
@@ -22,7 +20,7 @@ const TagsPage = ({
         </li>
       ))}
     </ul>
-  </JustAStyledHomeContainer>
+  </main>
 )
 
 export default TagsPage

@@ -18,17 +18,6 @@ export default {
     }),
     highlightNavOnScroll: true,
 
-    containerWidth: "60rem",
-    containerPadding: "1rem",
-    containerHalfWidthMinusPadding: "29rem",
-    containerCss: `
-      max-width: 60rem;
-      margin-left: auto;
-      margin-right: auto;
-      padding-left: 1rem;
-      padding-right: 1rem;
-    `,
-
     boxShadowSm: "0 5px 10px rgba(0,0,0,0.12);",
     boxShadow: "0 8px 30px rgba(0,0,0,0.12);",
     boxShadowLg: "0 30px 60px rgba(0,0,0,0.12);",

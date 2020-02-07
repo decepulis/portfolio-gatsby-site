@@ -3,7 +3,6 @@ import { graphql, useStaticQuery, Link } from "gatsby"
 import PostPreview from "../../PostPreview"
 
 import { StyledEducationPosts } from "./styles"
-import { JustAStyledHomeContainer } from "../../layout.styles"
 
 const Education = React.forwardRef(({ id }, ref) => {
   const data = useStaticQuery(
@@ -43,28 +42,26 @@ const Education = React.forwardRef(({ id }, ref) => {
 
   return (
     <section id={id} ref={ref}>
-      <JustAStyledHomeContainer>
-        <header>
-          <h2>Education</h2>
-        </header>
-        <StyledEducationPosts>
-          {data.articles.edges.map(({ node }) => (
-            <PostPreview
-              key={node.id}
-              title={node.frontmatter.title}
-              subtitle={node.frontmatter.subtitle}
-              date={node.frontmatter.date}
-              description={node.frontmatter.description}
-              slug={node.fields.slug}
-            />
-          ))}
-        </StyledEducationPosts>
-        <p>
-          <Link to="/education/">
-            View All {data.totalCount.totalCount} Entries &rarr;
-          </Link>
-        </p>
-      </JustAStyledHomeContainer>
+      <header>
+        <h2>Education</h2>
+      </header>
+      <StyledEducationPosts>
+        {data.articles.edges.map(({ node }) => (
+          <PostPreview
+            key={node.id}
+            title={node.frontmatter.title}
+            subtitle={node.frontmatter.subtitle}
+            date={node.frontmatter.date}
+            description={node.frontmatter.description}
+            slug={node.fields.slug}
+          />
+        ))}
+      </StyledEducationPosts>
+      <p>
+        <Link to="/education/">
+          View All {data.totalCount.totalCount} Entries &rarr;
+        </Link>
+      </p>
     </section>
   )
 })

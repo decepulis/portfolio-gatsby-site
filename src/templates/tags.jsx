@@ -2,11 +2,10 @@ import React from "react"
 import { graphql } from "gatsby"
 
 import PostPreview from "../components/PostPreview"
-import { JustAStyledContentMain } from "../components/layout.styles"
 
 export default ({ data, pageContext }) => {
   return (
-    <JustAStyledContentMain>
+    <main>
       <header>
         <h1 style={{ textTransform: "capitalize" }}>{pageContext.tag}</h1>
       </header>
@@ -20,7 +19,7 @@ export default ({ data, pageContext }) => {
           slug={node.fields.slug}
         />
       ))}
-    </JustAStyledContentMain>
+    </main>
   )
 }
 
