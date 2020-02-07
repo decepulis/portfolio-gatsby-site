@@ -12,9 +12,13 @@ export const StyledMain = styled.main`
               props.theme.typography.options.headerLineHeight};
           }
           /* Each section has its own context, and its own big margins */
+          & > nav {
+            margin-top: ${props => props.theme.typography.rhythm(1)};
+            margin-bottom: ${props => props.theme.typography.rhythm(1)};
+          }
           & > section {
             padding-top: ${props => props.theme.typography.rhythm(2)};
-            padding-bottom: ${props => props.theme.typography.rhythm(1)};
+            padding-bottom: ${props => props.theme.typography.rhythm(2)};
           }
         `
       default:
