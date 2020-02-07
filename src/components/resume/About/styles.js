@@ -11,6 +11,7 @@ export const StyledAbout = styled.section`
           color: rgba(255, 255, 255, 0.9);
 
           /* background! */
+
           &:before {
             content: "";
             position: absolute;
@@ -36,24 +37,26 @@ export const StyledAbout = styled.section`
           &:after {
             content: "";
 
+            position: absolute;
+
+            bottom: 0;
+            left: calc(-50vw + 50%);
+            right: calc(-50vw + 50%);
+
             background-image: url(${wave});
             background-repeat: no-repeat;
-            background-size: 100% 105%;
+            background-position: center;
 
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-51%);
-
+            background-size: 1000px 100%;
             height: 70px;
-            width: 102vw;
-            min-width: 1000px;
             @media (min-width: 48em) {
+              background-size: 1920px 100%;
               height: 140px;
-              min-width: 1920px;
             }
-
-            overflow: hidden;
+            @media (min-width: 1920px) {
+              background-size: 100% 100%;
+              height: 140px;
+            }
           }
         `
       default:

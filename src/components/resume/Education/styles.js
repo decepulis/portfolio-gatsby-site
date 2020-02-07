@@ -8,7 +8,6 @@ export const StyledEducationPosts = styled.section`
     switch (props.theme.id) {
       case "2019":
         return css`
-          overflow-y: auto;
           article {
             /* SVG Background */
             position: relative;

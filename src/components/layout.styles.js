@@ -16,8 +16,6 @@ ${props => {
       return css`
         html,
         body {
-          overflow-x: hidden;
-
           --scroll-behavior: smooth;
           scroll-behavior: ${props =>
             props.isChrome ? "auto" : "var(--scroll-behavior)"};

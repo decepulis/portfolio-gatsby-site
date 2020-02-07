@@ -36,6 +36,7 @@ export const StyledProjects = styled.section`
           }
 
           /* background diagonals */
+
           --d-height: 4vw;
           @media (min-width: 60em) {
             --d-height: 2vw;
@@ -45,12 +46,12 @@ export const StyledProjects = styled.section`
             background-image: url(${t1}), url(${t2});
             background-position: center top, center bottom;
             background-repeat: no-repeat;
-            background-size: 102% var(--d-height);
+            background-size: 100% var(--d-height);
             position: absolute;
-            height: calc(100% + 2px);
-            top: -1px;
-            left: calc(-50vw + 49%);
-            right: calc(-50vw + 49%);
+            height: 100%;
+            top: 0;
+            left: calc(-50vw + 50%);
+            right: calc(-50vw + 50%);
           }
         `
 
