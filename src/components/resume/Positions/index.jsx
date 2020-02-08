@@ -86,18 +86,18 @@ const Positions = React.forwardRef(({ id }, ref) => {
               <img src={microsensor} alt="Microsensor Labs" />
             </StyledLogoContainerLink>
             <StyledLogoContainerLink
-              to="/positions/2015_bmw/"
-              className="ignore-global-style"
-            >
-              <div className="mask bmw" />
-              <img src={bmw} alt="BMW" />
-            </StyledLogoContainerLink>
-            <StyledLogoContainerLink
               to="/positions/2017_bosch/"
               className="ignore-global-style"
             >
               <div className="mask bosch" />
               <img src={bosch} alt="Bosch" />
+            </StyledLogoContainerLink>
+            <StyledLogoContainerLink
+              to="/positions/2015_bmw/"
+              className="ignore-global-style"
+            >
+              <div className="mask bmw" />
+              <img src={bmw} alt="BMW" />
             </StyledLogoContainerLink>
             <StyledLogoContainerLink
               to="/projects/2019_mmb_site/"
