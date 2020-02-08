@@ -28,18 +28,56 @@ export default {
     secondary: "#0051C1",
   },
   rad: {
+    // A pleasant take on web brutalistm:
+    // strong colors and serif fonts, pastel colors,
+    // you'll see, it'l be great
     label: "Rad",
+    disabled: true,
   },
   mono: {
+    // That great monospace font look that developer-facing websites have.
+    // I'mthinking uses.tech, alligator.io, even sentry.io somewhat
     label: "Geek Chic",
+    disabled: true,
   },
   paper: {
+    // How close to the look of an kinko's-printed resume can we get?
     label: "⌘+P",
+    disabled: true,
   },
-  handwriting: {
+  notes: {
+    // The web is very grid-friendly. How much can we break out of that?
+    // Taking on that question with a cool kinda bulletin-board look
     label: "Note To Self",
+    disabled: true,
   },
   editor: {
-    label: "Better Than Vim",
+    // I think I remember seeing a demo online of some website which
+    // actually showed the HTML tags and was editable.
+    // If I can find that, I'll try to replicate that here.
+    label: "Vim",
+    disabled: true,
+  },
+  snes: {
+    // 16 bit mario-overworld-inspired kinda thing
+    label: "Let's-a-Go!",
+    disabled: true,
+  },
+  firewatch: {
+    // I want a chance to flex my parallax.
+    // Inspirations, firewatch, gardenestudio, nationalparktypeface.com
+    label: "Firetower",
+    disabled: true,
+  },
+  ios6: {
+    // the title says it all
+    label: "Scott Forstall",
+    disabled: true,
+  },
+  ios7: {
+    // the title says it all
+    // obnoxiously thin fonts, fade effects, maybe some parallax
+    label: "Jony Ive",
+    disabled: true,
   },
 }

@@ -40,6 +40,7 @@ if (smoothscroll.polyfill) {
 const themeOptions = Object.entries(themes).map(([themeKey, themeValue]) => [
   themeKey,
   themeValue.label,
+  themeValue.disabled,
 ])
 
 const initThemeId = isWindow
