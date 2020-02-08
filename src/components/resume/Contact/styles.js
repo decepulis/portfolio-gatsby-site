@@ -63,10 +63,10 @@ const StyledContactListItem = styled.li`
               background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 
             background-color: gray;
-            box-shadow: ${props => props.theme.boxShadow};
+            box-shadow: ${props => props.theme.boxShadowXs};
             &:hover {
               transform: translateY(-0.1em);
-              box-shadow: ${props => props.theme.boxShadowLg};
+              box-shadow: ${props => props.theme.boxShadowSm};
             }
           }
           svg {
