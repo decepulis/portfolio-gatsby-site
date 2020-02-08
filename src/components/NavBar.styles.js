@@ -9,11 +9,7 @@ export const StyledNavbar = styled.nav`
           top: ${props => props.theme.typography.rhythm(1 / 2)};
           z-index: 5;
 
-          max-width: calc(
-            ${props => props.theme.containerWidth} +
-              calc(2 * ${props => props.theme.containerPadding})
-          );
-          margin: 0 auto;
+          margin: 0 calc(-1 * ${props => props.theme.typography.rhythm(1)});
 
           border-radius: ${props => props.theme.cardRadius};
           box-shadow: ${props => props.theme.boxShadow};

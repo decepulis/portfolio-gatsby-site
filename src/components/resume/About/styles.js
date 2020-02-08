@@ -96,12 +96,15 @@ export const StyledContainer = styled.div`
             "profile profile"
             "text text";
 
-          --grid-space: ${props => props.theme.typography.rhythm(2)};
-          padding: var(--grid-space) ${props => props.theme.containerPadding};
+          --grid-space: ${props => props.theme.typography.rhythm(1)};
+          padding: var(--grid-space) 0;
           grid-gap: var(--grid-space);
 
-          @media (min-width: 34em) {
+          @media (min-width: 28em) {
             padding: var(--grid-space);
+          }
+          @media (min-width: 34em) {
+            --grid-space: ${props => props.theme.typography.rhythm(2)};
             grid-template-areas: "text profile";
           }
           @media (min-width: 48em) {
