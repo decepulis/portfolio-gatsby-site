@@ -17,7 +17,11 @@ export const StyledMain = styled.main`
             margin-bottom: ${props => props.theme.typography.rhythm(1)};
           }
           & > section {
-            padding-top: ${props => props.theme.typography.rhythm(2)};
+            /* This negative margin allows the header to remain visible
+             * beneath the navbar after anchor scrolling */
+            margin-top: calc(-1 * ${props =>
+              props.theme.typography.rhythm(1.5)});
+            padding-top: ${props => props.theme.typography.rhythm(3.5)};
             padding-bottom: ${props => props.theme.typography.rhythm(2)};
           }
         `

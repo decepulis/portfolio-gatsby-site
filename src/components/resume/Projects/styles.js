@@ -11,8 +11,12 @@ export const StyledProjects = styled.section`
       case "2019":
         return css`
           position: relative;
-
           color: white;
+
+          & > * {
+            position: relative;
+            z-index: 1;
+          }
 
           /* background color */
           &:before {
@@ -21,8 +25,10 @@ export const StyledProjects = styled.section`
             position: absolute;
             left: calc(-50vw + 50%);
             right: calc(-50vw + 50%);
-            height: 100%;
-            top: 0;
+            /* Normally this would be 100%, but actually sections are virtually taller than they appear,
+             * thanks to the anchor-scrolling offset rules defined in globalstyle. */
+            height: calc(100% - ${props => props.theme.typography.rhythm(1.5)});
+            top: ${props => props.theme.typography.rhythm(1.5)};
             z-index: -1;
 
             background: #4e025a;
@@ -48,8 +54,15 @@ export const StyledProjects = styled.section`
             background-repeat: no-repeat;
             background-size: 100% var(--d-height);
             position: absolute;
-            height: calc(100% + 1px);
-            top: 0;
+            /* Normally this would be 100%, but actually sections are virtually taller than they appear,
+             * thanks to the anchor-scrolling offset rules defined in globalstyle.
+             * That's where the rhythm 1.5 comes in.
+             * The 1 and 2px comes in from the fact that I want my diagonals slightly
+             * pushed into their neighbors, to avoid any weird rendering glitches. */
+            height: calc(
+              calc(100% - ${props => props.theme.typography.rhythm(1.5)}) + 2px
+            );
+            top: calc(${props => props.theme.typography.rhythm(1.5)} - 1px);
             left: calc(-50vw + 50%);
             right: calc(-50vw + 50%);
           }

@@ -18,10 +18,11 @@ export default {
     }),
     highlightNavOnScroll: true,
 
+    boxShadowXs: "0 3px 5px rgba(0,0,0,0.12);",
     boxShadowSm: "0 5px 10px rgba(0,0,0,0.12);",
     boxShadow: "0 8px 30px rgba(0,0,0,0.12);",
     boxShadowLg: "0 30px 60px rgba(0,0,0,0.12);",
-    cardRadius: "1em",
+    cardRadius: "0.5rem",
 
     primaryDark: "#000758",
     primary: "#109b9b",

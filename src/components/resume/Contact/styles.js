@@ -5,17 +5,53 @@ export const StyledContactSection = styled.section`
     switch (props.theme.id) {
       case "2019":
         return css`
+          /* first, we override the global section styles */
+          && {
+            h2 {
+              ${props => props.theme.typography.scale(1)};
+              margin-bottom: ${props => props.theme.typography.rhythm(1.5)};
+              line-height: ${props =>
+                props.theme.typography.options.headerLineHeight};
+            }
+            padding: ${props => props.theme.typography.rhythm(1)};
+            margin-top: 0;
+          }
+
           position: relative;
+          background-color: white;
+          border-radius: ${props => props.theme.cardRadius};
+          box-shadow: ${props => props.theme.boxShadow};
+
           &:before {
+            content: "";
+            position: absolute;
+            height: 5px;
+            width: 100%;
+            top: 0;
+            left: 0;
+            border-top-left-radius: ${props => props.theme.cardRadius};
+            border-top-right-radius: ${props => props.theme.cardRadius};
+
+            background-image: linear-gradient(
+              155.89deg,
+              ${props => props.theme.primaryDark} 12.21%,
+              ${props => props.theme.primary} 99.84%
+            );
+          }
+          &:after {
             content: "";
             position: absolute;
             left: calc(-50vw + 50%);
             right: calc(-50vw + 50%);
-            height: 100%;
-            top: 0;
+            height: calc(50% + ${props => props.theme.typography.rhythm(1)});
+            top: 50%;
             z-index: -1;
 
-            background: #eee;
+            background-image: linear-gradient(
+              155.89deg,
+              ${props => props.theme.primaryDark} 12.21%,
+              ${props => props.theme.primary} 99.84%
+            );
           }
         `
       default:

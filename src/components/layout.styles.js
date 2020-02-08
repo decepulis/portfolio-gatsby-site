@@ -26,11 +26,12 @@ ${props => {
             }
           }
 
-          a:not(.ignore-global-style) {
-            color: ${props => props.theme.secondary};
+          a {
             text-decoration: none;
+            color: ${props => props.theme.secondary};
+            transition: color 0.1s ease-in-out;
             &:hover {
-              text-decoration: underline;
+              color: ${props => props.theme.primaryDark};
             }
           }
         }

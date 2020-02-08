@@ -59,6 +59,10 @@ export const StyledNavLink = styled.a`
               props.active
                 ? props.theme.primary
                 : props.theme.typography.options.bodyColor};
+
+            &:hover {
+              color: ${props => props.theme.primaryDark};
+            }
           }
         `
       default:

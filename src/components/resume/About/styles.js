@@ -10,16 +10,21 @@ export const StyledAbout = styled.section`
           position: relative;
           color: rgba(255, 255, 255, 0.9);
 
-          /* background! */
+          /* the about section should virtually extend behind the header
+           * so that the background goes back there, and
+           * so that anchor scrolling takes us all the way to the top */
+          margin-top: -10em;
+          padding-top: 10em;
 
+          /* background! */
           &:before {
             content: "";
             position: absolute;
 
             left: calc(-50vw + 50%);
             right: calc(-50vw + 50%);
-            height: calc(100% + 10em);
-            top: -10em;
+            height: 100%;
+            top: 0;
             z-index: -1;
 
             background-image: linear-gradient(
@@ -83,8 +88,6 @@ export const StyledContainer = styled.div`
     switch (props.theme.id) {
       case "2019":
         return css`
-          ${props => props.theme.containerCss};
-
           display: grid;
 
           grid-template-columns: 3fr 1fr;
@@ -204,14 +207,14 @@ export const StyledActionButton = styled.div`
             margin: 0;
           }
 
-          a {
+          && a {
             display: block;
             text-align: center;
             width: 100%;
             height: 100%;
             line-height: ${props => props.theme.typography.rhythm(8 / 5)};
-            color: rgba(255, 255, 255, 0.9);
             text-decoration: none;
+            color: white;
           }
         `
       default:

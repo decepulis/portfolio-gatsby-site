@@ -40,9 +40,6 @@ export const StyledPosts = styled.section`
 
           /** tablet or desktop layout */
           @media (min-width: 40em) {
-            /*** equal-height sections */
-            display: grid;
-            grid-auto-rows: 1fr;
             article {
               display: grid;
               grid-template-columns: 1fr 3fr;
@@ -96,15 +93,13 @@ export const StyledPosts = styled.section`
               margin-bottom: 0;
               div {
                 break-inside: avoid;
+                margin-bottom: ${props => props.theme.typography.rhythm(1)};
 
                 dd {
-                  display: inline-block;
-                  &:not(:last-of-type) {
-                    margin-bottom: 0;
-                    &:after {
-                      content: ", ";
-                      white-space: pre;
-                    }
+                  display: inline;
+                  &:not(:last-child):after {
+                    content: ", ";
+                    white-space: pre-line;
                   }
                 }
               }
