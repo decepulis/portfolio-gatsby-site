@@ -48,7 +48,7 @@ export const StyledProjects = styled.section`
             background-repeat: no-repeat;
             background-size: 100% var(--d-height);
             position: absolute;
-            height: 100%;
+            height: calc(100% + 1px);
             top: 0;
             left: calc(-50vw + 50%);
             right: calc(-50vw + 50%);
