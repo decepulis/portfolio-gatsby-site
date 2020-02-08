@@ -4,7 +4,14 @@ export default {
   "1989": {
     label: "1989",
   },
+  "1999": {
+    // I'm thinkin... space jam
+    label: "1999",
+    disabled: true,
+  },
   "2019": {
+    // netlify, contentful, zeit.
+    // blobs, waves, gradients
     label: "2019",
     typography: new Typography({
       headerFontFamily: ["Roboto", "sans-serif"],
