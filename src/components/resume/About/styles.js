@@ -99,18 +99,20 @@ export const StyledContainer = styled.div`
             "profile profile"
             "text text";
 
+          --pad-space: ${props => props.theme.typography.rhythm(2)};
           --grid-space: ${props => props.theme.typography.rhythm(1)};
-          padding: var(--grid-space) 0;
+          padding: var(--pad-space) 0;
           grid-gap: var(--grid-space);
 
           @media (min-width: 28em) {
-            padding: var(--grid-space);
+            padding: var(--pad-space);
           }
           @media (min-width: 34em) {
             --grid-space: ${props => props.theme.typography.rhythm(2)};
             grid-template-areas: "text profile";
           }
           @media (min-width: 48em) {
+            --pad-space: ${props => props.theme.typography.rhythm(3)};
             --grid-space: ${props => props.theme.typography.rhythm(3)};
           }
         `

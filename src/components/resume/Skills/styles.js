@@ -19,18 +19,19 @@ export const StyledPosts = styled.section`
 
             /** not the last article? you get a straight line under you! */
             &:not(:last-child) {
-              margin-bottom: ${props => props.theme.typography.rhythm(7)};
+              margin-bottom: ${props => props.theme.typography.rhythm(5)};
 
               &:after {
                 content: "";
                 background-image: url(${lineV});
                 background-repeat: no-repeat;
                 background-size: contain;
+                background-position: center;
 
                 display: block;
                 position: absolute;
                 height: ${props => props.theme.typography.rhythm(5)};
-                bottom: calc(-1 * ${props => props.theme.typography.rhythm(6)});
+                bottom: calc(-1 * ${props => props.theme.typography.rhythm(5)});
 
                 width: ${props => props.theme.typography.rhythm(1)};
                 left: 50%;

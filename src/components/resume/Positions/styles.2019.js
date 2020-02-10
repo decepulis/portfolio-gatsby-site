@@ -14,19 +14,12 @@ export const StyledCompanies = styled.div`
     switch (props.theme.id) {
       case "2019":
         return css`
-        display: initial;
-        text-align: center;
-        max-width: 100%;
+          display: initial;
+          text-align: center;
+          max-width: 100%;
 
-        grid-area: companies;
-
-        p {
-          ${props => props.theme.typography.scale(2 / 5)}
-          line-height: ${props =>
-            props.theme.typography.options.headerLineHeight};
-          font-weight: ${props => props.theme.typography.options.headerWeight};
-        }
-      `
+          grid-area: companies;
+        `
       default:
         return
     }
@@ -38,7 +31,7 @@ export const StyledLogos = styled.div`
       case "2019":
         return css`
           display: flex;
-          justify-content: space-around;
+          justify-content: center;
           flex-wrap: wrap;
         `
       default:
@@ -57,9 +50,9 @@ export const StyledLogoContainerLink = styled(Link)`
 
           margin: 0 ${props => props.theme.typography.rhythm(0.25)}
             ${props => props.theme.typography.rhythm(1)};
-          width: 8em;
-          height: 3em;
-          flex: 0 0 8em;
+          width: 7em;
+          height: 2.5em;
+          flex: 0 0 7em;
 
           /* Position of Children */
           .mask,

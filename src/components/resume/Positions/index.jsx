@@ -55,72 +55,74 @@ const Positions = React.forwardRef(({ id }, ref) => {
 
   return (
     <section id={id} ref={ref}>
-      <header>
-        <h2>Positions</h2>
-      </header>
       {theme.id !== "2019" ? (
-        <StyledPosts>
-          {data.articles.edges.map(({ node }) => (
-            <PostPreview
-              key={node.id}
-              title={node.frontmatter.title}
-              subtitle={node.frontmatter.subtitle}
-              date={node.frontmatter.date}
-              description={node.frontmatter.description}
-              slug={node.fields.slug}
-            />
-          ))}
-        </StyledPosts>
-      ) : (
-        <StyledCompanies>
+        <>
+          <header>
+            <h2>Positions</h2>
+          </header>
+          <StyledPosts>
+            {data.articles.edges.map(({ node }) => (
+              <PostPreview
+                key={node.id}
+                title={node.frontmatter.title}
+                subtitle={node.frontmatter.subtitle}
+                date={node.frontmatter.date}
+                description={node.frontmatter.description}
+                slug={node.fields.slug}
+              />
+            ))}
+          </StyledPosts>
           <p>
-            Join the companies and educational&nbsp;institutions that trust
-            Darius
+            <Link to="/positions/">
+              View All {data.totalCount.totalCount} Positions &rarr;
+            </Link>
           </p>
-          <StyledLogos>
-            <StyledLogoContainerLink
-              to="/positions/2018_microsensor"
-              className="ignore-global-style"
-            >
-              <div className="mask microsensor" />
-              <img src={microsensor} alt="Microsensor Labs" />
-            </StyledLogoContainerLink>
-            <StyledLogoContainerLink
-              to="/positions/2017_bosch/"
-              className="ignore-global-style"
-            >
-              <div className="mask bosch" />
-              <img src={bosch} alt="Bosch" />
-            </StyledLogoContainerLink>
-            <StyledLogoContainerLink
-              to="/positions/2015_bmw/"
-              className="ignore-global-style"
-            >
-              <div className="mask bmw" />
-              <img src={bmw} alt="BMW" />
-            </StyledLogoContainerLink>
-            <StyledLogoContainerLink
-              to="/projects/2019_mmb_site/"
-              className="ignore-global-style"
-            >
-              <div className="mask midwest" />
-              <img src={midwest} alt="Midwest Microbio" />
-            </StyledLogoContainerLink>
-            <StyledLogoContainerLink
-              to="/projects/2018_thesis/"
-              className="ignore-global-style"
-            >
-              <div className="mask uc" />
-              <img src={uc} alt="University of Cincinnati" />
-            </StyledLogoContainerLink>
-          </StyledLogos>
-        </StyledCompanies>
+        </>
+      ) : (
+        <>
+          <header>
+            <h2>
+              Employers have trusted Darius with over{" "}
+              <Link to="/positions/">
+                {data.totalCount.totalCount} positions
+              </Link>
+              !
+            </h2>
+          </header>
+          <StyledCompanies>
+            <StyledLogos>
+              <StyledLogoContainerLink
+                to="/positions/2018_microsensor"
+                className="ignore-global-style"
+              >
+                <div className="mask microsensor" />
+                <img src={microsensor} alt="Microsensor Labs" />
+              </StyledLogoContainerLink>
+              <StyledLogoContainerLink
+                to="/positions/2015_bmw/"
+                className="ignore-global-style"
+              >
+                <div className="mask bmw" />
+                <img src={bmw} alt="BMW" />
+              </StyledLogoContainerLink>
+              <StyledLogoContainerLink
+                to="/positions/2017_bosch/"
+                className="ignore-global-style"
+              >
+                <div className="mask bosch" />
+                <img src={bosch} alt="Bosch" />
+              </StyledLogoContainerLink>
+              <StyledLogoContainerLink
+                to="/projects/2018_thesis/"
+                className="ignore-global-style"
+              >
+                <div className="mask uc" />
+                <img src={uc} alt="University of Cincinnati" />
+              </StyledLogoContainerLink>
+            </StyledLogos>
+          </StyledCompanies>
+        </>
       )}
-      <p>
-        <Link to="/positions/">
-          View All {data.totalCount.totalCount} Positions &rarr;
-        </Link>
-      </p>
     </section>
   )
 })

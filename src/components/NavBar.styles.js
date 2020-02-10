@@ -9,10 +9,11 @@ export const StyledNavbar = styled.nav`
           top: ${props => props.theme.typography.rhythm(1 / 2)};
           z-index: 5;
 
+          /* Fill navbar into l/r padding */
           margin: 0 calc(-1 * ${props => props.theme.typography.rhythm(1)});
 
           border-radius: ${props => props.theme.cardRadius};
-          box-shadow: ${props => props.theme.boxShadow};
+          box-shadow: ${props => props.theme.boxShadowSm};
           overflow-x: scroll;
           background-color: white;
 

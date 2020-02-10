@@ -5,20 +5,10 @@ export const StyledContactSection = styled.section`
     switch (props.theme.id) {
       case "2019":
         return css`
-          /* first, we override the global section styles */
-          && {
-            h2 {
-              ${props => props.theme.typography.scale(1)};
-              margin-bottom: ${props => props.theme.typography.rhythm(1.5)};
-              line-height: ${props =>
-                props.theme.typography.options.headerLineHeight};
-            }
-            padding: ${props => props.theme.typography.rhythm(1)};
-            margin-top: 0;
-          }
-
           position: relative;
           background-color: white;
+          padding-top: var(--section-rhythm);
+          padding-bottom: var(--section-rhythm);
           border-radius: ${props => props.theme.cardRadius};
           box-shadow: ${props => props.theme.boxShadow};
 
@@ -43,8 +33,11 @@ export const StyledContactSection = styled.section`
             position: absolute;
             left: calc(-50vw + 50%);
             right: calc(-50vw + 50%);
-            height: calc(50% + ${props => props.theme.typography.rhythm(1)});
-            top: 50%;
+
+            --bg-height: calc(100% - var(--section-rhythm));
+
+            height: calc(var(--bg-height) + var(--section-rhythm));
+            top: calc(100% - var(--bg-height));
             z-index: -1;
 
             background-image: linear-gradient(
