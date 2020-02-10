@@ -63,9 +63,13 @@ export const StyledHeader = styled.header`
       case "2019":
         return css`
           position: relative;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
+          display: grid;
+          grid-template-columns: 2fr 1fr;
+          @media (min-width: 30rem) {
+            grid-template-columns: 3fr 1fr;
+          }
+          grid-space: ${props => props.theme.typography.rhythm(1)};
+          padding: ${props => props.theme.typography.rhythm(1)} 0;
 
           z-index: 5;
 
@@ -76,8 +80,12 @@ export const StyledHeader = styled.header`
 
           && h1 {
             /* using the ol ampersand trick to increase specificity */
-            margin: ${props.theme.typography.rhythm(1)} 0;
-            margin-right: ${props.theme.typography.rhythm(1)};
+            white-space: nowrap;
+            margin-bottom: 0;
+            @media (max-width: 30rem) {
+              font-size: 1.4em;
+            }
+
             a {
               color: ${props =>
                 props.path === "/"
@@ -115,10 +123,7 @@ export const StyledSelect = styled.select`
   ${props => {
     switch (props.theme.id) {
       case "2019":
-        return css`
-          text-align: right;
-          max-width: 33%;
-        `
+        return css``
       default:
         return
     }
