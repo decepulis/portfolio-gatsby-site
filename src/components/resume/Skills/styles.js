@@ -94,7 +94,10 @@ export const StyledPosts = styled.section`
               margin-bottom: 0;
               div {
                 break-inside: avoid;
-                margin-bottom: ${props => props.theme.typography.rhythm(1)};
+
+                &:not(:last-child) {
+                  margin-bottom: ${props => props.theme.typography.rhythm(1)};
+                }
 
                 dd {
                   display: inline;

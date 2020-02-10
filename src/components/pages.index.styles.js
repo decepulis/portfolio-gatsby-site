@@ -12,8 +12,10 @@ export const StyledMain = styled.main`
           /* Each section has its own context, and its own big margins */
           & > section,
           & > nav {
-            margin-top: var(--section-rhythm);
             margin-bottom: var(--section-rhythm);
+          }
+          & > section {
+            margin-top: var(--section-rhythm);
           }
         `
       default:
