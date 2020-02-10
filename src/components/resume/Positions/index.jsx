@@ -84,7 +84,7 @@ const Positions = React.forwardRef(({ id }, ref) => {
             <h2>
               Employers have trusted Darius with over{" "}
               <Link to="/positions/">
-                {data.totalCount.totalCount} positions
+                {data.totalCount.totalCount}&nbsp;positions
               </Link>
               !
             </h2>
