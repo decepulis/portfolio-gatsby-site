@@ -30,9 +30,13 @@ export const StyledLogos = styled.div`
     switch (props.theme.id) {
       case "2019":
         return css`
-          display: flex;
-          justify-content: center;
-          flex-wrap: wrap;
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          @media (min-width: 36rem) {
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+          }
+          justify-items: center;
+          align-items: center;
         `
       default:
         return
@@ -100,7 +104,9 @@ export const StyledLogoContainerLink = styled(Link)`
               opacity: 0;
             }
 
+            box-shadow: none;
             &:hover {
+              box-shadow: none;
               img {
                 opacity: 1;
               }

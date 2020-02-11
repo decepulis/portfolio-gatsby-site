@@ -113,8 +113,12 @@ export const StyledEmailItem = styled(StyledContactListItem)`
     switch (props.theme.id) {
       case "2019":
         return css`
-          & a:hover {
-            background-color: #d14836;
+          & a {
+            box-shadow: none;
+            &:hover {
+              box-shadow: none;
+              background-color: #d14836;
+            }
           }
         `
       default:

@@ -82,7 +82,7 @@ const Positions = React.forwardRef(({ id }, ref) => {
         <>
           <header>
             <h2>
-              Employers have trusted Darius with over{" "}
+              Join the employers who have trusted Darius with over{" "}
               <Link to="/positions/">
                 {data.totalCount.totalCount}&nbsp;positions
               </Link>
@@ -91,31 +91,19 @@ const Positions = React.forwardRef(({ id }, ref) => {
           </header>
           <StyledCompanies>
             <StyledLogos>
-              <StyledLogoContainerLink
-                to="/positions/2018_microsensor"
-                className="ignore-global-style"
-              >
+              <StyledLogoContainerLink to="/positions/2018_microsensor">
                 <div className="mask microsensor" />
                 <img src={microsensor} alt="Microsensor Labs" />
               </StyledLogoContainerLink>
-              <StyledLogoContainerLink
-                to="/positions/2015_bmw/"
-                className="ignore-global-style"
-              >
+              <StyledLogoContainerLink to="/positions/2015_bmw/">
                 <div className="mask bmw" />
                 <img src={bmw} alt="BMW" />
               </StyledLogoContainerLink>
-              <StyledLogoContainerLink
-                to="/positions/2017_bosch/"
-                className="ignore-global-style"
-              >
+              <StyledLogoContainerLink to="/positions/2017_bosch/">
                 <div className="mask bosch" />
                 <img src={bosch} alt="Bosch" />
               </StyledLogoContainerLink>
-              <StyledLogoContainerLink
-                to="/projects/2018_thesis/"
-                className="ignore-global-style"
-              >
+              <StyledLogoContainerLink to="/projects/2018_thesis/">
                 <div className="mask uc" />
                 <img src={uc} alt="University of Cincinnati" />
               </StyledLogoContainerLink>

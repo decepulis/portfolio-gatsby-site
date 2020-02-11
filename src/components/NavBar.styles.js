@@ -55,6 +55,7 @@ export const StyledNavLink = styled.a`
           font-size: 1.1em;
           text-decoration: none;
           && {
+            box-shadow: none;
             transition: color 0.2s ease;
             color: ${props =>
               props.active
@@ -62,6 +63,7 @@ export const StyledNavLink = styled.a`
                 : props.theme.typography.options.bodyColor};
 
             &:hover {
+              box-shadow: none;
               color: ${props => props.theme.primaryDark};
             }
           }

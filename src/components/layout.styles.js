@@ -28,10 +28,14 @@ ${props => {
 
           a {
             text-decoration: none;
-            color: ${props => props.theme.secondary};
-            transition: color 0.1s ease-in-out;
+            color: black;
+            box-shadow: inset 0 -0.25em 0 -1px ${props => props.theme.primary}88;
+
+            transition: background 0.1s 0s ease-in-out,
+              box-shadow 0.1s 0s ease-in-out, color 0.1s 0s ease-in-out;
+
             &:hover {
-              color: ${props => props.theme.primaryDark};
+              box-shadow: inset 0 calc(-1em - 2px) 0 -1px ${props => props.theme.primary}55;
             }
           }
         }
@@ -93,6 +97,11 @@ export const StyledHeader = styled.header`
                   : props.theme.typography.options.headerColor};
               text-decoration: none;
               text-transform: lowercase;
+
+              box-shadow: inset 0 -0.25em 0 -1px ${props => props.theme.primary};
+              &:hover {
+                box-shadow: inset 0 calc(-1em - 2px) 0 -1px ${props => props.theme.primary};
+              }
             }
           }
 

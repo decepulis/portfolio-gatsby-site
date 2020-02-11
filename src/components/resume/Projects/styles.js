@@ -106,6 +106,10 @@ export const StyledLink = styled(Link)`
         return css`
           && {
             color: white;
+            box-shadow: inset 0 -0.25em 0 -1px ${props => props.theme.primary};
+            &:hover {
+              box-shadow: inset 0 calc(-1em - 2px) 0 -1px ${props => props.theme.primary};
+            }
           }
         `
       default:
