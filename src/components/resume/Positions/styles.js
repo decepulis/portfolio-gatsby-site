@@ -1,5 +1,16 @@
 import styled, { css } from "styled-components"
 
+export const StyledPositions = styled.section`
+  ${props => {
+    switch (props.theme.id) {
+      case "2019":
+        return css``
+      default:
+        return
+    }
+  }}
+`
+
 export const StyledPosts = styled.section`
   ${props => {
     switch (props.theme.id) {

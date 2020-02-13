@@ -4,7 +4,6 @@ import microsensor from "./logo-microsensor.svg"
 import bosch from "./logo-bosch.svg"
 import uc from "./logo-uc.svg"
 import bmw from "./logo-bmw-mask.svg"
-import midwest from "./logo-midwest.svg"
 import { Link } from "gatsby"
 
 export const StyledCompanies = styled.div`
@@ -18,7 +17,9 @@ export const StyledCompanies = styled.div`
           text-align: center;
           max-width: 100%;
 
-          grid-area: companies;
+          h2 {
+            font-size: 1.31951rem;
+          }
         `
       default:
         return
@@ -32,6 +33,7 @@ export const StyledLogos = styled.div`
         return css`
           display: grid;
           grid-template-columns: 1fr 1fr;
+          grid-gap: ${props => props.theme.typography.rhythm(1)};
           @media (min-width: 36rem) {
             grid-template-columns: 1fr 1fr 1fr 1fr;
           }
@@ -52,11 +54,8 @@ export const StyledLogoContainerLink = styled(Link)`
           /* Size In Grid */
           position: relative;
 
-          margin: 0 ${props => props.theme.typography.rhythm(0.25)}
-            ${props => props.theme.typography.rhythm(1)};
           width: 7em;
           height: 2.5em;
-          flex: 0 0 7em;
 
           /* Position of Children */
           .mask,
@@ -88,9 +87,6 @@ export const StyledLogoContainerLink = styled(Link)`
               }
               &.bmw {
                 mask-image: url(${bmw});
-              }
-              &.midwest {
-                mask-image: url(${midwest});
               }
             }
 

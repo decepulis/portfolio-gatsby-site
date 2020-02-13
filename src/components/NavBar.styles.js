@@ -6,16 +6,17 @@ export const StyledNavbar = styled.nav`
       case "2019":
         return css`
           position: sticky;
-          top: ${props => props.theme.typography.rhythm(1 / 2)};
+          top: 0;
           z-index: 5;
 
           /* Fill navbar into l/r padding */
           margin: 0 calc(-1 * ${props => props.theme.typography.rhythm(1)});
 
-          border-radius: ${props => props.theme.cardRadius};
-          box-shadow: ${props => props.theme.boxShadowSm};
           overflow-x: scroll;
-          background-color: white;
+
+          border-bottom: 1px solid rgba(7, 96, 115, 0.07);
+          background-color: rgba(255, 255, 255, 0.9);
+          backdrop-filter: blur(10px);
 
           scrollbar-width: thin;
         `

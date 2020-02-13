@@ -3,7 +3,7 @@ import { graphql, useStaticQuery, Link } from "gatsby"
 import PostPreview from "../../PostPreview"
 import { ThemeContext } from "styled-components"
 
-import { StyledPosts } from "./styles"
+import { StyledPositions, StyledPosts } from "./styles"
 import {
   StyledCompanies,
   StyledLogos,
@@ -14,7 +14,6 @@ import microsensor from "./logo-microsensor.svg"
 import bosch from "./logo-bosch.svg"
 import uc from "./logo-uc.svg"
 import bmw from "./logo-bmw.svg"
-import midwest from "./logo-midwest.svg"
 
 const Positions = React.forwardRef(({ id }, ref) => {
   const data = useStaticQuery(
@@ -54,7 +53,7 @@ const Positions = React.forwardRef(({ id }, ref) => {
   const theme = useContext(ThemeContext)
 
   return (
-    <section id={id} ref={ref}>
+    <StyledPositions id={id} ref={ref}>
       {theme.id !== "2019" ? (
         <>
           <header>
@@ -80,16 +79,16 @@ const Positions = React.forwardRef(({ id }, ref) => {
         </>
       ) : (
         <>
-          <header>
-            <h2>
-              Join the employers who have trusted Darius with over{" "}
-              <Link to="/positions/">
-                {data.totalCount.totalCount}&nbsp;positions
-              </Link>
-              !
-            </h2>
-          </header>
           <StyledCompanies>
+            <header>
+              <h2>
+                Join the employers who have trusted Darius with over{" "}
+                <Link to="/positions/">
+                  {data.totalCount.totalCount}&nbsp;positions
+                </Link>
+                !
+              </h2>
+            </header>
             <StyledLogos>
               <StyledLogoContainerLink to="/positions/2018_microsensor">
                 <div className="mask microsensor" />
@@ -111,7 +110,7 @@ const Positions = React.forwardRef(({ id }, ref) => {
           </StyledCompanies>
         </>
       )}
-    </section>
+    </StyledPositions>
   )
 })
 

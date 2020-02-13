@@ -34,7 +34,7 @@ const About = React.forwardRef(({ id }, ref) => {
             into UI/UX, architecture, and tooling. I learn quickly and stuff.
           </p>
           <StyledActionButton>
-            <a className="ignore-global-style" role="button" href="#contact">
+            <a role="button" href="#contact">
               Contact Now &rarr;
             </a>
           </StyledActionButton>

@@ -217,6 +217,11 @@ export const StyledActionButton = styled.div`
             line-height: ${props => props.theme.typography.rhythm(8 / 5)};
             text-decoration: none;
             color: white;
+
+            box-shadow: none;
+            &:hover {
+              box-shadow: none;
+            }
           }
         `
       default:
