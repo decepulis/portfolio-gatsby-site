@@ -22,7 +22,7 @@ export const StyledPosts = styled.section`
 
           article {
             flex: 0 1 300px;
-            margin-bottom: ${props => props.theme.typography.rhythm(1)};
+            margin-bottom: var(--rhythm);
           }
         `
       default:

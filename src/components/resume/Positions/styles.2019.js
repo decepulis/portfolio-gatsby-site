@@ -33,7 +33,7 @@ export const StyledLogos = styled.div`
         return css`
           display: grid;
           grid-template-columns: 1fr 1fr;
-          grid-gap: ${props => props.theme.typography.rhythm(1)};
+          grid-gap: var(--rhythm);
           @media (min-width: 36rem) {
             grid-template-columns: 1fr 1fr 1fr 1fr;
           }

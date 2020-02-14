@@ -101,8 +101,8 @@ export const StyledContainer = styled.div`
             "profile profile"
             "text text";
 
-          --pad-space: ${props => props.theme.typography.rhythm(2)};
-          --grid-space: ${props => props.theme.typography.rhythm(1)};
+          --pad-space: calc(2 * var(--rhythm));
+          --grid-space: var(--rhythm);
           padding: var(--pad-space) 0;
           grid-gap: var(--grid-space);
 
@@ -110,12 +110,12 @@ export const StyledContainer = styled.div`
             padding: var(--pad-space);
           }
           @media (min-width: 34em) {
-            --grid-space: ${props => props.theme.typography.rhythm(2)};
+            --grid-space: calc(2 * var(--rhythm));
             grid-template-areas: "text profile";
           }
           @media (min-width: 48em) {
-            --pad-space: ${props => props.theme.typography.rhythm(3)};
-            --grid-space: ${props => props.theme.typography.rhythm(3)};
+            --pad-space: calc(3 * var(--rhythm));
+            --grid-space: calc(3 * var(--rhythm));
           }
         `
       default:
@@ -216,7 +216,7 @@ export const StyledActionButton = styled.div`
             text-align: center;
             width: 100%;
             height: 100%;
-            line-height: ${props => props.theme.typography.rhythm(8 / 5)};
+            line-height: calc(1.6 * var(--rhythm));
             text-decoration: none;
             color: white;
 

@@ -4,7 +4,7 @@ export const StyledMain = styled.main`
     switch (props.theme.id) {
       case "2019":
         return css`
-          --section-rhythm: ${props => props.theme.typography.rhythm(2)};
+          --section-rhythm: calc(2 * var(--rhythm));
 
           h2 {
             text-align: center;
@@ -21,12 +21,8 @@ export const StyledMain = styled.main`
             /* Each section's header acts as an anchor target */
             /* We add an offset to ensure that the navbar has room atop the header */
             header[id] {
-              margin-top: calc(
-                -1 * ${props => props.theme.typography.rhythm(3)}
-              );
-              padding-top: calc(
-                1 * ${props => props.theme.typography.rhythm(3)}
-              );
+              margin-top: calc(-1 * calc(3 * var(--rhythm)));
+              padding-top: calc(1 * calc(3 * var(--rhythm)));
             }
           }
         `

@@ -80,14 +80,14 @@ export const StyledProjectPosts = styled.section`
           display: grid;
           grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
           grid-gap: 2em;
-          margin-bottom: ${props => props.theme.typography.rhythm(1)};
+          margin-bottom: var(--rhythm);
 
           article {
             color: ${props => props.theme.typography.options.bodyColor};
             border-radius: ${props => props.theme.cardRadius};
             box-shadow: ${props => props.theme.boxShadowLg};
             background-color: white;
-            padding: ${props => props.theme.typography.rhythm(1)};
+            padding: var(--rhythm);
 
             & > p:last-of-type {
               margin: 0;
@@ -96,9 +96,8 @@ export const StyledProjectPosts = styled.section`
             .gatsby-image-wrapper {
               background-color: rgba(7, 96, 115, 0.14);
               background-clip: padding-box;
-              margin: 0 calc(-1 * ${props => props.theme.typography.rhythm(1)})
-                ${props => props.theme.typography.rhythm(1)};
-              width: calc(100% + ${props => props.theme.typography.rhythm(2)});
+              margin: 0 calc(-1 * var(--rhythm)) var(--rhythm);
+              width: calc(100% + calc(2 * var(--rhythm)));
               height: 250px;
               border-top: 1px solid rgba(7, 96, 115, 0.14);
               border-bottom: 1px solid rgba(7, 96, 115, 0.14);

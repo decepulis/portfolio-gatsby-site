@@ -9,12 +9,8 @@ export const StyledNavbar = styled.nav`
           top: 0;
           margin-left: calc(-50vw + 50%);
           margin-right: calc(-50vw + 50%);
-          padding-left: calc(
-            50vw - calc(50% + ${props => props.theme.typography.rhythm(1)})
-          );
-          padding-right: calc(
-            50vw - calc(50% + ${props => props.theme.typography.rhythm(1)})
-          );
+          padding-left: calc(50vw - calc(50% + var(--rhythm)));
+          padding-right: calc(50vw - calc(50% + var(--rhythm)));
 
           &:after {
             content: "";
@@ -64,8 +60,7 @@ export const StyledNavList = styled.ul`
           margin: 0;
           li {
             margin: 0;
-            padding: ${props => props.theme.typography.rhythm(1 / 2)}
-              ${props => props.theme.typography.rhythm(1)};
+            padding: calc(0.5 * var(--rhythm)) var(--rhythm);
           }
         `
       default:

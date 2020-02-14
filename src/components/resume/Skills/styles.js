@@ -14,12 +14,12 @@ export const StyledPosts = styled.section`
         return css`
           /** mobile layout of articles */
           article {
-            margin-bottom: ${props => props.theme.typography.rhythm(1)};
+            margin-bottom: var(--rhythm);
             position: relative;
 
             /** not the last article? you get a straight line under you! */
             &:not(:last-child) {
-              margin-bottom: ${props => props.theme.typography.rhythm(5)};
+              margin-bottom: calc(5 * var(--rhythm));
 
               &:after {
                 content: "";
@@ -30,10 +30,10 @@ export const StyledPosts = styled.section`
 
                 display: block;
                 position: absolute;
-                height: ${props => props.theme.typography.rhythm(5)};
-                bottom: calc(-1 * ${props => props.theme.typography.rhythm(5)});
+                height: calc(5 * var(--rhythm));
+                bottom: calc(-1 * calc(5 * var(--rhythm)));
 
-                width: ${props => props.theme.typography.rhythm(1)};
+                width: var(--rhythm);
                 left: 50%;
               }
             }
@@ -45,7 +45,7 @@ export const StyledPosts = styled.section`
               display: grid;
               grid-template-columns: 1fr 3fr;
               grid-template-areas: "header dl" "arrow arrow";
-              grid-gap: ${props => props.theme.typography.rhythm(1)};
+              grid-gap: var(--rhythm);
 
               header {
                 grid-area: header;
@@ -62,7 +62,7 @@ export const StyledPosts = styled.section`
 
               /** ...arrows for big */
               &:not(:last-child) {
-                margin-bottom: ${props => props.theme.typography.rhythm(1)};
+                margin-bottom: var(--rhythm);
 
                 &:after {
                   background-image: url(${lineH});
@@ -96,7 +96,7 @@ export const StyledPosts = styled.section`
                 break-inside: avoid;
 
                 &:not(:last-child) {
-                  margin-bottom: ${props => props.theme.typography.rhythm(1)};
+                  margin-bottom: var(--rhythm);
                 }
 
                 dd {

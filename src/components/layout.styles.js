@@ -21,10 +21,10 @@ ${props => {
             props.isChrome ? "auto" : "var(--scroll-behavior)"};
 
           @media (prefers-reduced-motion: reduce) {
-            html {
-              --scroll-behavior: auto;
-            }
+            --scroll-behavior: auto;
           }
+
+          --rhythm: ${props => props.theme.typography.rhythm(1)};
 
           a {
             text-decoration: none;
@@ -53,7 +53,7 @@ export const StyledLayout = styled.div`
         return css`
           max-width: ${props => (props.path === "/" ? "60em" : "40em")};
           margin: 0 auto;
-          padding: 0 ${props => props.theme.typography.rhythm(1)};
+          padding: 0 var(--rhythm);
         `
       default:
         return
@@ -72,8 +72,8 @@ export const StyledHeader = styled.header`
           @media (min-width: 30rem) {
             grid-template-columns: 3fr 1fr;
           }
-          grid-space: ${props => props.theme.typography.rhythm(1)};
-          padding: ${props => props.theme.typography.rhythm(1)} 0;
+          grid-space: var(--rhythm);
+          padding: var(--rhythm) 0;
 
           z-index: 5;
 
