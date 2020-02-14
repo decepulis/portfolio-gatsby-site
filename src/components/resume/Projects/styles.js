@@ -88,8 +88,20 @@ export const StyledProjectPosts = styled.section`
             box-shadow: ${props => props.theme.boxShadowLg};
             background-color: white;
             padding: ${props => props.theme.typography.rhythm(1)};
+
             & > p:last-of-type {
               margin: 0;
+            }
+
+            .gatsby-image-wrapper {
+              background-color: rgba(7, 96, 115, 0.14);
+              background-clip: padding-box;
+              margin: 0 calc(-1 * ${props => props.theme.typography.rhythm(1)})
+                ${props => props.theme.typography.rhythm(1)};
+              width: calc(100% + ${props => props.theme.typography.rhythm(2)});
+              height: 250px;
+              border-top: 1px solid rgba(7, 96, 115, 0.14);
+              border-bottom: 1px solid rgba(7, 96, 115, 0.14);
             }
           }
         `

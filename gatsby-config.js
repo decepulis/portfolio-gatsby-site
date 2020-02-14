@@ -1,14 +1,10 @@
 module.exports = {
   plugins: [
-    `gatsby-plugin-netlify-cms`,
-    `gatsby-transformer-remark`,
-    `gatsby-plugin-styled-components`,
     {
-      resolve: "gatsby-plugin-react-svg",
+      resolve: `gatsby-source-filesystem`,
       options: {
-        rule: {
-          include: /\.inline\.svg$/,
-        },
+        name: `assets`,
+        path: `${__dirname}/static/assets`,
       },
     },
     {
@@ -18,5 +14,43 @@ module.exports = {
         path: `${__dirname}/src/posts`,
       },
     },
+
+    {
+      resolve: `gatsby-plugin-netlify-cms-paths`,
+      options: {
+        cmsConfig: `/static/admin/config.yml`,
+      },
+    },
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-plugin-netlify-cms-paths`,
+            options: {
+              cmsConfig: `/static/admin/config.yml`,
+            },
+          },
+          {
+            resolve: `gatsby-remark-images`,
+            options: { maxWidth: 300 },
+          },
+        ],
+      },
+    },
+
+    `gatsby-plugin-styled-components`,
+    {
+      resolve: "gatsby-plugin-react-svg",
+      options: {
+        rule: {
+          include: /\.inline\.svg$/,
+        },
+      },
+    },
+
+    `gatsby-plugin-netlify-cms`,
   ],
 }

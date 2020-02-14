@@ -5,6 +5,7 @@ description: A lightweight marketing landing page featuring dark mode, subtle pa
 date: 2019-04-01T00:00:00.000Z
 datetimeformat: MM-YYYY
 featuredpost: true
+featuredimage: assets/projects-mmb-site.png
 tags:
   [
     "parcel",

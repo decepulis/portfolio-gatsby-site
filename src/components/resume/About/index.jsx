@@ -1,4 +1,5 @@
 import React from "react"
+import { graphql, useStaticQuery } from "gatsby"
 
 import {
   StyledAbout,
@@ -10,9 +11,23 @@ import {
   StyledActionButton,
 } from "./styles"
 
-import headshot from "./headshot-bw-web.jpg"
-
 const About = React.forwardRef(({ id }, ref) => {
+  const data = useStaticQuery(
+    graphql`
+      query {
+        file(name: { eq: "headshot-bw-web" }) {
+          childImageSharp {
+            fluid(maxWidth: 200) {
+              ...GatsbyImageSharpFluid_withWebp
+            }
+          }
+        }
+      }
+    `
+  )
+
+  console.log(data)
+
   return (
     <StyledAbout id={id} ref={ref}>
       <StyledContainer>
@@ -20,10 +35,7 @@ const About = React.forwardRef(({ id }, ref) => {
           <h2>About Me</h2>
         </StyledHeader>
 
-        <StyledProfile
-          src={headshot}
-          alt="Yep. That's my face, gazing into the camera. I thought I had a pretty nice haircut here."
-        />
+        <StyledProfile fluid={data.file.childImageSharp.fluid} />
 
         <StyledHeroText>
           <StyledLead>

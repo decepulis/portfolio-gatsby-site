@@ -5,5 +5,6 @@ description: An unfinished little game for identifying Google Trends, with a gro
 date: 2019-12-01T00:00:00.000Z
 datetimeformat: MM-YYYY
 featuredpost: true
+featuredimage: assets/projects-chart-game.png
 tags: ["react", "recharts", "data visualization", "netlify"]
 ---

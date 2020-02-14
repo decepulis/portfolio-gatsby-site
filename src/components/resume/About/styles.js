@@ -1,5 +1,7 @@
 import styled, { css } from "styled-components"
 
+import Img from "gatsby-image"
+
 import wave from "./wave.svg"
 
 export const StyledAbout = styled.section`
@@ -122,7 +124,7 @@ export const StyledContainer = styled.div`
   }};
 `
 
-export const StyledProfile = styled.img`
+export const StyledProfile = styled(Img)`
   width: 200px;
   height: 200px;
 

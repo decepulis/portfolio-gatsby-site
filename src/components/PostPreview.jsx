@@ -1,9 +1,9 @@
 import React from "react"
 import { Link } from "gatsby"
 
-import { StyledPostPreview } from "./PostPreview.styles"
+import { StyledPostPreview, StyledImg } from "./PostPreview.styles"
 
-export default ({ title, subtitle, date, description, slug }) => (
+export default ({ title, subtitle, date, description, slug, image }) => (
   <StyledPostPreview>
     <header>
       {title && (
@@ -14,6 +14,11 @@ export default ({ title, subtitle, date, description, slug }) => (
       {subtitle && <p>{subtitle}</p>}
       {date && <p>{date}</p>}
     </header>
+    {image ? (
+      <StyledImg fluid={image} />
+    ) : (
+      <div className="gatsby-image-wrapper gatsby-image-wrapper-placeholder"></div>
+    )}
     {description && <p>{description}</p>}
   </StyledPostPreview>
 )

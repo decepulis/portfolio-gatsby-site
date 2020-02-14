@@ -5,6 +5,7 @@ description: Wake up to artisan coffee
 date: 2018-02-01T00:00:00.000Z
 datetimeformat: MM-YYYY
 featuredpost: true
+featuredimage: assets/projects-coffee.jpg
 tags: ["arduino", "electronics"]
 ---
 

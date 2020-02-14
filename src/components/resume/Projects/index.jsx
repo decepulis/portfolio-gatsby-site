@@ -27,6 +27,13 @@ const Projects = React.forwardRef(({ id }, ref) => {
                 subtitle
                 date(formatString: "MMMM YYYY")
                 description
+                featuredimage {
+                  childImageSharp {
+                    fluid(maxWidth: 500) {
+                      ...GatsbyImageSharpFluid_withWebp
+                    }
+                  }
+                }
               }
             }
           }
@@ -57,6 +64,7 @@ const Projects = React.forwardRef(({ id }, ref) => {
             subtitle={node.frontmatter.subtitle}
             date={node.frontmatter.date}
             description={node.frontmatter.description}
+            image={node.frontmatter.featuredimage?.childImageSharp.fluid}
             slug={node.fields.slug}
           />
         ))}
