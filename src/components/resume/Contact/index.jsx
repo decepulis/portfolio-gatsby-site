@@ -22,22 +22,26 @@ const Contact = React.forwardRef(({ id }, ref) => (
     <StyledContactList>
       <StyledEmailItem>
         <a href="mailto:darius@decepulis.com">
-          <IconEmail height="2em" />
+          <IconEmail aria-hidden="true" focusable="false" height="2em" />
+          <span class="visually-hidden">Email</span>
         </a>
       </StyledEmailItem>
       <StyledLinkedinItem>
         <a href="https://www.linkedin.com/in/decepulis/">
-          <IconLinkedin height="2em" />
+          <IconLinkedin aria-hidden="true" focusable="false" height="2em" />
+          <span class="visually-hidden">LinkedIn</span>
         </a>
       </StyledLinkedinItem>
       <StyledFacebookItem>
         <a href="https://www.facebook.com/de.cepulis">
-          <IconFacebook height="2em" />
+          <IconFacebook aria-hidden="true" focusable="false" height="2em" />
+          <span class="visually-hidden">Facebook</span>
         </a>
       </StyledFacebookItem>
       <StyledInstagramItem>
         <a href="https://www.instagram.com/__dardarbinks/">
-          <IconInstagram height="2em" />
+          <IconInstagram aria-hidden="true" focusable="false" height="2em" />
+          <span class="visually-hidden">Instagram</span>
         </a>
       </StyledInstagramItem>
     </StyledContactList>
