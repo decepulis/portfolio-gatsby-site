@@ -87,14 +87,17 @@ export default function NavBar({ sectionRefs }) {
     <StyledNavbar ref={navRef}>
       <StyledNavList>
         <li>
-          <StyledNavLink href="#about" active={activeSection === "about"}>
+          <StyledNavLink
+            href="#about"
+            aria-current={activeSection === "about" ? "section" : null}
+          >
             About
           </StyledNavLink>
         </li>
         <li>
           <StyledNavLink
             href="#positions"
-            active={activeSection === "positions"}
+            aria-current={activeSection === "positions" ? "section" : null}
           >
             Positions
           </StyledNavLink>
@@ -102,23 +105,32 @@ export default function NavBar({ sectionRefs }) {
         <li>
           <StyledNavLink
             href="#education"
-            active={activeSection === "education"}
+            aria-current={activeSection === "education" ? "section" : null}
           >
             Education
           </StyledNavLink>
         </li>
         <li>
-          <StyledNavLink href="#projects" active={activeSection === "projects"}>
+          <StyledNavLink
+            href="#projects"
+            aria-current={activeSection === "projects" ? "section" : null}
+          >
             Projects
           </StyledNavLink>
         </li>
         <li>
-          <StyledNavLink href="#skills" active={activeSection === "skills"}>
+          <StyledNavLink
+            href="#skills"
+            aria-current={activeSection === "skills" ? "section" : null}
+          >
             Skills
           </StyledNavLink>
         </li>
         <li>
-          <StyledNavLink href="#contact" active={activeSection === "contact"}>
+          <StyledNavLink
+            href="#contact"
+            aria-current={activeSection === "contact" ? "section" : null}
+          >
             Contact
           </StyledNavLink>
         </li>

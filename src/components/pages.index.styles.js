@@ -5,6 +5,7 @@ export const StyledMain = styled.main`
       case "2019":
         return css`
           --section-rhythm: ${props => props.theme.typography.rhythm(2)};
+
           h2 {
             text-align: center;
             margin-bottom: var(--section-rhythm);
@@ -16,6 +17,17 @@ export const StyledMain = styled.main`
           }
           & > section {
             margin-top: var(--section-rhythm);
+
+            /* Each section's header acts as an anchor target */
+            /* We add an offset to ensure that the navbar has room atop the header */
+            header[id] {
+              margin-top: calc(
+                -1 * ${props => props.theme.typography.rhythm(3)}
+              );
+              padding-top: calc(
+                1 * ${props => props.theme.typography.rhythm(3)}
+              );
+            }
           }
         `
       default:

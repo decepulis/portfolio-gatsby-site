@@ -53,10 +53,10 @@ const Positions = React.forwardRef(({ id }, ref) => {
   const theme = useContext(ThemeContext)
 
   return (
-    <StyledPositions id={id} ref={ref}>
+    <StyledPositions ref={ref}>
       {theme.id !== "2019" ? (
         <>
-          <header>
+          <header id={id}>
             <h2>Positions</h2>
           </header>
           <StyledPosts>
@@ -80,7 +80,7 @@ const Positions = React.forwardRef(({ id }, ref) => {
       ) : (
         <>
           <StyledCompanies>
-            <header>
+            <header id={id}>
               <h2>
                 Join the employers who have trusted Darius with over{" "}
                 <Link to="/positions/">

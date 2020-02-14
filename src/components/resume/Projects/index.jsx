@@ -48,8 +48,8 @@ const Projects = React.forwardRef(({ id }, ref) => {
   )
 
   return (
-    <StyledProjects id={id} ref={ref}>
-      <header>
+    <StyledProjects ref={ref}>
+      <header id={id}>
         <h2>
           Side-
           <wbr />
