@@ -14,8 +14,9 @@ export const StyledProjects = styled.section`
           color: white;
 
           /* Some padding to maintain vertical section rhythm */
-          padding-top: var(--section-rhythm);
-          padding-bottom: var(--section-rhythm);
+          padding: var(--section-rhythm) var(--rhythm);
+
+          margin: 0 calc(-50vw + 50%);
 
           /* Place cards above backdrop */
           & > * {
@@ -28,8 +29,8 @@ export const StyledProjects = styled.section`
             content: "";
 
             position: absolute;
-            left: calc(-50vw + 50%);
-            right: calc(-50vw + 50%);
+            left: 0;
+            right: 0;
 
             height: 100%;
             top: 0;
@@ -61,8 +62,8 @@ export const StyledProjects = styled.section`
 
             height: calc(100% + 2px);
             top: -1px;
-            left: calc(-50vw + 50%);
-            right: calc(-50vw + 50%);
+            left: 0;
+            right: 0;
           }
         `
 
@@ -77,10 +78,30 @@ export const StyledProjectPosts = styled.section`
     switch (props.theme.id) {
       case "2019":
         return css`
+          overflow-x: scroll;
+          margin: 0 calc(-1 * var(--rhythm)) var(--rhythm);
+
           display: grid;
-          grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-          grid-gap: 2em;
-          margin-bottom: var(--rhythm);
+          grid-gap: var(--rhythm);
+
+          --card-width: calc(100vw - calc(2 * var(--rhythm)));
+          @media (min-width: 600px) {
+            --card-width: calc(600px - calc(2 * var(--rhythm)));
+          }
+          grid-template-columns:
+            1px
+            repeat(9, var(--card-width))
+            1px;
+
+          &:before,
+          &:after {
+            /* 
+            * these are 1px columns: a little trick
+            * to get padding in an x-scroll container
+            */
+            content: "";
+            width: 1px;
+          }
 
           article {
             color: ${props => props.theme.typography.options.bodyColor};
