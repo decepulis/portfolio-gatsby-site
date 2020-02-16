@@ -9,7 +9,7 @@ const Projects = React.forwardRef(({ id }, ref) => {
     graphql`
       query {
         articles: allMarkdownRemark(
-          limit: 9
+          limit: 7
           sort: { fields: [frontmatter___date], order: DESC }
           filter: {
             fileAbsolutePath: { regex: "/(projects)/" }
@@ -50,11 +50,7 @@ const Projects = React.forwardRef(({ id }, ref) => {
   return (
     <StyledProjects ref={ref}>
       <header id={id}>
-        <h2>
-          Side-
-          <wbr />
-          Projects
-        </h2>
+        <h2>Projects</h2>
       </header>
       <StyledProjectPosts>
         {data.articles.edges.map(({ node }) => (

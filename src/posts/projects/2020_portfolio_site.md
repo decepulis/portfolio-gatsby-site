@@ -1,8 +1,8 @@
 ---
 templateKey: post
-title: This Website
-description: Exploring the Jamstack with Gatsby and Netlify, while over-doing it with Styled Components.
-date: 2020-01-01T00:00:00.000Z
+title: This Portfolio Site
+description: Exploring the Jamstack. Overzealous Theme Picker. React/Gatsby/Styled-Components/Netlify
+date: 2020-03-01T00:00:00.000Z
 datetimeformat: MM-YYYY
 featuredpost: true
 tags:

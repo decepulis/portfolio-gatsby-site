@@ -79,14 +79,16 @@ export const StyledProjectPosts = styled.section`
       case "2019":
         return css`
           overflow-x: scroll;
+          scroll-snap-type: x mandatory;
           margin: 0 calc(-1 * var(--rhythm)) var(--rhythm);
+          padding-top: 0.2rem; /* some room for cards to hover into */
 
           display: grid;
           grid-gap: var(--rhythm);
 
-          --card-width: calc(100vw - calc(2 * var(--rhythm)));
-          @media (min-width: 600px) {
-            --card-width: calc(600px - calc(2 * var(--rhythm)));
+          --card-width: calc(90vw - calc(2 * var(--rhythm)));
+          @media (min-width: 560px) {
+            --card-width: calc(504px - calc(2 * var(--rhythm)));
           }
           grid-template-columns:
             1px
@@ -104,6 +106,7 @@ export const StyledProjectPosts = styled.section`
           }
 
           article {
+            /* make nice card */
             color: ${props => props.theme.typography.options.bodyColor};
             border-radius: ${props => props.theme.cardRadius};
             box-shadow: ${props => props.theme.boxShadowLg};
@@ -114,14 +117,45 @@ export const StyledProjectPosts = styled.section`
               margin: 0;
             }
 
+            transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
+            &:hover {
+              box-shadow: ${props => props.theme.boxShadowXl};
+              transform: translateY(-0.2rem);
+            }
+
+            /* expand link to cover card */
+            position: relative;
+            a {
+              &:after {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                pointer-events: auto;
+                z-index: 2;
+              }
+            }
+            &:hover {
+            }
+
+            /* make article snapping card*/
+            scroll-snap-align: center;
+
+            /* make image neat*/
             .gatsby-image-wrapper {
               background-color: rgba(7, 96, 115, 0.14);
               background-clip: padding-box;
               margin: 0 calc(-1 * var(--rhythm)) var(--rhythm);
               width: calc(100% + calc(2 * var(--rhythm)));
-              height: 250px;
+              height: calc(var(--card-width) / 1.33);
               border-top: 1px solid rgba(7, 96, 115, 0.14);
               border-bottom: 1px solid rgba(7, 96, 115, 0.14);
+
+              * img {
+                object-position: center 0 !important;
+              }
             }
           }
         `

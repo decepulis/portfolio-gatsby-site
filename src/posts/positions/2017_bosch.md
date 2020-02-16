@@ -11,7 +11,6 @@ tags:
     "javascript/es6",
     "css",
     "html",
-    "pug",
     "data visualization",
     "jquery",
     "node.js",

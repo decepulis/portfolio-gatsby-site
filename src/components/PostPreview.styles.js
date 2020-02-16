@@ -19,8 +19,8 @@ export const StyledPostPreview = styled.article`
 `
 
 export const StyledImg = styled(Img)`
-  width: 200px;
-  height: 200px;
+  width: 320px;
+  height: 240px;
 
   ${props => {
     switch (props.theme.id) {
