@@ -31,7 +31,7 @@ ${props => {
             color: inherit;
             box-shadow: inset 0 -0.25em 0 -1px ${props => props.theme.primary}88;
 
-            transition: background 0.1s 0s ease-in-out,
+            transition: color 0.1s 0s ease-in-out,
               box-shadow 0.1s 0s ease-in-out;
 
             &:hover {
@@ -74,6 +74,8 @@ export const StyledHeader = styled.header`
           }
           grid-space: var(--rhythm);
           padding: var(--rhythm) 0;
+          margin-bottom: ${props =>
+            props.path !== "/" ? "var(--rhythm)" : null};
 
           z-index: 5;
 
@@ -101,6 +103,7 @@ export const StyledHeader = styled.header`
               box-shadow: inset 0 -0.25em 0 -1px ${props => props.theme.primary};
               &:hover {
                 box-shadow: inset 0 calc(-1em - 2px) 0 -1px ${props => props.theme.primary};
+                color: white;
               }
             }
           }
