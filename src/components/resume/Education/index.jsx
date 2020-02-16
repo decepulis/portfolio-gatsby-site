@@ -41,7 +41,7 @@ const Education = React.forwardRef(({ id }, ref) => {
   )
 
   return (
-    <section ref={ref}>
+    <section ref={ref} data-scroll-id={id}>
       <header id={id}>
         <h2>Education</h2>
       </header>

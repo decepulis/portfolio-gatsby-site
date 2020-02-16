@@ -69,7 +69,7 @@ export default function NavBar({ sectionRefs }) {
       })
     }
 
-    setActiveSection(topRef?.current?.id)
+    setActiveSection(topRef?.current?.getAttribute("data-scroll-id"))
   }, [sectionRefs])
 
   useEventListener(
