@@ -110,6 +110,15 @@ export const StyledLogoContainerLink = styled(Link)`
                 opacity: 0;
               }
             }
+            &:active {
+              box-shadow: none;
+              img {
+                opacity: 0.5;
+              }
+              .mask {
+                opacity: 1;
+              }
+            }
           }
         `
       default:

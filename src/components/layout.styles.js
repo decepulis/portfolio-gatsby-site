@@ -34,8 +34,14 @@ ${props => {
             transition: color 0.1s 0s ease-in-out,
               box-shadow 0.1s 0s ease-in-out;
 
+            &:focus {
+              outline: 0.25em solid ${props => props.theme.primary}55;
+            }
             &:hover {
               box-shadow: inset 0 calc(-1em - 2px) 0 -1px ${props => props.theme.primary}55;
+            }
+            &:active {
+              box-shadow: inset 0 calc(-0.9em) 0 -1px ${props => props.theme.primary}88;
             }
           }
         }
@@ -101,8 +107,15 @@ export const StyledHeader = styled.header`
                   color: white;
                   box-shadow: inset 0 -0.25em 0 -1px
                     ${props => props.theme.primary};
+                  &:focus {
+                    outline: 0.25em solid ${props => props.theme.primary};
+                  }
                   &:hover {
                     box-shadow: inset 0 calc(-1em - 2px) 0 -1px ${props => props.theme.primary};
+                  }
+                  &:active {
+                    box-shadow: inset 0 -0.9em 0 -1px
+                      ${props => props.theme.primary};
                   }
                 `};
             }

@@ -205,7 +205,11 @@ export const StyledActionButton = styled.div`
           &:hover {
             box-shadow: ${props => props.theme.boxShadow};
             transform: translateY(-0.1em);
+          }
+          &:active {
             background-color: ${props => props.theme.primaryDark};
+            box-shadow: ${props => props.theme.boxShadowSm};
+            transform: translateY(-0.05em);
           }
 
           margin: 0 auto;
@@ -225,6 +229,7 @@ export const StyledActionButton = styled.div`
             box-shadow: none;
             &:hover {
               box-shadow: none;
+              text-decoration: underline;
             }
           }
         `

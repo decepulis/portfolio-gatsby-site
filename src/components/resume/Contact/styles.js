@@ -110,6 +110,10 @@ const StyledContactListItem = styled.li`
               transform: translateY(-0.1em);
               box-shadow: ${props => props.theme.boxShadowSm};
             }
+            &:active {
+              transform: translateY(-0.05em);
+              box-shadow: ${props => props.theme.boxShadowXs};
+            }
           }
           svg {
             height: 1.5em;
@@ -126,12 +130,8 @@ export const StyledEmailItem = styled(StyledContactListItem)`
     switch (props.theme.id) {
       case "2019":
         return css`
-          & a {
-            box-shadow: none;
-            &:hover {
-              box-shadow: none;
-              background-color: #d14836;
-            }
+          & a:hover {
+            background-color: #d14836;
           }
         `
       default:

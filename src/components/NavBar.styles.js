@@ -59,15 +59,15 @@ export const StyledNavLink = styled.a`
           font-size: 1.1em;
           text-decoration: none;
           && {
-            transition: color 0.2s ease;
             box-shadow: none;
             color: ${props => props.theme.typography.options.bodyColor};
 
-            &[aria-current="section"] {
+            &[aria-current="section"],
+            &:active {
               color: ${props => props.theme.primaryDark};
             }
             &:hover {
-              color: ${props => props.theme.primary};
+              text-decoration: underline;
             }
           }
         `

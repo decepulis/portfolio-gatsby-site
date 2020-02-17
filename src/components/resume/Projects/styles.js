@@ -122,6 +122,10 @@ export const StyledProjectPosts = styled.section`
               box-shadow: ${props => props.theme.boxShadowXl};
               transform: translateY(-0.2rem);
             }
+            &:active {
+              box-shadow: ${props => props.theme.boxShadowLg};
+              transform: translateY(-0.1rem);
+            }
 
             /* expand link to cover card */
             position: relative;
@@ -195,9 +199,13 @@ export const StyledProjectPosts = styled.section`
                   box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
                 box-shadow: ${props => props.theme.boxShadowXs};
                 &:hover {
-                  background-color: ${props => props.theme.primaryDark};
                   box-shadow: ${props => props.theme.boxShadowSm};
                   transform: translateY(-0.1em);
+                }
+                &:active {
+                  box-shadow: ${props => props.theme.boxShadowXs};
+                  transform: translateY(-0.05em);
+                  background-color: ${props => props.theme.primaryDark};
                 }
               }
             }
@@ -237,8 +245,14 @@ export const StyledLink = styled(Link)`
           && {
             color: white;
             box-shadow: inset 0 -0.25em 0 -1px ${props => props.theme.primary};
+            &:focus {
+              outline: 0.25em solid ${props => props.theme.primary};
+            }
             &:hover {
               box-shadow: inset 0 calc(-1em - 2px) 0 -1px ${props => props.theme.primary};
+            }
+            &:active {
+              box-shadow: inset 0 -0.9em 0 -1px ${props => props.theme.primary};
             }
           }
         `
