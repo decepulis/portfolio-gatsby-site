@@ -63,7 +63,9 @@ export const StyledNavLink = styled.a`
             box-shadow: none;
             color: ${props => props.theme.typography.options.bodyColor};
 
-            &[aria-current="section"],
+            &[aria-current="section"] {
+              color: ${props => props.theme.primaryDark};
+            }
             &:hover {
               color: ${props => props.theme.primary};
             }

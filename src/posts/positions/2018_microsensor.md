@@ -7,7 +7,7 @@ date: 2018-11-05T00:00:00.000Z
 datetimeformat: YYYY
 featuredpost: true
 tags: [
-"react", "hooks", "javascript/es6", "css", "scss", "styled-components", "python", "django", "aws", "webpack", "parcel", "html", "pug", "bootstrap", "xstate", "recharts", "chart.js", "data visualization", "jquery", "requirements", "markdown", "gulp", "nunjucks", "load times", "raspberry pi", "postgresql", "apache", "illustrator", "photoshop", "final cut", "ui/ux", "marketing"
+"React", "JavaScript/ES6", "CSS", "SCSS", "Styled Components", "Python", "Django", "AWS", "Webpack", "Parcel", "HTML", "Pug", "Bootstrap", "XState", "Recharts", "Chart.js", "Data Visualization", "jQuery", "Requirements", "Markdown", "Gulp", "Nunjucks", "Load Times", "Raspberry Pi", "postgreSQL", "Apache", "Illustrator", "Photoshop", "Final Cut", "UI/UX", "Marketing"
 ]
 ---
 

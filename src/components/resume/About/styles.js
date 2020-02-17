@@ -31,7 +31,7 @@ export const StyledAbout = styled.section`
 
             background-image: linear-gradient(
               155.89deg,
-              ${props => props.theme.primaryDark} 12.21%,
+              ${props => props.theme.tertiary} 12.21%,
               ${props => props.theme.primary} 99.84%
             );
           }
@@ -198,12 +198,14 @@ export const StyledActionButton = styled.div`
 
           border-radius: ${props => props.theme.cardRadius};
           background-color: ${props => props.theme.primary};
-          transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
+          transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out,
+            background-color 0.2s ease-in-out;
           box-shadow: ${props => props.theme.boxShadowSm};
 
           &:hover {
             box-shadow: ${props => props.theme.boxShadow};
             transform: translateY(-0.1em);
+            background-color: ${props => props.theme.primaryDark};
           }
 
           margin: 0 auto;

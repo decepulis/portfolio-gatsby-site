@@ -8,16 +8,16 @@ datetimeformat: YYYY
 featuredpost: true
 tags:
   [
-    "javascript/es6",
-    "css",
-    "html",
-    "data visualization",
-    "jquery",
-    "node.js",
-    "raspberry pi",
-    "influxdb",
-    "requirements",
-    "ui/ux",
+    "JavaScript/ES6",
+    "CSS",
+    "HTML",
+    "Data Visualization",
+    "jQuery",
+    "Node.js",
+    "Raspberry Pi",
+    "InfluxDB",
+    "Requirements",
+    "UI/UX",
   ]
 ---
 

@@ -79,6 +79,7 @@ export const StyledProjectPosts = styled.section`
       case "2019":
         return css`
           overflow-x: scroll;
+          scrollbar-width: thin;
           scroll-snap-type: x mandatory;
           margin: 0 calc(-1 * var(--rhythm)) var(--rhythm);
           padding-top: 0.2rem; /* some room for cards to hover into */
@@ -113,6 +114,9 @@ export const StyledProjectPosts = styled.section`
             background-color: white;
             padding: 0 var(--rhythm);
 
+            display: flex;
+            flex-direction: column;
+
             transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
             &:hover {
               box-shadow: ${props => props.theme.boxShadowXl};
@@ -121,7 +125,7 @@ export const StyledProjectPosts = styled.section`
 
             /* expand link to cover card */
             position: relative;
-            a {
+            a:not(.tag) {
               &:after {
                 content: "";
                 position: absolute;
@@ -133,7 +137,69 @@ export const StyledProjectPosts = styled.section`
                 z-index: 2;
               }
             }
-            &:hover {
+
+            /* exempt tags, which have their own styling */
+            .tag-list {
+              /* grow to end of container so tags would be at bottom */
+              flex: 1 0 auto;
+
+              font-size: 0.9em;
+              &:before {
+                content: unset;
+              }
+              &:after {
+                /* 
+                * instead of the above-grid trick, we'll add padding at the end like this
+                */
+                content: " ";
+                white-space: pre;
+                flex: 0 0 var(--rhythm);
+              }
+              display: flex;
+              align-items: flex-end;
+              overflow-x: scroll;
+              scrollbar-width: thin;
+
+              /* 
+              * negative margins ensure that the tag's 
+              * shadows and transforms are visible
+              */
+              margin: calc(-1 * var(--rhythm)) calc(-1 * var(--rhythm)) 0;
+              padding: var(--rhythm);
+
+              .tag.tag {
+                z-index: 3;
+                flex: 0 0 auto;
+                --tag-right: calc(0.25 * 1em);
+                &:not(:last-child) {
+                  margin-right: var(--tag-right);
+                }
+
+                white-space: nowrap;
+                padding: calc(0.25 * 1em);
+                border-radius: calc(0.25 * 1em);
+                background-color: ${props => props.theme.primary};
+                color: white;
+                position: relative;
+                &:after {
+                  /* increase touch target size */
+                  content: "";
+                  position: absolute;
+                  height: 44px;
+                  width: calc(100% + var(--tag-right));
+                  left: calc(-0.5 * var(--tag-right));
+                  top: calc(-50% + 5.5px);
+                }
+
+                transition: background-color 0.2s ease-in-out,
+                  box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
+                box-shadow: ${props => props.theme.boxShadowXs};
+                &:hover {
+                  background-color: ${props => props.theme.primaryDark};
+                  box-shadow: ${props => props.theme.boxShadowSm};
+                  transform: translateY(-0.1em);
+                }
+              }
             }
 
             /* make article snapping card*/

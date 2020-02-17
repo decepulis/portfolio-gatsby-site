@@ -2,12 +2,11 @@
 templateKey: post
 title: Time Management Web App
 description: Trying to stay on schedule with Senior Design.
-stack: HTML, CSS, jQuery
 date: 2018-04-01T00:00:00.000Z
 datetimeformat: MM-YYYY
 featuredpost: false
 featuredimage: assets/projects-tt-interface.jpg
-tags: ["javascript/es6", "css", "html", "jquery", "ui/ux"]
+tags: ["JavaScript/ES6", "jQuery", "CSS", "HTML", "UI/UX"]
 ---
 
 Tic Talk: A Time Management App

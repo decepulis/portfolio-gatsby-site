@@ -62,13 +62,13 @@ const Skills = React.forwardRef(({ id }, ref) => (
               <Link to="/tags/react">React (Hooks, Context, Router)</Link>
             </dd>
             <dd>
-              <Link to="/tags/jquery">jQuery</Link>
+              <Link to="/tags/j-query">jQuery</Link>
             </dd>
             <dd>
               <Link to="/tags/bootstrap">Bootstrap</Link>
             </dd>
             <dd>
-              <Link to="/tags/xstate">XState</Link>
+              <Link to="/tags/x-state">XState</Link>
             </dd>
           </div>
           <div>
@@ -124,16 +124,16 @@ const Skills = React.forwardRef(({ id }, ref) => (
               <Link to="/tags/python">Python 3</Link>
             </dd>
             <dd>
-              <Link to="/tags/javascript-es-6">node.js</Link>
+              <Link to="/tags/java-script-es-6">node.js</Link>
             </dd>
           </div>
           <div>
             <dt>Databases</dt>
             <dd>
-              <Link to="/tags/postgresql">PostgreSQL</Link>
+              <Link to="/tags/postgre-sql">PostgreSQL</Link>
             </dd>
             <dd>
-              <Link to="/tags/influxdb">InfluxDB</Link>
+              <Link to="/tags/influx-db">InfluxDB</Link>
             </dd>
           </div>
           <div>
@@ -225,7 +225,7 @@ const Skills = React.forwardRef(({ id }, ref) => (
               <Link to="/tags/matlab">MATLAB</Link>
             </dd>
             <dd>
-              <Link to="/tags/latex">LaTeX</Link>
+              <Link to="/tags/la-te-x/">LaTeX</Link>
             </dd>
             <dd>
               <Link to="/tags/swift">Swift</Link>

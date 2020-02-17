@@ -31,9 +31,10 @@ export default {
     boxShadowLg: "0 30px 60px rgba(0,0,0,0.12);",
     cardRadius: "0.5rem",
 
-    primaryDark: "#000758",
     primary: "#109b9b",
+    primaryDark: "#078383",
     secondary: "#0051C1",
+    tertiary: "#000758",
   },
   rad: {
     // A pleasant take on web brutalistm:

@@ -27,7 +27,7 @@ const Projects = React.forwardRef(({ id }, ref) => {
                 subtitle
                 date(formatString: "MMMM YYYY")
                 description
-                stack
+                tags
                 featuredimage {
                   childImageSharp {
                     fluid(maxWidth: 500) {
@@ -61,7 +61,7 @@ const Projects = React.forwardRef(({ id }, ref) => {
             subtitle={node.frontmatter.subtitle}
             date={node.frontmatter.date}
             description={node.frontmatter.description}
-            stack={node.frontmatter.stack}
+            tags={node.frontmatter.tags}
             image={node.frontmatter.featuredimage?.childImageSharp.fluid}
             slug={node.fields.slug}
           />

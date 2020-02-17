@@ -2,22 +2,21 @@
 templateKey: post
 title: Sensor Analytics and Web Visualization
 description: Ferrying data from sensor to analytics and visualization.
-stack: Node.js, HTML, CSS, jQuery
 date: 2017-01-01T00:00:00.000Z
 datetimeformat: MM-YYYY
 featuredpost: false
 tags:
   [
-    "javascript/es6",
-    "css",
-    "html",
-    "data visualization",
-    "jquery",
-    "node.js",
-    "raspberry pi",
-    "influxdb",
-    "requirements",
-    "ui/ux",
+    "jQuery",
+    "Node.js",
+    "JavaScript/ES6",
+    "InfluxDB",
+    "CSS",
+    "HTML",
+    "Data Visualization",
+    "Raspberry Pi",
+    "Requirements",
+    "UI/UX",
   ]
 ---
 

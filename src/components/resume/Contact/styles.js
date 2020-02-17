@@ -24,7 +24,7 @@ export const StyledContactSection = styled.section`
 
             background-image: linear-gradient(
               155.89deg,
-              ${props => props.theme.primaryDark} 12.21%,
+              ${props => props.theme.tertiary} 12.21%,
               ${props => props.theme.primary} 99.84%
             );
           }
@@ -43,7 +43,7 @@ export const StyledContactSection = styled.section`
 
             background-image: linear-gradient(
               155.89deg,
-              ${props => props.theme.primaryDark} 12.21%,
+              ${props => props.theme.tertiary} 12.21%,
               ${props => props.theme.primary} 99.84%
             );
           }

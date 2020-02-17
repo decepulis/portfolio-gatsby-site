@@ -2,6 +2,18 @@ import styled, { css } from "styled-components"
 import Img from "gatsby-image"
 
 export const StyledPostPreview = styled.article`
+  .tag-list {
+    &:before {
+      content: "Tags: ";
+    }
+    .tag {
+      text-transform: capitalize;
+      &:not(:last-of-type):after {
+        content: ", ";
+        white-space: pre-line;
+      }
+    }
+  }
   ${props => {
     switch (props.theme.id) {
       case "2019":
