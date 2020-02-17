@@ -1,12 +1,13 @@
 ---
 templateKey: post
 title: sanibit
-description: A Full Stack Application Powering Hand Hygiene Compliance. React, Django AWS, and Legacy jQuery.
+description: A Full Stack Application Powering Hand Hygiene Compliance.
+stack: React, jQuery, Recharts, XState, Django, AWS
 date: 2020-04-01T00:00:00.000Z
 datetimeformat: MM-YYYY
 featuredpost: true
-tags:
-  [
+tags: [
+    \
     "react",
     "hooks",
     "javascript/es6",

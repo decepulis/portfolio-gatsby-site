@@ -1,7 +1,8 @@
 ---
 templateKey: post
 title: Sensor Analytics and Web Visualization
-description: Ferrying data from sensor to analytics and visualization. Node.js/HTML/CSS/jQuery.
+description: Ferrying data from sensor to analytics and visualization.
+stack: Node.js, HTML, CSS, jQuery
 date: 2017-01-01T00:00:00.000Z
 datetimeformat: MM-YYYY
 featuredpost: false

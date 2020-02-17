@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 
 import { StyledPostPreview, StyledImg } from "./PostPreview.styles"
 
-export default ({ title, subtitle, date, description, slug, image }) => (
+export default ({ title, subtitle, date, description, slug, image, stack }) => (
   <StyledPostPreview>
     {image ? (
       <StyledImg fluid={image} />
@@ -19,6 +19,7 @@ export default ({ title, subtitle, date, description, slug, image }) => (
       )}
       {subtitle && <p>{subtitle}</p>}
       {date && <p>{date}</p>}
+      {stack && <p>{stack}</p>}
     </header>
 
     {description && <p>{description}</p>}

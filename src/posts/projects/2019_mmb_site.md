@@ -1,7 +1,8 @@
 ---
 templateKey: post
 title: Midwest Microbio Website
-description: A lightweight marketing landing page featuring dark mode, subtle parallax, and loads of SVGs. Pug/SCSS/ES6/Netlify.
+description: A lightweight marketing landing page featuring dark mode, subtle parallax, and loads of SVGs.
+stack: Pug, SCSS, ES6, Netlify
 date: 2019-03-01T00:00:00.000Z
 datetimeformat: MM-YYYY
 featuredpost: true
