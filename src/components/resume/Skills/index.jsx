@@ -50,7 +50,7 @@ const Skills = React.forwardRef(({ id }, ref) => (
           <div>
             <dt>Scripting</dt>
             <dd>
-              <Link to="/tags/javascript-es-6">JavaScript/ES6</Link>
+              <Link to="/tags/java-script-es-6">JavaScript/ES6</Link>
             </dd>
             <dd>
               <Link to="/tags/react">JSX</Link>
@@ -124,7 +124,7 @@ const Skills = React.forwardRef(({ id }, ref) => (
               <Link to="/tags/python">Python 3</Link>
             </dd>
             <dd>
-              <Link to="/tags/java-script-es-6">node.js</Link>
+              <Link to="/tags/node-js">node.js</Link>
             </dd>
           </div>
           <div>
