@@ -12,23 +12,6 @@ export const StyledNavbar = styled.nav`
           padding-left: calc(50vw - calc(50% + var(--rhythm)));
           padding-right: calc(50vw - calc(50% + var(--rhythm)));
 
-          &:after {
-            content: "";
-            position: absolute;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            height: 1px;
-            opacity: 0.08;
-            background-image: linear-gradient(
-              -90deg,
-              rgba(0, 0, 0, 0) 0,
-              #000 5%,
-              #000 90%,
-              rgba(0, 0, 0, 0) 100%
-            );
-          }
-
           z-index: 5;
 
           overflow-x: scroll;

@@ -93,18 +93,18 @@ export const StyledHeader = styled.header`
             }
 
             a {
-              color: ${props =>
-                props.path === "/"
-                  ? "white"
-                  : props.theme.typography.options.headerColor};
-              text-decoration: none;
               text-transform: lowercase;
 
-              box-shadow: inset 0 -0.25em 0 -1px ${props => props.theme.primary};
-              &:hover {
-                box-shadow: inset 0 calc(-1em - 2px) 0 -1px ${props => props.theme.primary};
-                color: white;
-              }
+              ${props =>
+                props.path === "/" &&
+                css`
+                  color: white;
+                  box-shadow: inset 0 -0.25em 0 -1px
+                    ${props => props.theme.primary};
+                  &:hover {
+                    box-shadow: inset 0 calc(-1em - 2px) 0 -1px ${props => props.theme.primary};
+                  }
+                `};
             }
           }
 

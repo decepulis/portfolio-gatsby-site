@@ -21,8 +21,20 @@ export const StyledMain = styled.main`
             /* Each section's header acts as an anchor target */
             /* We add an offset to ensure that the navbar has room atop the header */
             header[id] {
-              margin-top: calc(-1 * calc(3 * var(--rhythm)));
-              padding-top: calc(1 * calc(3 * var(--rhythm)));
+              --navbar-height: calc(var(--rhythm) + 1.1rem);
+              margin-top: calc(
+                -1 * calc(var(--section-rhythm) + var(--navbar-height))
+              );
+              padding-top: calc(
+                1 * calc(var(--section-rhythm) + var(--navbar-height))
+              );
+
+              /* for accessibility, we focus the header/section when we scroll to it. */
+              /* However, the focus outline doesn't look good and isn't necessary in this context */
+              /* https://css-tricks.com/focus-styles-non-interactive-elements/ */
+              &:focus {
+                outline: 0;
+              }
             }
           }
         `

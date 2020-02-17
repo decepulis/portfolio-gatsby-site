@@ -37,7 +37,8 @@ export const StyledContactSection = styled.section`
             --bg-height: calc(100% - var(--section-rhythm));
 
             height: calc(var(--bg-height) + var(--section-rhythm));
-            top: calc(100% - var(--bg-height));
+            /* 102 kills rounding errors */
+            top: calc(102% - var(--bg-height));
             z-index: -1;
 
             background-image: linear-gradient(

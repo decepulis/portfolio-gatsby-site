@@ -84,7 +84,7 @@ export const StyledProjectPosts = styled.section`
           padding-top: 0.2rem; /* some room for cards to hover into */
 
           display: grid;
-          grid-gap: var(--rhythm);
+          column-gap: var(--rhythm);
 
           --card-width: calc(90vw - calc(2 * var(--rhythm)));
           @media (min-width: 560px) {
@@ -105,17 +105,13 @@ export const StyledProjectPosts = styled.section`
             width: 1px;
           }
 
+          /* each article is a card */
           article {
-            /* make nice card */
             color: ${props => props.theme.typography.options.bodyColor};
             border-radius: ${props => props.theme.cardRadius};
             box-shadow: ${props => props.theme.boxShadowLg};
             background-color: white;
-            padding: var(--rhythm);
-
-            & > p:last-of-type {
-              margin: 0;
-            }
+            padding: 0 var(--rhythm);
 
             transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
             &:hover {
@@ -145,16 +141,18 @@ export const StyledProjectPosts = styled.section`
 
             /* make image neat*/
             .gatsby-image-wrapper {
-              background-color: rgba(7, 96, 115, 0.14);
+              background-color: rgba(7, 96, 115, 0.07);
               background-clip: padding-box;
               margin: 0 calc(-1 * var(--rhythm)) var(--rhythm);
-              width: calc(100% + calc(2 * var(--rhythm)));
+              width: var(--card-width);
               height: calc(var(--card-width) / 1.33);
-              border-top: 1px solid rgba(7, 96, 115, 0.14);
-              border-bottom: 1px solid rgba(7, 96, 115, 0.14);
+              border-bottom: 2px solid rgba(7, 96, 115, 0.07);
+              border-top-left-radius: ${props => props.theme.cardRadius};
+              border-top-right-radius: ${props => props.theme.cardRadius};
 
               * img {
                 object-position: center 0 !important;
+                transform: scale(1.01); /* fix some rounding errors */
               }
             }
           }
