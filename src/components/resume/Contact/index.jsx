@@ -15,8 +15,8 @@ import IconLinkedin from "./linkedin.inline.svg"
 import IconEmail from "./gmail.inline.svg"
 
 const Contact = React.forwardRef(({ id }, ref) => (
-  <StyledContactSection ref={ref} data-scroll-id={id}>
-    <header id={id}>
+  <StyledContactSection>
+    <header id={id} ref={ref}>
       <h2>Contact</h2>
     </header>
     <StyledContactList>

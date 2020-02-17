@@ -6,8 +6,8 @@ import { StyledPosts } from "./styles"
 
 // todo: pull _this_ information from the cms
 const Skills = React.forwardRef(({ id }, ref) => (
-  <section ref={ref} data-scroll-id={id}>
-    <header id={id}>
+  <section>
+    <header id={id} ref={ref}>
       <h2>Technical Skills</h2>
     </header>
 

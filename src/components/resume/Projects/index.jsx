@@ -49,8 +49,8 @@ const Projects = React.forwardRef(({ id }, ref) => {
   )
 
   return (
-    <StyledProjects ref={ref} data-scroll-id={id}>
-      <header id={id}>
+    <StyledProjects>
+      <header id={id} ref={ref}>
         <h2>Projects</h2>
       </header>
       <StyledProjectPosts>

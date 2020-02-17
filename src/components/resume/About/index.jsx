@@ -27,7 +27,7 @@ const About = React.forwardRef(({ id }, ref) => {
   )
 
   return (
-    <StyledAbout id={id} ref={ref} data-scroll-id={id}>
+    <StyledAbout id={id} ref={ref}>
       <StyledContainer>
         <StyledHeader>
           <h2>About Me</h2>

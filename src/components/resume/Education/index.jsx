@@ -41,8 +41,8 @@ const Education = React.forwardRef(({ id }, ref) => {
   )
 
   return (
-    <section ref={ref} data-scroll-id={id}>
-      <header id={id}>
+    <section>
+      <header id={id} ref={ref}>
         <h2>Education</h2>
       </header>
       <StyledEducationPosts>
