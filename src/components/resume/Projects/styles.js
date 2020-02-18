@@ -168,6 +168,7 @@ export const StyledProjectPosts = styled.section`
                 white-space: pre;
                 flex: 0 0 var(--rhythm);
               }
+              position: relative;
               &:before {
                 content: unset;
               }

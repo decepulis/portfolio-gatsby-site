@@ -192,29 +192,17 @@ const Skills = React.forwardRef(({ id }, ref) => (
           <div>
             <dt>Language</dt>
             <dd>
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://en.wikipedia.org/wiki/Common_European_Framework_of_Reference_for_Languages#Common_reference_levels"
-              >
+              <a href="https://en.wikipedia.org/wiki/Common_European_Framework_of_Reference_for_Languages#Common_reference_levels">
                 English (C2)
               </a>
             </dd>
             <dd>
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://en.wikipedia.org/wiki/Common_European_Framework_of_Reference_for_Languages#Common_reference_levels"
-              >
+              <a href="https://en.wikipedia.org/wiki/Common_European_Framework_of_Reference_for_Languages#Common_reference_levels">
                 Lithuanian (C1)
               </a>
             </dd>
             <dd>
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://en.wikipedia.org/wiki/Common_European_Framework_of_Reference_for_Languages#Common_reference_levels"
-              >
+              <a href="https://en.wikipedia.org/wiki/Common_European_Framework_of_Reference_for_Languages#Common_reference_levels">
                 German (A2)
               </a>
             </dd>
