@@ -2,6 +2,6 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg width="100%" height="100%" viewBox="0 0 600 600" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
     <g transform="matrix(1.64166,0,0,1.30512,323.767,320.65)">
-        <path d="M69.4,-96.2C90.2,-48.6 107.6,-24.3 130.5,22.9C153.3,70 181.7,140 160.8,176.8C140,213.7 70,217.3 5.2,212.2C-59.6,207 -119.3,192.9 -151.6,156.1C-183.9,119.3 -189,59.6 -193.8,-4.8C-198.6,-69.3 -203.3,-138.6 -170.9,-186.3C-138.6,-233.9 -69.3,-260 -22.5,-237.5C24.3,-214.9 48.6,-143.9 69.4,-96.2Z" style="fill:rgb(0,81,193);fill-opacity:0.1;fill-rule:nonzero;"/>
+        <path d="M69.4,-96.2C90.2,-48.6 107.6,-24.3 130.5,22.9C153.3,70 181.7,140 160.8,176.8C140,213.7 70,217.3 5.2,212.2C-59.6,207 -119.3,192.9 -151.6,156.1C-183.9,119.3 -189,59.6 -193.8,-4.8C-198.6,-69.3 -203.3,-138.6 -170.9,-186.3C-138.6,-233.9 -69.3,-260 -22.5,-237.5C24.3,-214.9 48.6,-143.9 69.4,-96.2Z" style="fill:rgb(0,81,193);fill-opacity:0.08;fill-rule:nonzero;"/>
     </g>
 </svg>

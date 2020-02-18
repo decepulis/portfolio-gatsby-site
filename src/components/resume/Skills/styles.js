@@ -120,32 +120,44 @@ export const StyledPosts = styled.section`
             }
 
             &:nth-of-type(1) {
-              background-image: url(${blob1});
+              background-image: url(${blob1}), url(${blob2});
+              background-position: 25% 33%, 75% 66%;
+              background-size: 66% 66%, 75% 75%;
 
               @media (min-width: 40em) {
                 background-image: none;
                 header {
-                  background-image: url(${blob1});
+                  background-image: url(${blob1}), url(${blob2});
+                  background-position: 25% 33%, 75% 66%;
+                  background-size: 66% 66%, 75% 75%;
                 }
               }
             }
             &:nth-of-type(2) {
-              background-image: url(${blob2});
+              background-image: url(${blob2}), url(${blob3});
+              background-position: 33% 33%, 66% 66%;
+              background-size: 75% 75%, 66% 66%;
 
               @media (min-width: 40em) {
                 background-image: none;
                 header {
-                  background-image: url(${blob2});
+                  background-image: url(${blob2}), url(${blob3});
+                  background-position: 33% 33%, 66% 66%;
+                  background-size: 75% 75%, 66% 66%;
                 }
               }
             }
             &:nth-of-type(3) {
-              background-image: url(${blob3});
+              background-image: url(${blob3}), url(${blob1});
+              background-position: 25% 33%, 75% 66%;
+              background-size: 66% 66%, 75% 75%;
 
               @media (min-width: 40em) {
                 background-image: none;
                 header {
-                  background-image: url(${blob3});
+                  background-image: url(${blob3}), url(${blob1});
+                  background-position: 25% 33%, 75% 66%;
+                  background-size: 66% 66%, 75% 75%;
                 }
               }
             }
