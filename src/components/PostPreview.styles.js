@@ -2,12 +2,19 @@ import styled, { css } from "styled-components"
 import Img from "gatsby-image"
 
 export const StyledPostPreview = styled.article`
-  .tag-list {
+  ul.tag-list {
+    list-style-type: none;
+    padding-left: 0;
+
     &:before {
       content: "Tags: ";
     }
-    .tag {
+
+    li {
+      display: inline;
+
       text-transform: capitalize;
+
       &:not(:last-of-type):after {
         content: ", ";
         white-space: pre-line;

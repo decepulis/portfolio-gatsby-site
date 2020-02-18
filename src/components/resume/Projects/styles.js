@@ -146,19 +146,8 @@ export const StyledProjectPosts = styled.section`
             .tag-list {
               /* grow to end of container so tags would be at bottom */
               flex: 1 0 auto;
-
               font-size: 0.9em;
-              &:before {
-                content: unset;
-              }
-              &:after {
-                /* 
-                * instead of the above-grid trick, we'll add padding at the end like this
-                */
-                content: " ";
-                white-space: pre;
-                flex: 0 0 var(--rhythm);
-              }
+
               display: flex;
               align-items: flex-end;
               overflow-x: scroll;
@@ -171,29 +160,32 @@ export const StyledProjectPosts = styled.section`
               margin: calc(-1 * var(--rhythm)) calc(-1 * var(--rhythm)) 0;
               padding: var(--rhythm);
 
-              .tag.tag {
+              &:after {
+                /* 
+                * instead of the above-grid trick, we'll add padding at the end like this
+                */
+                content: " ";
+                white-space: pre;
+                flex: 0 0 var(--rhythm);
+              }
+              &:before {
+                content: unset;
+              }
+
+              .tag-list-item.tag-list-item {
+                &:after {
+                  content: "";
+                }
+
                 z-index: 3;
                 flex: 0 0 auto;
+
+                margin-bottom: 0;
                 --tag-right: calc(0.25 * 1em);
                 &:not(:last-child) {
                   margin-right: var(--tag-right);
                 }
-
-                white-space: nowrap;
-                padding: calc(0.25 * 1em);
-                border-radius: calc(0.25 * 1em);
-                background-color: ${props => props.theme.primary};
-                color: white;
                 position: relative;
-                &:after {
-                  /* increase touch target size */
-                  content: "";
-                  position: absolute;
-                  height: 44px;
-                  width: calc(100% + var(--tag-right));
-                  left: calc(-0.5 * var(--tag-right));
-                  top: calc(-50% + 5.5px);
-                }
 
                 transition: background-color 0.2s ease-in-out,
                   box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
@@ -206,6 +198,24 @@ export const StyledProjectPosts = styled.section`
                   box-shadow: ${props => props.theme.boxShadowXs};
                   transform: translateY(-0.05em);
                   background-color: ${props => props.theme.primaryDark};
+                }
+              }
+
+              .tag.tag {
+                white-space: nowrap;
+                padding: calc(0.25 * 1em);
+                border-radius: calc(0.25 * 1em);
+                background-color: ${props => props.theme.primary};
+                color: white;
+
+                &:after {
+                  /* increase touch target size */
+                  content: "";
+                  position: absolute;
+                  height: 44px;
+                  top: -11px;
+                  width: calc(100% + var(--tag-right));
+                  left: calc(-0.5 * var(--tag-right));
                 }
               }
             }
