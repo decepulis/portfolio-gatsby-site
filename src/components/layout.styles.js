@@ -25,6 +25,11 @@ ${props => {
           }
 
           --rhythm: ${props => props.theme.typography.rhythm(1)};
+        }
+        body {
+          @media (min-width: 36rem) {
+            font-size: 18px !important;
+          }
 
           a {
             text-decoration: none;
@@ -57,7 +62,7 @@ export const StyledLayout = styled.div`
     switch (props.theme.id) {
       case "2019":
         return css`
-          max-width: ${props => (props.path === "/" ? "60em" : "40em")};
+          max-width: ${props => (props.path === "/" ? "60rem" : "40rem")};
           margin: 0 auto;
           padding: 0 var(--rhythm);
         `
