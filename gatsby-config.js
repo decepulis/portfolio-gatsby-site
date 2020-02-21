@@ -43,6 +43,12 @@ module.exports = {
 
     `gatsby-plugin-styled-components`,
     {
+      resolve: "gatsby-plugin-sass",
+      options: {
+        useResolveUrlLoader: true,
+      },
+    },
+    {
       resolve: "gatsby-plugin-react-svg",
       options: {
         rule: {

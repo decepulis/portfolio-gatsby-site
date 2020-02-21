@@ -1,15 +1,7 @@
 import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 
-import {
-  StyledAbout,
-  StyledContainer,
-  StyledHeader,
-  StyledLead,
-  StyledProfile,
-  StyledHeroText,
-  StyledActionButton,
-} from "./styles"
+import Img from "gatsby-image"
 
 const About = React.forwardRef(({ id }, ref) => {
   const data = useStaticQuery(
@@ -27,30 +19,33 @@ const About = React.forwardRef(({ id }, ref) => {
   )
 
   return (
-    <StyledAbout id={id} ref={ref}>
-      <StyledContainer>
-        <StyledHeader>
+    <section className="about" id={id} ref={ref}>
+      <div className="about-layout">
+        <header className="about-layout__header">
           <h2>About Me</h2>
-        </StyledHeader>
+        </header>
 
-        <StyledProfile fluid={data.file.childImageSharp.fluid} />
+        <Img
+          className="about-layout__profile"
+          fluid={data.file.childImageSharp.fluid}
+        />
 
-        <StyledHeroText>
-          <StyledLead>
+        <div className="about-layout__text">
+          <p className="lead">
             I am a Full-Stack Web&nbsp;Developer from Chicago,&nbsp;IL.
-          </StyledLead>
+          </p>
           <p>
             I specialize in Front-End applications and sites, ready to get deep
             into UI/UX, architecture, and tooling. I learn quickly and stuff.
           </p>
-          <StyledActionButton>
+          <div className="action-btn">
             <a role="button" href="#contact">
               Contact Now &rarr;
             </a>
-          </StyledActionButton>
-        </StyledHeroText>
-      </StyledContainer>
-    </StyledAbout>
+          </div>
+        </div>
+      </div>
+    </section>
   )
 })
 

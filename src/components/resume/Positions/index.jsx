@@ -1,7 +1,6 @@
 import React, { useContext } from "react"
 import { graphql, useStaticQuery, Link } from "gatsby"
 import PostPreview from "../../PostPreview"
-import { ThemeContext } from "styled-components"
 
 import { StyledPositions, StyledPosts } from "./styles"
 import {
@@ -14,6 +13,7 @@ import microsensor from "./logo-microsensor.svg"
 import bosch from "./logo-bosch.svg"
 import uc from "./logo-uc.svg"
 import bmw from "./logo-bmw.svg"
+import { WindowThemeContext } from "../../contexts/WindowThemeContext"
 
 const Positions = React.forwardRef(({ id }, ref) => {
   const data = useStaticQuery(
@@ -50,11 +50,11 @@ const Positions = React.forwardRef(({ id }, ref) => {
       }
     `
   )
-  const theme = useContext(ThemeContext)
+  const [, , currentTheme] = useContext(WindowThemeContext)
 
   return (
     <StyledPositions>
-      {theme.id !== "2019" ? (
+      {currentTheme?.id !== "2019" ? (
         <>
           <header id={id} ref={ref}>
             <h2>Positions</h2>

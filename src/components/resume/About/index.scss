@@ -1,0 +1,169 @@
+.about {
+  position: relative;
+  color: rgba(255, 255, 255, 0.9);
+
+  /* the about section should virtually extend behind the header
+           * so that the background goes back there, and
+           * so that anchor scrolling takes us all the way to the top */
+  margin-top: -10em;
+  padding-top: 10em;
+
+  /* background! */
+  &:before {
+    content: "";
+    position: absolute;
+
+    left: calc(-50vw + 50%);
+    right: calc(-50vw + 50%);
+    height: 100%;
+    top: 0;
+    z-index: -1;
+
+    background-image: linear-gradient(
+      155.89deg,
+      rgba(var(--tertiary), 1) 12.21%,
+      rgba(var(--primary), 1) 99.84%
+    );
+  }
+
+  /* wave */
+  padding-bottom: 70px;
+  @media (min-width: 48em) {
+    padding-bottom: 140px;
+  }
+  &:after {
+    content: "";
+
+    position: absolute;
+
+    bottom: 0;
+    left: calc(-50vw + 50%);
+    right: calc(-50vw + 50%);
+
+    background-image: url("./wave.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+
+    background-size: 1000px 100%;
+    height: 70px;
+    @media (min-width: 48em) {
+      background-size: 1920px 100%;
+      height: 140px;
+    }
+    @media (min-width: 1920px) {
+      background-size: 100% 100%;
+      height: 140px;
+    }
+  }
+}
+
+.about-layout {
+  display: grid;
+
+  grid-template-columns: 3fr 1fr;
+  grid-template-rows: auto;
+  grid-auto-flow: row dense;
+  align-items: center;
+
+  grid-template-areas:
+    "profile profile"
+    "text text";
+
+  --pad-space: calc(2 * var(--rhythm));
+  --grid-space: var(--rhythm);
+  padding: var(--pad-space) 0;
+  grid-gap: var(--grid-space);
+
+  @media (min-width: 28em) {
+    padding: var(--pad-space);
+  }
+  @media (min-width: 34em) {
+    --grid-space: calc(2 * var(--rhythm));
+    grid-template-areas: "text profile";
+  }
+  @media (min-width: 48em) {
+    --pad-space: calc(3 * var(--rhythm));
+    --grid-space: calc(3 * var(--rhythm));
+  }
+}
+
+.about-layout__header {
+  display: none;
+}
+
+.about-layout__profile {
+  grid-area: profile;
+
+  border-radius: 50%;
+  border: 0.5rem solid white;
+  width: 100%;
+  max-width: 125px;
+  height: auto;
+  margin: 0 auto;
+  box-shadow: var(--boxShadowLg);
+
+  @media (min-width: 34em) {
+    max-width: initial;
+  }
+}
+
+.about-layout__text {
+  grid-area: text;
+  text-align: center;
+  @media (min-width: 34em) {
+    text-align: left;
+  }
+
+  .lead {
+    font-size: var(--scale1size);
+    line-height: var(--scale1height);
+    @media (min-width: 48em) {
+      font-size: var(--scale75size);
+      line-height: var(--scale75height);
+    }
+    line-height: var(--headerLineHeight);
+    font-weight: var(--headerWeight);
+    color: white;
+  }
+}
+
+.action-btn {
+  width: 12em;
+
+  border-radius: var(--cardRadius);
+  background-color: rgba(var(--primary), 1);
+  transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out,
+    background-color 0.2s ease-in-out;
+  box-shadow: var(--boxShadowSm);
+
+  &:hover {
+    box-shadow: var(--boxShadow);
+    transform: translateY(-0.1em);
+  }
+  &:active {
+    background-color: rgba(var(--primaryDark), 1);
+    box-shadow: var(--boxShadowSm);
+    transform: translateY(-0.05em);
+  }
+
+  margin: 0 auto;
+  @media (min-width: 34em) {
+    margin: 0;
+  }
+
+  a {
+    display: block;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    line-height: calc(1.6 * var(--rhythm));
+    text-decoration: none;
+    color: white;
+
+    box-shadow: none;
+    &:hover {
+      box-shadow: none;
+      text-decoration: underline;
+    }
+  }
+}

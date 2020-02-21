@@ -6,8 +6,7 @@ import React, {
   useContext,
 } from "react"
 import useEventListener from "../components/utilities/useEventListener"
-
-import { ThemeContext } from "styled-components"
+import { WindowThemeContext } from "../components/contexts/WindowThemeContext"
 
 import { StyledNavbar, StyledNavList, StyledNavLink } from "./NavBar.styles"
 
@@ -38,7 +37,6 @@ const scrollElementLeftToHref = (scrollElement, targetHref) => {
 }
 
 export default function NavBar({ sectionRefs }) {
-  const theme = useContext(ThemeContext)
   const navRef = useRef()
   const [activeSection, setActiveSection] = useState()
 
@@ -72,9 +70,11 @@ export default function NavBar({ sectionRefs }) {
     setActiveSection(topRef?.current?.id)
   }, [sectionRefs])
 
+  const [, , currentTheme] = useContext(WindowThemeContext)
+
   useEventListener(
     "scroll",
-    theme.highlightNavOnScroll
+    currentTheme?.highlightNavOnScroll
       ? throttle(setActiveSectionOnScroll, 250)
       : () => {}
   )
