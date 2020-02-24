@@ -1,4 +1,4 @@
-import React, { useMemo, useContext } from "react"
+import React, { useContext } from "react"
 
 import { WindowThemeContext } from "../../components/contexts/WindowThemeContext"
 import themes from "../../styles/themes"
@@ -6,7 +6,6 @@ import "./polyfills.jsx"
 
 import { Link } from "gatsby"
 import Helmet from "react-helmet"
-import { GoogleFont } from "react-typography"
 
 const themeOptions = Object.entries(themes).map(([themeKey, themeValue]) => [
   themeKey,
@@ -17,20 +16,12 @@ const themeOptions = Object.entries(themes).map(([themeKey, themeValue]) => [
 export default ({ children, location: { pathname } }) => {
   const [theme, setTheme, currentTheme] = useContext(WindowThemeContext)
 
-  // We should also manage the typography
-  const typography = useMemo(() => {
-    return currentTheme?.typography
-  }, [currentTheme])
-
   return (
     <>
       {/* Manage Head */}
-      {(currentTheme?.typography || currentTheme?.variables) && (
+      {currentTheme?.variables && (
         <Helmet>
-          <style id="typography.js" type="text/css">
-            {currentTheme?.typography?.toString()}
-          </style>
-          <style id="variables" type="text/css">
+          <style id="js-variables" type="text/css">
             {currentTheme?.variables}
           </style>
         </Helmet>
@@ -60,8 +51,11 @@ export default ({ children, location: { pathname } }) => {
         </header>
         {children}
       </div>
+
       {/* Manage Google Fonts */}
-      {typography && <GoogleFont typography={typography} />}
+      {currentTheme?.fontHref && (
+        <link href={currentTheme?.fontHref} rel="stylesheet" />
+      )}
     </>
   )
 }

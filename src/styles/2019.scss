@@ -1,3 +1,27 @@
+& {
+  --boxShadowXs: 0 3px 5px rgba(0, 0, 0, 0.12);
+  --boxShadowSm: 0 5px 10px rgba(0, 0, 0, 0.12);
+  --boxShadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  --boxShadowLg: 0 30px 60px rgba(0, 0, 0, 0.12);
+  --cardRadius: 0.5rem;
+
+  --primary: 16, 155, 155;
+  --primaryDark: 7, 131, 131;
+  --secondary: 0, 81, 193;
+  --tertiary: 0, 7, 88;
+
+  // from typography.js
+  --rhythm: 1.45rem;
+  --scale1size: 2rem;
+  --scale1height: 2.9rem;
+  --scale75size: 2.63902rem;
+  --scale75height: 2.9rem;
+  --headerLineHeight: 1.1;
+  --headerWeight: bold;
+  --bodyColor: hsla(0, 0%, 0%, 0.8);
+}
+
+@import "./typography.js/typography.2019.scss";
 @import "../components/layout/styles.2019.scss";
 @import "../pages/index.2019.scss";
 @import "../components/resume/About/styles.2019.scss";
