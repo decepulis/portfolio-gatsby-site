@@ -37,8 +37,10 @@ body {
 }
 
 .layout {
-  // TODO: max-width: ${props => (props.path === "/" ? "60rem" : "40rem")};
-  max-width: 60rem;
+  max-width: 40rem;
+  &--home {
+    max-width: 60rem;
+  }
   margin: 0 auto;
   padding: 0 var(--rhythm);
 }
@@ -52,13 +54,12 @@ body {
   }
   grid-gap: var(--rhythm);
   padding: var(--rhythm) 0;
-  // TODO: margin-bottom: ${props => props.path !== "/" ? "var(--rhythm)" : null};
   margin-bottom: var(--rhythm);
+  &--home {
+    margin-bottom: unset;
+  }
 
   z-index: 5;
-
-  // TODO: color: ${props => props.path === "/" ? "rgba(255, 255, 255, 0.9)" : props.theme.typography.options.bodyColor};
-  color: var(--bodyColor);
 
   h1 {
     white-space: nowrap;
@@ -66,22 +67,20 @@ body {
     @media (max-width: 30rem) {
       font-size: 1.4em;
     }
+    text-transform: lowercase;
+  }
 
-    a {
-      text-transform: lowercase;
-
-      // TODO: ${props => props.path === "/" && css` ...
-      color: white;
-      box-shadow: inset 0 -0.25em 0 -1px rgba(var(--primary), 1);
-      &:focus {
-        outline: 0.25em solid rgba(var(--primary), 1);
-      }
-      &:hover {
-        box-shadow: inset 0 calc(-1em - 2px) 0 -1px rgba(var(--primary), 1);
-      }
-      &:active {
-        box-shadow: inset 0 -0.9em 0 -1px rgba(var(--primary), 1);
-      }
+  &--home a {
+    color: white;
+    box-shadow: inset 0 -0.25em 0 -1px rgba(var(--primary), 1);
+    &:focus {
+      outline: 0.25em solid rgba(var(--primary), 1);
+    }
+    &:hover {
+      box-shadow: inset 0 calc(-1em - 2px) 0 -1px rgba(var(--primary), 1);
+    }
+    &:active {
+      box-shadow: inset 0 -0.9em 0 -1px rgba(var(--primary), 1);
     }
   }
 

@@ -2,8 +2,6 @@ import React from "react"
 
 import { Link } from "gatsby"
 
-import { StyledPosts } from "./styles"
-
 // todo: pull _this_ information from the cms
 const Skills = React.forwardRef(({ id }, ref) => (
   <section>
@@ -11,7 +9,7 @@ const Skills = React.forwardRef(({ id }, ref) => (
       <h2>Technical Skills</h2>
     </header>
 
-    <StyledPosts>
+    <section className="skill-posts">
       <article>
         <header>
           <h3>Front-End Web</h3>
@@ -254,7 +252,7 @@ const Skills = React.forwardRef(({ id }, ref) => (
           </div>
         </dl>
       </article>
-    </StyledPosts>
+    </section>
   </section>
 ))
 

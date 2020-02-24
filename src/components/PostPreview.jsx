@@ -1,14 +1,14 @@
 import React from "react"
 import { Link } from "gatsby"
 
-import { StyledPostPreview, StyledImg } from "./PostPreview.styles"
-
 import { kebabCase } from "lodash"
 
+import Img from "gatsby-image"
+
 export default ({ title, subtitle, date, description, slug, image, tags }) => (
-  <StyledPostPreview>
+  <article className="post-preview">
     {image ? (
-      <StyledImg fluid={image} />
+      <Img className="post-preview__image" fluid={image} />
     ) : (
       <div className="gatsby-image-wrapper gatsby-image-wrapper-placeholder"></div>
     )}
@@ -39,5 +39,5 @@ export default ({ title, subtitle, date, description, slug, image, tags }) => (
         })}
       </ul>
     )}
-  </StyledPostPreview>
+  </article>
 )

@@ -2,13 +2,6 @@ import React, { useContext } from "react"
 import { graphql, useStaticQuery, Link } from "gatsby"
 import PostPreview from "../../PostPreview"
 
-import { StyledPositions, StyledPosts } from "./styles"
-import {
-  StyledCompanies,
-  StyledLogos,
-  StyledLogoContainerLink,
-} from "./styles.2019"
-
 import microsensor from "./logo-microsensor.svg"
 import bosch from "./logo-bosch.svg"
 import uc from "./logo-uc.svg"
@@ -53,13 +46,13 @@ const Positions = React.forwardRef(({ id }, ref) => {
   const [, , currentTheme] = useContext(WindowThemeContext)
 
   return (
-    <StyledPositions>
-      {currentTheme?.id !== "2019" ? (
+    <section className="positions">
+      {currentTheme?.id !== "twenty-nineteen" ? (
         <>
           <header id={id} ref={ref}>
             <h2>Positions</h2>
           </header>
-          <StyledPosts>
+          <section className="position-posts">
             {data.articles.edges.map(({ node }) => (
               <PostPreview
                 key={node.id}
@@ -70,7 +63,7 @@ const Positions = React.forwardRef(({ id }, ref) => {
                 slug={node.fields.slug}
               />
             ))}
-          </StyledPosts>
+          </section>
           <p>
             <Link to="/positions/">
               View All {data.totalCount.totalCount} Positions &rarr;
@@ -79,7 +72,7 @@ const Positions = React.forwardRef(({ id }, ref) => {
         </>
       ) : (
         <>
-          <StyledCompanies>
+          <div className="position-companies">
             <header id={id} ref={ref}>
               <h2>
                 Join the employers who have trusted Darius with over{" "}
@@ -89,28 +82,40 @@ const Positions = React.forwardRef(({ id }, ref) => {
                 !
               </h2>
             </header>
-            <StyledLogos>
-              <StyledLogoContainerLink to="/positions/2018_microsensor">
+            <div className="position-company-logos">
+              <Link
+                className="position-company-logos__link"
+                to="/positions/2018_microsensor"
+              >
                 <div className="mask microsensor" />
                 <img src={microsensor} alt="Microsensor Labs" />
-              </StyledLogoContainerLink>
-              <StyledLogoContainerLink to="/positions/2015_bmw/">
+              </Link>
+              <Link
+                className="position-company-logos__link"
+                to="/positions/2015_bmw/"
+              >
                 <div className="mask bmw" />
                 <img src={bmw} alt="BMW" />
-              </StyledLogoContainerLink>
-              <StyledLogoContainerLink to="/positions/2017_bosch/">
+              </Link>
+              <Link
+                className="position-company-logos__link"
+                to="/positions/2017_bosch/"
+              >
                 <div className="mask bosch" />
                 <img src={bosch} alt="Bosch" />
-              </StyledLogoContainerLink>
-              <StyledLogoContainerLink to="/projects/2018_thesis/">
+              </Link>
+              <Link
+                className="position-company-logos__link"
+                to="/projects/2018_thesis/"
+              >
                 <div className="mask uc" />
                 <img src={uc} alt="University of Cincinnati" />
-              </StyledLogoContainerLink>
-            </StyledLogos>
-          </StyledCompanies>
+              </Link>
+            </div>
+          </div>
         </>
       )}
-    </StyledPositions>
+    </section>
   )
 })
 

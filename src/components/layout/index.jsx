@@ -14,7 +14,7 @@ const themeOptions = Object.entries(themes).map(([themeKey, themeValue]) => [
   themeValue.disabled,
 ])
 
-export default ({ children, path }) => {
+export default ({ children, location: { pathname } }) => {
   const [theme, setTheme, currentTheme] = useContext(WindowThemeContext)
 
   // We should also manage the typography
@@ -37,8 +37,12 @@ export default ({ children, path }) => {
       )}
 
       {/* Manage Body */}
-      <div className="layout" path={path}>
-        <header className="page-header" path={path}>
+      <div className={`layout${pathname === "/" ? " layout--home" : ""}`}>
+        <header
+          className={`page-header${
+            pathname === "/" ? " page-header--home" : ""
+          }`}
+        >
           <h1>
             <Link to="/">Darius Cepulis</Link>
           </h1>

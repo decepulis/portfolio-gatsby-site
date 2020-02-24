@@ -11,7 +11,7 @@ export const WindowThemeProvider = ({ children }) => {
     isWindow ? window.__theme : "nineteen-eighty-nine"
   )
 
-  const currentTheme = themes[theme]
+  const currentTheme = { ...themes[theme], id: theme }
 
   if (isWindow) {
     window.__onThemeChange = () => {

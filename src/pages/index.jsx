@@ -1,8 +1,6 @@
 import React, { useRef, useMemo } from "react"
 
-import { StyledMain } from "../components/pages.index.styles"
-
-import NavBar from "../components/NavBar"
+import NavBar from "../components/resume/NavBar"
 
 import About from "../components/resume/About"
 import Positions from "../components/resume/Positions"
@@ -34,14 +32,14 @@ export default () => {
   return (
     <>
       <About id="about" ref={aboutRef} />
-      <StyledMain>
+      <main className="main">
         <NavBar sectionRefs={sectionList} />
         <Positions id="positions" ref={positionsRef} />
         <Education id="education" ref={educationRef} />
         <Projects id="projects" ref={projectsRef} />
         <Skills id="skills" ref={skillsRef} />
         <Contact id="contact" ref={contactRef} />
-      </StyledMain>
+      </main>
     </>
   )
 }

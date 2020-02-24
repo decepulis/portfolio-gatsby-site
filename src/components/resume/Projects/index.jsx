@@ -2,7 +2,7 @@ import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import PostPreview from "../../PostPreview"
 
-import { StyledProjects, StyledProjectPosts, StyledLink } from "./styles"
+import { Link } from "gatsby"
 
 const Projects = React.forwardRef(({ id }, ref) => {
   const data = useStaticQuery(
@@ -49,11 +49,11 @@ const Projects = React.forwardRef(({ id }, ref) => {
   )
 
   return (
-    <StyledProjects>
+    <section className="projects">
       <header id={id} ref={ref}>
         <h2>Projects</h2>
       </header>
-      <StyledProjectPosts>
+      <section className="project-posts">
         {data.articles.edges.map(({ node }) => (
           <PostPreview
             key={node.id}
@@ -66,13 +66,13 @@ const Projects = React.forwardRef(({ id }, ref) => {
             slug={node.fields.slug}
           />
         ))}
-      </StyledProjectPosts>
+      </section>
       <p>
-        <StyledLink to="/projects/">
+        <Link className="projects__link" to="/projects/">
           View All {data.totalCount.totalCount} Entries &rarr;
-        </StyledLink>
+        </Link>
       </p>
-    </StyledProjects>
+    </section>
   )
 })
 

@@ -5,10 +5,8 @@ import React, {
   useCallback,
   useContext,
 } from "react"
-import useEventListener from "../components/utilities/useEventListener"
-import { WindowThemeContext } from "../components/contexts/WindowThemeContext"
-
-import { StyledNavbar, StyledNavList, StyledNavLink } from "./NavBar.styles"
+import useEventListener from "../../components/utilities/useEventListener"
+import { WindowThemeContext } from "../../components/contexts/WindowThemeContext"
 
 import { throttle } from "lodash"
 
@@ -84,57 +82,63 @@ export default function NavBar({ sectionRefs }) {
   }, [activeSection])
 
   return (
-    <StyledNavbar ref={navRef}>
-      <StyledNavList>
+    <nav className="navbar" ref={navRef}>
+      <ul className="navlist">
         <li>
-          <StyledNavLink
+          <a
+            className="navlist__link"
             href="#about"
             aria-current={activeSection === "about" ? "section" : null}
           >
             About
-          </StyledNavLink>
+          </a>
         </li>
         <li>
-          <StyledNavLink
+          <a
+            className="navlist__link"
             href="#positions"
             aria-current={activeSection === "positions" ? "section" : null}
           >
             Positions
-          </StyledNavLink>
+          </a>
         </li>
         <li>
-          <StyledNavLink
+          <a
+            className="navlist__link"
             href="#education"
             aria-current={activeSection === "education" ? "section" : null}
           >
             Education
-          </StyledNavLink>
+          </a>
         </li>
         <li>
-          <StyledNavLink
+          <a
+            className="navlist__link"
             href="#projects"
             aria-current={activeSection === "projects" ? "section" : null}
           >
             Projects
-          </StyledNavLink>
+          </a>
         </li>
         <li>
-          <StyledNavLink
+          <a
+            className="navlist__link"
             href="#skills"
             aria-current={activeSection === "skills" ? "section" : null}
           >
             Skills
-          </StyledNavLink>
+          </a>
         </li>
         <li>
-          <StyledNavLink
+          <a
+            className="navlist__link"
             href="#contact"
             aria-current={activeSection === "contact" ? "section" : null}
           >
             Contact
-          </StyledNavLink>
+          </a>
         </li>
-      </StyledNavList>
-    </StyledNavbar>
+      </ul>
+    </nav>
   )
 }
