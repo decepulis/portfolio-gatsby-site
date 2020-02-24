@@ -8,14 +8,15 @@
 body {
   min-width: 300px;
 
-  @media (min-width: 36rem) {
-    font-size: 18px !important;
-  }
-
   scroll-behavior: var(--scroll-behavior);
 
   @media (prefers-reduced-motion: reduce) {
     --scroll-behavior: auto;
+  }
+}
+body {
+  @media (min-width: 36rem) {
+    font-size: 18px !important;
   }
 
   a {

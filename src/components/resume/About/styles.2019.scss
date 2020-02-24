@@ -28,7 +28,7 @@
 
   /* wave */
   padding-bottom: 70px;
-  @media (min-width: 48em) {
+  @media (min-width: 48rem) {
     padding-bottom: 140px;
   }
   &:after {
@@ -46,7 +46,7 @@
 
     background-size: 1000px 100%;
     height: 70px;
-    @media (min-width: 48em) {
+    @media (min-width: 48rem) {
       background-size: 1920px 100%;
       height: 140px;
     }
@@ -74,14 +74,14 @@
   padding: var(--pad-space) 0;
   grid-gap: var(--grid-space);
 
-  @media (min-width: 28em) {
+  @media (min-width: 28rem) {
     padding: var(--pad-space);
   }
-  @media (min-width: 34em) {
+  @media (min-width: 36rem) {
     --grid-space: calc(2 * var(--rhythm));
     grid-template-areas: "text profile";
   }
-  @media (min-width: 48em) {
+  @media (min-width: 48rem) {
     --pad-space: calc(3 * var(--rhythm));
     --grid-space: calc(3 * var(--rhythm));
   }
@@ -102,7 +102,7 @@
   margin: 0 auto;
   box-shadow: var(--boxShadowLg);
 
-  @media (min-width: 34em) {
+  @media (min-width: 36rem) {
     max-width: initial;
   }
 }
@@ -110,14 +110,14 @@
 .about-layout__text {
   grid-area: text;
   text-align: center;
-  @media (min-width: 34em) {
+  @media (min-width: 36rem) {
     text-align: left;
   }
 
   .lead {
     font-size: var(--scale1size);
     line-height: var(--scale1height);
-    @media (min-width: 48em) {
+    @media (min-width: 48rem) {
       font-size: var(--scale75size);
       line-height: var(--scale75height);
     }
@@ -147,7 +147,7 @@
   }
 
   margin: 0 auto;
-  @media (min-width: 34em) {
+  @media (min-width: 36rem) {
     margin: 0;
   }
 

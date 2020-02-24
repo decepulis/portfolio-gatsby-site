@@ -39,7 +39,7 @@
   /* background diagonals */
   --d-height: 4vw;
   @media (min-width: 60em) {
-    --d-height: 2vw;
+    --d-height: 3vw;
   }
   &:after {
     content: "";
@@ -49,8 +49,8 @@
     background-size: 100% var(--d-height);
     position: absolute;
 
-    height: calc(100% + 2px);
-    top: -1px;
+    height: calc(100% + 3px);
+    top: -1.5px;
     left: 0;
     right: 0;
   }

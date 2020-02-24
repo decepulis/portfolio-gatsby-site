@@ -1,6 +1,13 @@
 .main {
   --section-rhythm: calc(2 * var(--rhythm));
 
+  @media (min-width: 36rem) {
+    --section-rhythm: calc(4 * var(--rhythm));
+    h2 {
+      font-size: 2rem;
+    }
+  }
+
   h2 {
     text-align: center;
     margin-bottom: var(--section-rhythm);
