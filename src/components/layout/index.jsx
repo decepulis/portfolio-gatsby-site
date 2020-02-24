@@ -1,4 +1,4 @@
-import React, { useContext } from "react"
+import React, { useContext, useEffect, useState } from "react"
 
 import { WindowThemeContext } from "../../components/contexts/WindowThemeContext"
 import themes from "../../styles/themes"
@@ -15,6 +15,16 @@ const themeOptions = Object.entries(themes).map(([themeKey, themeValue]) => [
 
 export default ({ children, location: { pathname } }) => {
   const [theme, setTheme, currentTheme] = useContext(WindowThemeContext)
+  const [themeSelect, setThemeSelect] = useState()
+
+  const onThemeSelectChange = e => {
+    setTheme(e.target.value)
+  }
+
+  useEffect(() => {
+    /* useEffect overrides the select as set by the SSR once javascript loads */
+    setThemeSelect(theme)
+  }, [theme, setThemeSelect])
 
   return (
     <>
@@ -39,8 +49,8 @@ export default ({ children, location: { pathname } }) => {
           </h1>
           <select
             aria-label="Pick a Theme"
-            value={theme}
-            onChange={e => setTheme(e.target.value)}
+            value={themeSelect}
+            onChange={onThemeSelectChange}
           >
             {themeOptions.map(([id, label, disabled]) => (
               <option key={id} value={id} disabled={disabled}>

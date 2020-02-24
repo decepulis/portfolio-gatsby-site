@@ -17,8 +17,7 @@ export default {
     label: "2019",
     highlightNavOnScroll: true,
     variables: `html {--scroll-behavior: ${isChrome ? "auto" : "smooth"};}`,
-    fontHref:
-      "https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap",
+    fontHref: "https://fonts.googleapis.com/css?family=Roboto:400,700",
   },
   rad: {
     // A pleasant take on web brutalistm:

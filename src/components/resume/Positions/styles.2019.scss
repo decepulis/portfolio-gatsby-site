@@ -7,6 +7,21 @@
   }
 }
 
+.position-posts {
+  /* 
+  * React will eventually hide this div and replace it with -logos
+  * until then, we hide its contents and give it a placeholder height
+  */
+  position: relative;
+  height: 105px;
+  @media (min-width: 36rem) {
+    height: 45px;
+  }
+  & > * {
+    display: none;
+  }
+}
+
 .position-company-logos {
   display: grid;
   grid-template-columns: 1fr 1fr;
