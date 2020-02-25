@@ -1,4 +1,7 @@
-& {
+@import "./typography.js/typography.2019.scss";
+
+html.twenty-nineteen {
+  // variables
   --boxShadowXs: 0 3px 5px rgba(0, 0, 0, 0.12);
   --boxShadowSm: 0 5px 10px rgba(0, 0, 0, 0.12);
   --boxShadow: 0 8px 30px rgba(0, 0, 0, 0.12);
@@ -19,16 +22,16 @@
   --headerLineHeight: 1.1;
   --headerWeight: bold;
   --bodyColor: hsla(0, 0%, 0%, 0.8);
-}
 
-@import "./typography.js/typography.2019.scss";
-@import "../components/layout/styles.2019.scss";
-@import "../pages/index.2019.scss";
-@import "../components/resume/About/styles.2019.scss";
-@import "../components/resume/NavBar.2019.scss";
-@import "../components/resume/Contact/styles.2019.scss";
-@import "../components/resume/Education/styles.2019.scss";
-@import "../components/resume/Positions/styles.2019.scss";
-@import "../components/resume/Projects/styles.2019.scss";
-@import "../components/resume/Skills/styles.2019.scss";
-@import "../components/PostPreview.2019.scss";
+  // imports
+  @import "../components/layout/styles.2019.scss";
+  @import "../pages/index.2019.scss";
+  @import "../components/resume/About/styles.2019.scss";
+  @import "../components/resume/NavBar.2019.scss";
+  @import "../components/resume/Contact/styles.2019.scss";
+  @import "../components/resume/Education/styles.2019.scss";
+  @import "../components/resume/Positions/styles.2019.scss";
+  @import "../components/resume/Projects/styles.2019.scss";
+  @import "../components/resume/Skills/styles.2019.scss";
+  @import "../components/PostPreview.2019.scss";
+}

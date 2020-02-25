@@ -1,11 +1,6 @@
 // -- Themed Imports --
-html {
-  @import "./all.scss";
-}
-
-html.twenty-nineteen {
-  @import "./2019.scss";
-}
+@import "./all.scss";
+@import "./2019.scss";
 
 // -- Utilities --
 .visually-hidden-text {
