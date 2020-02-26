@@ -2,8 +2,10 @@
 /*
 new Typography({
   normalize: false,
-  headerFontFamily: ["Roboto", "sans-serif"],
-  bodyFontFamily: ["Roboto", "sans-serif"],
+  headerFontFamily: ["Lato", "sans-serif"],
+  bodyFontFamily: ["Lato", "sans-serif"],
+  scaleRatio: 3,
+  headerWeight: 100,
 })
 */
 & {
@@ -191,7 +193,7 @@ textarea {
   font: inherit;
 }
 & {
-  font: 100%/1.45 "Roboto", sans-serif;
+  font: 100%/1.45 "Lato", sans-serif;
   box-sizing: border-box;
   overflow-y: scroll;
 }
@@ -206,8 +208,8 @@ textarea {
 }
 body {
   color: hsla(0, 0%, 0%, 0.8);
-  font-family: "Roboto", sans-serif;
-  font-weight: normal;
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
   word-wrap: break-word;
   font-kerning: normal;
   -moz-font-feature-settings: "kern", "liga", "clig", "calt";
@@ -236,10 +238,10 @@ h1 {
   padding-top: 0;
   margin-bottom: 1.45rem;
   color: inherit;
-  font-family: "Roboto", sans-serif;
-  font-weight: bold;
+  font-family: "Lato", sans-serif;
+  font-weight: 100;
   text-rendering: optimizeLegibility;
-  font-size: 2rem;
+  font-size: 3rem;
   line-height: 1.1;
 }
 h2 {
@@ -252,10 +254,10 @@ h2 {
   padding-top: 0;
   margin-bottom: 1.45rem;
   color: inherit;
-  font-family: "Roboto", sans-serif;
-  font-weight: bold;
+  font-family: "Lato", sans-serif;
+  font-weight: 100;
   text-rendering: optimizeLegibility;
-  font-size: 1.51572rem;
+  font-size: 1.93318rem;
   line-height: 1.1;
 }
 h3 {
@@ -268,10 +270,10 @@ h3 {
   padding-top: 0;
   margin-bottom: 1.45rem;
   color: inherit;
-  font-family: "Roboto", sans-serif;
-  font-weight: bold;
+  font-family: "Lato", sans-serif;
+  font-weight: 100;
   text-rendering: optimizeLegibility;
-  font-size: 1.31951rem;
+  font-size: 1.55185rem;
   line-height: 1.1;
 }
 h4 {
@@ -284,8 +286,8 @@ h4 {
   padding-top: 0;
   margin-bottom: 1.45rem;
   color: inherit;
-  font-family: "Roboto", sans-serif;
-  font-weight: bold;
+  font-family: "Lato", sans-serif;
+  font-weight: 100;
   text-rendering: optimizeLegibility;
   font-size: 1rem;
   line-height: 1.1;
@@ -300,10 +302,10 @@ h5 {
   padding-top: 0;
   margin-bottom: 1.45rem;
   color: inherit;
-  font-family: "Roboto", sans-serif;
-  font-weight: bold;
+  font-family: "Lato", sans-serif;
+  font-weight: 100;
   text-rendering: optimizeLegibility;
-  font-size: 0.87055rem;
+  font-size: 0.80274rem;
   line-height: 1.1;
 }
 h6 {
@@ -316,10 +318,10 @@ h6 {
   padding-top: 0;
   margin-bottom: 1.45rem;
   color: inherit;
-  font-family: "Roboto", sans-serif;
-  font-weight: bold;
+  font-family: "Lato", sans-serif;
+  font-weight: 100;
   text-rendering: optimizeLegibility;
-  font-size: 0.81225rem;
+  font-size: 0.71922rem;
   line-height: 1.1;
 }
 hgroup {

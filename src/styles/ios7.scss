@@ -1,0 +1,37 @@
+& {
+  // Typography
+  @import "~normalize.css";
+  @import "./typography.js/typography.ios7.scss";
+
+  // variables
+  --lightblue: #38cbf8;
+  --darkblue: #3c81fa;
+  --yellow: #f8c731;
+  --green: #3cd86d;
+  --orange: #f69124;
+  --red: #f53034;
+  --raspberry: #f51f55;
+  --gray: #8e8e93;
+
+  // from typography.js
+  --rhythm: 1.45rem;
+  --scale1size: 3rem;
+  --scale1height: 3.625rem;
+  --scale75size: 4.65554rem;
+  --scale75height: 5.075rem;
+  --headerLineHeight: 1.1;
+  --headerWeight: 100;
+  --bodyColor: hsla(0, 0%, 0%, 0.8);
+
+  // imports
+  @import "../components/layout/styles.ios7.scss";
+  @import "../pages/index.ios7.scss";
+  @import "../components/resume/About/styles.ios7.scss";
+  @import "../components/resume/NavBar.ios7.scss";
+  @import "../components/resume/Contact/styles.ios7.scss";
+  @import "../components/resume/Education/styles.ios7.scss";
+  @import "../components/resume/Positions/styles.ios7.scss";
+  @import "../components/resume/Projects/styles.ios7.scss";
+  @import "../components/resume/Skills/styles.ios7.scss";
+  @import "../components/PostPreview.ios7.scss";
+}

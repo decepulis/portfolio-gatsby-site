@@ -17,7 +17,8 @@ export default {
     label: "2019",
     highlightNavOnScroll: true,
     variables: `html {--scroll-behavior: ${isChrome ? "auto" : "smooth"};}`,
-    fontHref: "https://fonts.googleapis.com/css?family=Roboto:400,700",
+    fontHref:
+      "https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap",
   },
   rad: {
     // A pleasant take on web brutalistm:
@@ -70,6 +71,10 @@ export default {
     // the title says it all
     // obnoxiously thin fonts, fade effects, maybe some parallax
     label: "Jony Ive",
-    disabled: true,
+    highlightNavOnScroll: true,
+    accessible: false,
+    variables: `html {--scroll-behavior: ${isChrome ? "auto" : "smooth"};}`,
+    fontHref:
+      "https://fonts.googleapis.com/css?family=Lato:100,300&display=swap",
   },
 }
