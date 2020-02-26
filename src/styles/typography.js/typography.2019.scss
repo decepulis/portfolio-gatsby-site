@@ -1,5 +1,5 @@
 // Generated with typography.js
-html {
+& {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -126,7 +126,7 @@ select {
 [type="reset"],
 [type="submit"],
 button,
-html [type="button"] {
+& [type="button"] {
   -webkit-appearance: button;
 }
 [type="button"]::-moz-focus-inner,
@@ -183,7 +183,7 @@ textarea {
   -webkit-appearance: button;
   font: inherit;
 }
-html {
+& {
   font: 100%/1.45 "Roboto", sans-serif;
   box-sizing: border-box;
   overflow-y: scroll;
