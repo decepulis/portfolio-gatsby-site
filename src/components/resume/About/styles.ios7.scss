@@ -1,0 +1,170 @@
+.about-layout {
+  color: var(--bodyColor);
+  display: grid;
+  position: relative;
+  border-radius: calc(0.75 * var(--rhythm));
+
+  grid-template-columns: 2fr 1fr;
+  @media (min-width: 36rem) {
+    grid-template-columns: 5fr 1fr;
+  }
+  grid-template-areas:
+    "header header"
+    "text profile";
+
+  margin: var(--rhythm) 0;
+  padding: calc(0.5 * var(--rhythm)) var(--rhythm);
+  grid-gap: var(--rhythm) calc(0.5 * var(--rhythm));
+
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  background-color: rgba(196, 196, 196, 0.9);
+  @supports (backdrop-filter: blur(10px)) {
+    background-color: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
+  }
+  &:hover {
+    background-color: rgba(196, 196, 196, 0.8);
+    @supports (backdrop-filter: blur(10px)) {
+      background-color: rgba(255, 255, 255, 0.5);
+    }
+    transform: scale(0.995);
+  }
+  &:active {
+    transform: scale(0.99);
+  }
+
+  &__header {
+    grid-area: header;
+
+    margin: calc(-0.5 * var(--rhythm)) calc(-1 * var(--rhythm));
+    padding: calc(0.5 * var(--rhythm)) calc(1 * var(--rhythm));
+    border-top-left-radius: calc(0.75 * var(--rhythm));
+    border-top-right-radius: calc(0.75 * var(--rhythm));
+
+    background-color: rgba(255, 255, 255, 0.4);
+
+    h2 {
+      font-size: 1em;
+      margin-bottom: 0;
+      font-weight: 300;
+      text-transform: uppercase;
+      color: var(--bodyColor);
+      opacity: 0.8;
+    }
+  }
+
+  &__profile {
+    grid-area: profile;
+
+    border-radius: 0.25rem;
+    box-shadow: var(--boxShadowLg);
+
+    &,
+    img {
+      width: unset !important;
+      height: unset !important;
+    }
+  }
+
+  &__text {
+    grid-area: text;
+
+    p {
+      margin-bottom: calc(0.5 * var(--rhythm));
+    }
+
+    .lead {
+      font-weight: normal;
+    }
+  }
+
+  .action-btn {
+    a {
+      &:before {
+        content: "Tap to ";
+      }
+      &:after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+      }
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+      color: var(--bodyColor);
+      opacity: 0.8;
+    }
+  }
+}
+
+.about {
+  min-height: 100vh;
+  color: rgba(255, 255, 255, 0.9);
+
+  position: relative;
+
+  background-color: rgb(25, 33, 60);
+  background-image: url("./ios7.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-left: calc(-50vw + 50%);
+  padding-left: calc(50vw - 50%);
+  margin-right: calc(-50vw + 50%);
+  padding-right: calc(50vw - 50%);
+  margin-top: calc(-1 * var(--header-height));
+  padding-top: var(--header-height);
+
+  --unlock-height: 1.5rem;
+  --unlock-padding: var(--rhythm);
+  @media (min-width: 36rem) {
+    --unlock-height: 2.5rem;
+    --unlock-padding: calc(2 * var(--rhythm));
+  }
+  padding-bottom: calc(var(--unlock-height) + calc(2 * var(--unlock-padding)));
+
+  &:after {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    font-size: var(--unlock-height);
+    line-height: var(--unlock-height);
+    padding: var(--unlock-padding);
+    text-align: center;
+    white-space: nowrap;
+    content: "scroll to unlock";
+
+    @supports (-webkit-text-fill-color: transparent) {
+      // https://css-tricks.com/slide-to-unlock/
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+
+      background-color: rgba(255, 255, 255, 0.5);
+      background-image: linear-gradient(
+        to top,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.75) 25%,
+        rgba(255, 255, 255, 1) 50%,
+        rgba(255, 255, 255, 0.75) 75%,
+        rgba(255, 255, 255, 0) 100%
+      );
+      background-size: 100% 75%;
+      background-repeat: no-repeat;
+
+      @keyframes unlock {
+        0% {
+          background-position: 0% 300%;
+        }
+        100% {
+          background-position: 0% -200%;
+        }
+      }
+      animation: unlock 3s infinite;
+    }
+  }
+}

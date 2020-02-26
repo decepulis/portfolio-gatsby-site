@@ -75,6 +75,6 @@ export default {
     accessible: false,
     variables: `html {--scroll-behavior: ${isChrome ? "auto" : "smooth"};}`,
     fontHref:
-      "https://fonts.googleapis.com/css?family=Lato:100,300&display=swap",
+      "https://fonts.googleapis.com/css?family=Lato:100,300,400&display=swap",
   },
 }

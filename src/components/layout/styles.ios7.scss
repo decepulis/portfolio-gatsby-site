@@ -1,0 +1,59 @@
+@import "./styles.shared.scss";
+
+& {
+  --header__h1-size: 4rem;
+  --header__h1-padding: var(--rhythm);
+  --header__select-height: 2rem;
+
+  @media (min-width: 36rem) {
+    --header__h1-size: 6rem;
+  }
+
+  --header-height: calc(
+    var(--header__h1-size) + calc(2 * var(--header__h1-padding)) +
+      var(--header__select-height)
+  );
+}
+
+.page-header--home {
+  scroll-snap-align: start;
+  height: var(--header-height);
+
+  &,
+  a {
+    color: white;
+    text-decoration: none;
+  }
+
+  display: block;
+  padding: 0;
+  text-align: center;
+
+  h1 {
+    font-size: var(--header__h1-size);
+    line-height: var(--header__h1-size);
+    height: calc(var(--header__h1-size) + var(--header__h1-padding));
+    overflow: hidden;
+    white-space: initial;
+    padding-top: var(--header__h1-padding);
+    margin-bottom: var(--header__h1-padding);
+  }
+  select {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 0.25em;
+    padding: 0.25em;
+    height: var(--header__select-height);
+    border: none;
+    color: white;
+    option {
+      color: var(--bodyColor);
+      &[disabled] {
+        color: #ccc;
+      }
+    }
+  }
+}
+
+& {
+  scroll-snap-type: y mandatory;
+}

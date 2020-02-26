@@ -1,0 +1,7 @@
+@import "./index.shared.scss";
+
+.main {
+  header[id] {
+    scroll-snap-align: start;
+  }
+}
