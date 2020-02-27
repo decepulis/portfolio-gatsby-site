@@ -19,3 +19,14 @@ if (smoothscroll.polyfill) {
   smoothscrollAnchor.polyfill({ force: isChrome })
 }
 // End Smoothscroll Nonsense ---------------------------------------------
+
+// VH for mobile browsers
+// https://css-tricks.com/the-trick-to-viewport-units-on-mobile/
+// We listen to the resize event
+if (typeof window !== "undefined") {
+  window.addEventListener("resize", () => {
+    // We execute the same script as before
+    let vh = window.innerHeight * 0.01
+    document.documentElement.style.setProperty("--vh", `${vh}px`)
+  })
+}

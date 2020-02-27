@@ -121,16 +121,22 @@
 
   --unlock-height: 1.5rem;
   --unlock-padding: var(--rhythm);
+  --unlock-mobile-bottom: calc(100vh - calc(var(--vh, 1vh) * 100));
   @media (min-width: 36rem) {
     --unlock-height: 2.5rem;
     --unlock-padding: calc(2 * var(--rhythm));
   }
-  padding-bottom: calc(var(--unlock-height) + calc(2 * var(--unlock-padding)));
+  padding-bottom: calc(
+    calc(var(--unlock-height) + calc(2 * var(--unlock-padding))) +
+      var(--unlock-mobile-bottom)
+  );
 
   &:after {
     position: absolute;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%)
+      translateY(calc(-1 * var(--unlock-mobile-bottom)));
+    transition: transform 0.1s ease;
     bottom: 0;
     font-size: var(--unlock-height);
     line-height: var(--unlock-height);
