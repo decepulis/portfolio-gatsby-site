@@ -1,3 +1,7 @@
+.about {
+  scroll-snap-align: start;
+}
+
 .about-layout {
   color: var(--bodyColor);
   display: grid;
@@ -91,9 +95,12 @@
         top: 0;
         left: 0;
       }
+
       text-decoration: none;
+      transition: box-shadow 0.2s ease;
+      box-shadow: inset 0px -2px 0px -1px rgba(0, 0, 0, 0);
       &:hover {
-        text-decoration: underline;
+        box-shadow: inset 0px -2px 0px -1px var(--bodyColor);
       }
       color: var(--bodyColor);
       opacity: 0.8;
@@ -107,11 +114,6 @@
 
   position: relative;
 
-  background-color: rgb(25, 33, 60);
-  background-image: url("./ios7.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
   margin-left: calc(-50vw + 50%);
   padding-left: calc(50vw - 50%);
   margin-right: calc(-50vw + 50%);

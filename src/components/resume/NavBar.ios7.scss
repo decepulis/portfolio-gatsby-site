@@ -1,1 +1,74 @@
-@import "./NavBar.shared.scss";
+.navbar {
+  scroll-snap-align: start;
+  height: 100vh;
+
+  position: relative;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+}
+
+.navlist {
+  height: 100%;
+  width: 100%;
+
+  --icon-padding: 1rem;
+  --icon-size: 4rem;
+  --line-height: 1.8rem;
+  @media (min-width: 60rem) {
+    --icon-padding: 2rem;
+    --icon-size: 5rem;
+    --line-height: 2rem;
+  }
+
+  line-height: calc(--line-height);
+  font-size: calc(var(--line-height) / 2);
+  --row-height: calc(var(--icon-size) + var(--line-height));
+
+  display: grid;
+  padding: calc(var(--icon-padding) / 2);
+  gap: 0 var(--icon-padding);
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  @media (min-width: 60rem) {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    padding: calc(2 * var(--icon-padding));
+    gap: var(--icon-padding);
+  }
+  grid-template-rows: repeat(auto-fill, minmax(var(--row-height), 1fr));
+  align-items: center;
+  justify-items: center;
+
+  list-style-type: none;
+  margin: 0;
+
+  li {
+    margin: 0;
+    text-align: center;
+    position: relative;
+
+    &:before {
+      content: "P";
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: var(--icon-size);
+      height: var(--icon-size);
+      border-radius: calc(var(--icon-size) / 4);
+      background-color: white;
+      box-shadow: 0 0 calc(var(--icon-size) / 2) rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  &__link {
+    color: white;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+    }
+  }
+}

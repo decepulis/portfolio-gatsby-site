@@ -13,10 +13,16 @@
     var(--header__h1-size) + calc(2 * var(--header__h1-padding)) +
       var(--header__select-height)
   );
+
+  background-color: rgb(25, 33, 60);
+  background-image: url("./ios7.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 .page-header--home {
-  scroll-snap-align: start;
   height: var(--header-height);
 
   &,
@@ -54,6 +60,7 @@
   }
 }
 
-& {
+&,
+body {
   scroll-snap-type: y mandatory;
 }
