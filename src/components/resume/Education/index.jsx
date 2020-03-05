@@ -39,8 +39,8 @@ const Education = React.forwardRef(({ id }, ref) => {
   )
 
   return (
-    <section>
-      <header id={id} ref={ref}>
+    <section id={id} ref={ref}>
+      <header>
         <h2>Education</h2>
       </header>
       <section className="education-posts">

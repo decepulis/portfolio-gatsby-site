@@ -49,8 +49,8 @@ const Projects = React.forwardRef(({ id }, ref) => {
   )
 
   return (
-    <section className="projects">
-      <header id={id} ref={ref}>
+    <section className="projects" id={id} ref={ref}>
+      <header>
         <h2>Projects</h2>
       </header>
       <section className="project-posts">

@@ -5,20 +5,18 @@
     margin-bottom: var(--section-rhythm);
   }
   /* Each section has its own context, and its own big margins */
-  & > section,
   & > nav {
     margin-bottom: var(--section-rhythm);
   }
   & > section {
-    margin-top: var(--section-rhythm);
-
-    /* Each section's header acts as an anchor target */
-    /* We add an offset to ensure that the navbar has room atop the header */
-    header[id] {
-      --navbar-height: calc(var(--rhythm) + 1rem);
-      /* TODO: scroll-margin-top */
-      margin-top: calc(-1 * calc(var(--section-rhythm) + var(--navbar-height)));
-      padding-top: calc(1 * calc(var(--section-rhythm) + var(--navbar-height)));
+    &[id] {
+      /* We add an offset to ensure that the navbar has room atop the header */
+      /* I'd love to use scroll-margin, but it just doesn't work in safari. */
+      /* Plus, this way makes the navbar highlighting easier */
+      margin-top: calc(-1 * var(--section-rhythm));
+      margin-bottom: calc(-1 * var(--section-rhythm));
+      padding-top: calc(1 * var(--section-rhythm));
+      padding-bottom: calc(1 * var(--section-rhythm));
 
       /* for accessibility, we focus the header/section when we scroll to it. */
       /* However, the focus outline doesn't look good and isn't necessary in this context */

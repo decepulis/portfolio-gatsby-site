@@ -1,11 +1,18 @@
+.projects.projects.projects {
+  /* say it enough times and CSS HAS to listen to you!!*/
+  margin-top: var(--section-rhythm);
+  margin-bottom: var(--section-rhythm);
+}
+
 .projects {
   position: relative;
   color: white;
 
   /* Some padding to maintain vertical section rhythm */
-  padding: var(--section-rhythm) var(--rhythm);
-
-  margin: 0 calc(-50vw + 50%);
+  padding-left: var(--rhythm);
+  padding-right: var(--rhythm);
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
 
   /* Place cards above backdrop */
   & > * {
@@ -13,7 +20,7 @@
     z-index: 1;
   }
 
-  /* background color */
+  /* background color/image */
   &:before {
     content: "";
 

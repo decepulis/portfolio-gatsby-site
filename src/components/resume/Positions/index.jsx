@@ -46,10 +46,10 @@ const Positions = React.forwardRef(({ id }, ref) => {
   const [, , currentTheme] = useContext(WindowThemeContext)
 
   return (
-    <section className="positions">
+    <section className="positions" id={id} ref={ref}>
       {currentTheme?.id !== "twenty-nineteen" ? (
         <>
-          <header id={id} ref={ref}>
+          <header>
             <h2>Positions</h2>
           </header>
           <section className="position-posts">
@@ -73,7 +73,7 @@ const Positions = React.forwardRef(({ id }, ref) => {
       ) : (
         <>
           <div className="position-companies">
-            <header id={id} ref={ref}>
+            <header>
               <h2>
                 Join the employers who have trusted Darius with over{" "}
                 <Link to="/positions/">
