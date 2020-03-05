@@ -51,6 +51,7 @@ export default ({ children, location: { pathname } }) => {
             aria-label="Pick a Theme"
             value={themeSelect}
             onChange={onThemeSelectChange}
+            onBlur={onThemeSelectChange}
           >
             {themeOptions.map(([id, label, disabled]) => (
               <option key={id} value={id} disabled={disabled}>
