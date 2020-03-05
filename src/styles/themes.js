@@ -16,7 +16,7 @@ export default {
     // blobs, waves, gradients
     label: "2019",
     highlightNavOnScroll: true,
-    variables: `html {--scroll-behavior: ${isChrome ? "auto" : "smooth"};}`,
+    variables: `html {--scroll-behavior-js: ${isChrome ? "auto" : "smooth"};}`,
     fontHref:
       "https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap",
   },
@@ -71,7 +71,7 @@ export default {
     // the title says it all
     // obnoxiously thin fonts, fade effects, maybe some parallax
     label: "Jony Ive",
-    highlightNavOnScroll: true,
+    highlightNavOnScroll: false,
     accessible: false,
     variables: `html {--scroll-behavior: ${isChrome ? "auto" : "smooth"};}`,
     fontHref:

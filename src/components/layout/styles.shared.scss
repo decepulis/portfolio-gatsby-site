@@ -8,10 +8,14 @@
 body {
   min-width: 300px;
 
-  scroll-behavior: var(--scroll-behavior);
+  /* The scroll-behavior variable tells the polyfill whether to activate */
+  --scroll-behavior: smooth;
+  /* The scroll-behavior-js variable tells the browser whether to activate */
+  scroll-behavior: var(--scroll-behavior-js, smooth);
 
   @media (prefers-reduced-motion: reduce) {
     --scroll-behavior: auto;
+    scroll-behavior: auto;
   }
 }
 
