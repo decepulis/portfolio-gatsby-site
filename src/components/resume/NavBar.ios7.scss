@@ -20,7 +20,7 @@
     --line-height: 2rem;
   }
 
-  line-height: calc(--line-height);
+  line-height: var(--line-height);
   font-size: calc(var(--line-height) / 2);
   --row-height: calc(var(--icon-size) + var(--line-height));
 

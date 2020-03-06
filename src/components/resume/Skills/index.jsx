@@ -6,7 +6,7 @@ import { Link } from "gatsby"
 const Skills = React.forwardRef(({ id }, ref) => (
   <section id={id} ref={ref}>
     <header>
-      <h2>Technical Skills</h2>
+      <h2>Skills</h2>
     </header>
 
     <section className="skill-posts">

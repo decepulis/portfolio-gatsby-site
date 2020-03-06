@@ -1,4 +1,6 @@
-import React, { useRef, useMemo } from "react"
+import React, { useRef, useMemo, useContext } from "react"
+
+import { WindowThemeContext } from "../components/contexts/WindowThemeContext"
 
 import NavBar from "../components/resume/NavBar"
 
@@ -10,6 +12,8 @@ import Projects from "../components/resume/Projects"
 import Contact from "../components/resume/Contact"
 
 export default () => {
+  const [, , currentTheme] = useContext(WindowThemeContext)
+
   const aboutRef = useRef()
   const positionsRef = useRef()
   const educationRef = useRef()
@@ -33,12 +37,25 @@ export default () => {
     <>
       <About id="about" ref={aboutRef} />
       <main className="main">
-        <NavBar sectionRefs={sectionList} />
+        <NavBar id="nav" sectionRefs={sectionList} />
         <Positions id="positions" ref={positionsRef} />
         <Education id="education" ref={educationRef} />
         <Projects id="projects" ref={projectsRef} />
         <Skills id="skills" ref={skillsRef} />
         <Contact id="contact" ref={contactRef} />
+
+        <a className="back-to-top" href={currentTheme.navIsTop ? "#nav" : "#"}>
+          <span className="back-to-top__arrow">&uarr;</span>
+          <span
+            className="back-to-top__text"
+            aria-hidden="true"
+            focusable="false"
+          >
+            {" "}
+            Back{currentTheme.navIsTop ? "" : " To Top"}
+          </span>
+          <span className="visually-hidden-text">Back to Top</span>
+        </a>
       </main>
     </>
   )

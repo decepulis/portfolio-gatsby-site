@@ -26,4 +26,45 @@
       }
     }
   }
+
+  .navbar[data-current="contact"] ~ .back-to-top {
+    transform: translateY(0);
+    transition: transform 0.2s ease;
+
+    &:hover {
+      transform: translateY(-0.1em);
+      box-shadow: var(--boxShadowSm);
+    }
+    &:active {
+      transform: translateY(-0.05em);
+      box-shadow: var(--boxShadowXs);
+    }
+  }
+
+  .back-to-top {
+    position: fixed;
+    bottom: var(--rhythm);
+    left: calc(var(--rhythm) / 2);
+    height: calc(2 * var(--rhythm));
+    width: calc(2 * var(--rhythm));
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgba(var(--primary), 1);
+    color: white;
+    z-index: 1000;
+
+    box-shadow: var(--boxShadowXs);
+    transform: translateY(calc(var(--rhythm) * 4));
+
+    transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out,
+      box-shadow 0.2s ease-in-out;
+
+    &__text {
+      display: none;
+    }
+  }
 }

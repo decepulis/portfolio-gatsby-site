@@ -61,8 +61,8 @@
     }
 
     a {
-      height: 3em;
-      width: 3em;
+      height: calc(2 * var(--rhythm));
+      width: calc(2 * var(--rhythm));
       border-radius: 50%;
 
       display: flex;

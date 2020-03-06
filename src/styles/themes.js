@@ -72,6 +72,7 @@ export default {
     // obnoxiously thin fonts, fade effects, maybe some parallax
     label: "Jony Ive",
     highlightNavOnScroll: false,
+    navIsTop: true,
     accessible: false,
     variables: `html {--scroll-behavior: ${isChrome ? "auto" : "smooth"};}`,
     fontHref:

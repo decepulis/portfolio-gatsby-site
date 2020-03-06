@@ -34,7 +34,7 @@ const scrollElementLeftToHref = (scrollElement, targetHref) => {
   }, 350)
 }
 
-export default function NavBar({ sectionRefs }) {
+export default function NavBar({ id, sectionRefs }) {
   const navRef = useRef()
   const [activeSection, setActiveSection] = useState()
 
@@ -82,13 +82,13 @@ export default function NavBar({ sectionRefs }) {
   }, [activeSection])
 
   return (
-    <nav className="navbar" ref={navRef}>
+    <nav id={id} className="navbar" ref={navRef} data-current={activeSection}>
       <ul className="navlist">
         <li>
           <a
             className="navlist__link"
             href="#about"
-            aria-current={activeSection === "about" ? "section" : null}
+            aria-current={activeSection === "about" ? "location" : null}
           >
             About
           </a>
@@ -97,7 +97,7 @@ export default function NavBar({ sectionRefs }) {
           <a
             className="navlist__link"
             href="#positions"
-            aria-current={activeSection === "positions" ? "section" : null}
+            aria-current={activeSection === "positions" ? "location" : null}
           >
             Positions
           </a>
@@ -106,7 +106,7 @@ export default function NavBar({ sectionRefs }) {
           <a
             className="navlist__link"
             href="#education"
-            aria-current={activeSection === "education" ? "section" : null}
+            aria-current={activeSection === "education" ? "location" : null}
           >
             Education
           </a>
@@ -115,7 +115,7 @@ export default function NavBar({ sectionRefs }) {
           <a
             className="navlist__link"
             href="#projects"
-            aria-current={activeSection === "projects" ? "section" : null}
+            aria-current={activeSection === "projects" ? "location" : null}
           >
             Projects
           </a>
@@ -124,7 +124,7 @@ export default function NavBar({ sectionRefs }) {
           <a
             className="navlist__link"
             href="#skills"
-            aria-current={activeSection === "skills" ? "section" : null}
+            aria-current={activeSection === "skills" ? "location" : null}
           >
             Skills
           </a>
@@ -133,7 +133,7 @@ export default function NavBar({ sectionRefs }) {
           <a
             className="navlist__link"
             href="#contact"
-            aria-current={activeSection === "contact" ? "section" : null}
+            aria-current={activeSection === "contact" ? "location" : null}
           >
             Contact
           </a>

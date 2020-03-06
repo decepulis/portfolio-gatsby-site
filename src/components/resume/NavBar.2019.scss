@@ -14,7 +14,7 @@
   box-shadow: none;
   color: var(--bodyColor);
 
-  &[aria-current="section"],
+  &[aria-current="location"],
   &:active {
     color: rgba(var(--primaryDark), 1);
     text-decoration: none;
