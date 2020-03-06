@@ -6,7 +6,7 @@ import "./polyfills.jsx"
 
 import { Link } from "gatsby"
 import Helmet from "react-helmet"
-import ParallaxBackground from "../utilities/parallaxBackground"
+import ParallaxBackground from "../utilities/ParallaxBackground"
 
 import ios7 from "./ios7.png"
 
