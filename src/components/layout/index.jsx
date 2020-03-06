@@ -6,6 +6,9 @@ import "./polyfills.jsx"
 
 import { Link } from "gatsby"
 import Helmet from "react-helmet"
+import ParallaxBackground from "../utilities/parallaxBackground"
+
+import ios7 from "./ios7.png"
 
 const themeOptions = Object.entries(themes).map(([themeKey, themeValue]) => [
   themeKey,
@@ -61,6 +64,9 @@ export default ({ children, location: { pathname } }) => {
           </select>
         </header>
         {children}
+        {currentTheme.id === "ios7" && (
+          <ParallaxBackground img={ios7} color="rgb(25, 33, 60)" />
+        )}
       </div>
 
       {/* Manage Google Fonts */}

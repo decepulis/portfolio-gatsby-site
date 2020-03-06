@@ -22,22 +22,6 @@
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
   scroll-snap-type: y mandatory;
-
-  &:after {
-    content: "";
-    position: fixed;
-    z-index: -1;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-
-    background-color: rgb(25, 33, 60);
-    background-image: url("./ios7.png");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
 }
 
 .page-header--home {
