@@ -1,6 +1,7 @@
 .navbar {
   scroll-snap-align: start;
   height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
 
   position: relative;
   margin-left: calc(-50vw + 50%);

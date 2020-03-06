@@ -1,6 +1,7 @@
 @import "./styles.shared.scss";
 
 & {
+  //html
   --header__h1-size: 4rem;
   --header__h1-padding: var(--rhythm);
   --header__select-height: 2rem;
@@ -13,13 +14,30 @@
     var(--header__h1-size) + calc(2 * var(--header__h1-padding)) +
       var(--header__select-height)
   );
+}
 
-  background-color: rgb(25, 33, 60);
-  background-image: url("./ios7.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
+.layout--home {
+  max-height: 100vh;
+  max-height: calc(var(--vh, 1vh) * 100);
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: y mandatory;
+
+  &:after {
+    content: "";
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+
+    background-color: rgb(25, 33, 60);
+    background-image: url("./ios7.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
 }
 
 .page-header--home {
@@ -58,9 +76,4 @@
       }
     }
   }
-}
-
-&,
-body {
-  scroll-snap-type: y mandatory;
 }
