@@ -17,11 +17,26 @@
 }
 
 .layout--home {
+  // make full-screen app
   max-height: 100vh;
   max-height: calc(var(--vh, 1vh) * 100);
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
   scroll-snap-type: y mandatory;
+
+  // override shared defaults
+  max-width: unset;
+  margin: unset;
+  padding: unset;
+
+  display: grid;
+  grid-template-columns:
+    [fullWidth-start] minmax(var(--rhythm), 1fr)
+    [article-start] minmax(auto, 60rem) [article-end]
+    minmax(var(--rhythm), 1fr) [fullWidth-end];
+  & > * {
+    grid-column: article;
+  }
 }
 
 .page-header--home {
