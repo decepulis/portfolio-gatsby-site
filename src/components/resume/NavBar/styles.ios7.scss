@@ -47,24 +47,23 @@
     margin: 0;
     text-align: center;
     position: relative;
-
-    &:before {
-      content: "P";
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: var(--icon-size);
-      height: var(--icon-size);
-      border-radius: calc(var(--icon-size) / 4);
-      background-color: white;
-      box-shadow: 0 0 calc(var(--icon-size) / 2) rgba(0, 0, 0, 0.2);
-    }
   }
 
   &__link {
     color: white;
     text-decoration: none;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+
+    &:before {
+      content: "";
+      display: block;
+      width: var(--icon-size);
+      height: var(--icon-size);
+      border-radius: calc(var(--icon-size) / 4);
+      background-color: var(--gray);
+      box-shadow: 0 0 calc(var(--icon-size) / 2) rgba(0, 0, 0, 0.2);
+    }
+
     &:after {
       content: "";
       position: absolute;
@@ -72,6 +71,25 @@
       left: 0;
       height: 100%;
       width: 100%;
+    }
+
+    &--about:before {
+      background-image: url('./ios7.about.svg')
+    }
+    &--positions:before {
+      background-image: url('./ios7.positions.svg')
+    }
+    &--education:before {
+      background-image: url('./ios7.education.svg')
+    }
+    &--projects:before {
+      background-image: url('./ios7.projects.svg')
+    }
+    &--skills:before {
+      background-image: url('./ios7.skills.svg')
+    }
+    &--contact:before {
+      background-image: url('./ios7.contact.svg')
     }
   }
 }

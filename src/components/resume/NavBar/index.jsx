@@ -5,8 +5,8 @@ import React, {
   useCallback,
   useContext,
 } from "react"
-import useEventListener from "../../components/utilities/useEventListener"
-import { WindowThemeContext } from "../../components/contexts/WindowThemeContext"
+import useEventListener from "../../../components/utilities/useEventListener"
+import { WindowThemeContext } from "../../../components/contexts/WindowThemeContext"
 
 import { throttle } from "lodash"
 
@@ -86,7 +86,7 @@ export default function NavBar({ id, sectionRefs }) {
       <ul className="navlist">
         <li>
           <a
-            className="navlist__link"
+            className="navlist__link navlist__link--about"
             href="#about"
             aria-current={activeSection === "about" ? "location" : null}
           >
@@ -95,7 +95,7 @@ export default function NavBar({ id, sectionRefs }) {
         </li>
         <li>
           <a
-            className="navlist__link"
+            className="navlist__link navlist__link--positions"
             href="#positions"
             aria-current={activeSection === "positions" ? "location" : null}
           >
@@ -104,7 +104,7 @@ export default function NavBar({ id, sectionRefs }) {
         </li>
         <li>
           <a
-            className="navlist__link"
+            className="navlist__link navlist__link--education"
             href="#education"
             aria-current={activeSection === "education" ? "location" : null}
           >
@@ -113,7 +113,7 @@ export default function NavBar({ id, sectionRefs }) {
         </li>
         <li>
           <a
-            className="navlist__link"
+            className="navlist__link navlist__link--projects"
             href="#projects"
             aria-current={activeSection === "projects" ? "location" : null}
           >
@@ -122,7 +122,7 @@ export default function NavBar({ id, sectionRefs }) {
         </li>
         <li>
           <a
-            className="navlist__link"
+            className="navlist__link navlist__link--skills"
             href="#skills"
             aria-current={activeSection === "skills" ? "location" : null}
           >
@@ -131,7 +131,7 @@ export default function NavBar({ id, sectionRefs }) {
         </li>
         <li>
           <a
-            className="navlist__link"
+            className="navlist__link navlist__link--contact"
             href="#contact"
             aria-current={activeSection === "contact" ? "location" : null}
           >
