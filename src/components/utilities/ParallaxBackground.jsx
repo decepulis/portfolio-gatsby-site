@@ -4,11 +4,11 @@ import { useMouse } from "react-use"
 
 const styles = {
   position: "fixed",
-  zIndex: -1,
+  zIndex: 0,
   top: 0,
   left: 0,
-  height: "100%",
-  width: "100%",
+  height: "100vh",
+  width: "100vw",
 
   backgroundPosition: "center",
   backgroundRepeat: "no-repeat",

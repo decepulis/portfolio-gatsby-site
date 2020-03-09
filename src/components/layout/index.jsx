@@ -63,10 +63,10 @@ export default ({ children, location: { pathname } }) => {
             ))}
           </select>
         </header>
-        {children}
         {currentTheme.id === "ios7" && (
           <ParallaxBackground img={ios7} color="rgb(25, 33, 60)" />
         )}
+        {children}
       </div>
 
       {/* Manage Google Fonts */}

@@ -5,7 +5,9 @@
 .navbar {
   scroll-snap-align: start;
   height: 100vh;
-  height: calc(var(--vh, 1vh) * 100);
+  @supports (-webkit-overflow-scrolling: touch) {
+    height: calc(var(--vh, 1vh) * 100);
+  }
 
   position: relative;
 }
@@ -74,22 +76,22 @@
     }
 
     &--about:before {
-      background-image: url('./ios7.about.svg')
+      background-image: url("./ios7.about.svg");
     }
     &--positions:before {
-      background-image: url('./ios7.positions.svg')
+      background-image: url("./ios7.positions.svg");
     }
     &--education:before {
-      background-image: url('./ios7.education.svg')
+      background-image: url("./ios7.education.svg");
     }
     &--projects:before {
-      background-image: url('./ios7.projects.svg')
+      background-image: url("./ios7.projects.svg");
     }
     &--skills:before {
-      background-image: url('./ios7.skills.svg')
+      background-image: url("./ios7.skills.svg");
     }
     &--contact:before {
-      background-image: url('./ios7.contact.svg')
+      background-image: url("./ios7.contact.svg");
     }
   }
 }

@@ -16,16 +16,27 @@
   );
 }
 
+&,
+body {
+  scroll-snap-type: y mandatory;
+}
 .layout--home {
   // make full-screen app
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  height: calc(var(--vh, 1vh) * 100);
-  width: 100vw;
-  overflow: scroll;
-  scroll-snap-type: y mandatory;
+  position: relative;
+  @supports (-webkit-overflow-scrolling: touch) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    @supports (-webkit-overflow-scrolling: touch) {
+      height: calc(var(--vh, 1vh) * 100);
+    }
+    width: 100vw;
+    overflow: scroll;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: y mandatory;
+  }
+  background-color: rgb(25, 33, 60);
 
   // override shared defaults
   max-width: unset;
