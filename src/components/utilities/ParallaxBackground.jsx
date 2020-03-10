@@ -30,26 +30,30 @@ export default function ParallaxBackground({ img, color }) {
   }
 
   if (typeof window !== "undefined") {
-    const reducedMotion = window.matchMedia(
+    // does the user prefer less motion? Then disable this.
+    const mediaReducedMotion = window.matchMedia(
       "(prefers-reduced-motion: no-preference)"
     )
+    if (mediaReducedMotion.matches || mediaReducedMotion.media === "not all") {
+      // can we assume mouse input? Then we use mouse for location
+      const mediaHover = window.matchMedia("(hover: hover)")
+      if (mediaHover.matches) {
+        const docW = window.innerWidth
+        const docH = window.innerHeight
 
-    if (reducedMotion.matches || reducedMotion.media === "not all") {
-      const docW = window.innerWidth
-      const docH = window.innerHeight
+        const prcX = (2 * (docW / 2 - docX)) / docW
+        const prcY = (2 * (docH / 2 - docY)) / docH
 
-      const prcX = (2 * (docW / 2 - docX)) / docW
-      const prcY = (2 * (docH / 2 - docY)) / docH
-
-      style = {
-        ...style,
-        transform: `
-        scale(1.25)
-        perspective(1000px)
-        rotateY(${-1 * prcX}deg)
-        rotateX(${1 * prcY}deg)
-        translate3d(${3 * prcX}px, ${3 * prcY}px, -100px)
-      `,
+        style = {
+          ...style,
+          transform: `
+            scale(1.25)
+            perspective(1000px)
+            rotateY(${-1 * prcX}deg)
+            rotateX(${1 * prcY}deg)
+            translate3d(${3 * prcX}px, ${3 * prcY}px, -100px)
+          `,
+        }
       }
     }
   }
