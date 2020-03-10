@@ -1,8 +1,4 @@
 & {
-  // Typography
-  @import "~normalize.css";
-  @import "./typography.js/typography.2019.scss";
-
   // variables
   --boxShadowXs: 0 3px 5px rgba(0, 0, 0, 0.12);
   --boxShadowSm: 0 5px 10px rgba(0, 0, 0, 0.12);
@@ -15,15 +11,10 @@
   --secondary: 0, 81, 193;
   --tertiary: 0, 7, 88;
 
-  // from typography.js
-  --rhythm: 1.45rem;
-  --scale1size: 2rem;
-  --scale1height: 2.9rem;
-  --scale75size: 2.63902rem;
-  --scale75height: 2.9rem;
-  --headerLineHeight: 1.1;
-  --headerWeight: bold;
-  --bodyColor: hsla(0, 0%, 0%, 0.8);
+  // typography.js overrides
+  --scale75: 2.63902rem;
+  --headerFontFamily: "Roboto", sans-serif;
+  --bodyFontFamily: "Roboto", sans-serif;
 
   // imports
   @import "../components/layout/styles.2019.scss";

@@ -1,3 +1,10 @@
+// -- Typography Opt-In --
+html.twenty-nineteen,
+html.ios7 {
+  @import "./normalize.css.scss";
+  @import "./typography.js.scss";
+}
+
 // -- Themed Imports --
 html {
   @import "./all.scss";

@@ -1,8 +1,4 @@
 & {
-  // Typography
-  @import "~normalize.css";
-  @import "./typography.js/typography.ios7.scss";
-
   // variables
   --lightblue: #38cbf8;
   --darkblue: #3c81fa;
@@ -13,15 +9,18 @@
   --raspberry: #f51f55;
   --gray: #8e8e93;
 
-  // from typography.js
-  --rhythm: 1.45rem;
-  --scale1size: 3rem;
-  --scale1height: 3.625rem;
-  --scale75size: 4.65554rem;
-  --scale75height: 5.075rem;
-  --headerLineHeight: 1.1;
+  // typography.js overrides
+  --bodyFontFamily: "Lato", sans-serif;
+  --headerFontFamily: "Lato", sans-serif;
   --headerWeight: 100;
-  --bodyColor: hsla(0, 0%, 0%, 0.8);
+  --bodyWeight: 300;
+
+  --scale55: 3rem;
+  --scale35: 1.93318rem;
+  --scale25: 1.55185rem;
+  --scale05: 1rem;
+  --scale-15: 0.80274rem;
+  --scale-25: 0.71922rem;
 
   // imports
   @import "../components/layout/styles.ios7.scss";

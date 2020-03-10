@@ -115,11 +115,11 @@
   }
 
   .lead {
-    font-size: var(--scale1size);
-    line-height: var(--scale1height);
+    font-size: var(--scale55);
+    line-height: calc(var(--scale55) * var(--headerLineHeight));
     @media (min-width: 48rem) {
-      font-size: var(--scale75size);
-      line-height: var(--scale75height);
+      font-size: var(--scale75);
+      line-height: calc(var(--scale75) * var(--headerLineHeight));
     }
     line-height: var(--headerLineHeight);
     font-weight: var(--headerWeight);
