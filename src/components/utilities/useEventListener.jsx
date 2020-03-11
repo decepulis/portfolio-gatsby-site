@@ -26,6 +26,11 @@ export default function useEventListener(
 
       if (!isSupported) return
 
+      // Make sure we have an event name
+      const isEventString = typeof eventName === "string"
+
+      if (!isEventString) return
+
       // Create event listener that calls handler function stored in ref
       const eventListener = event => savedHandler.current(event)
 

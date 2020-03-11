@@ -1,6 +1,9 @@
-import React, { useRef } from "react"
+import React, { useState, useCallback } from "react"
 
-import { useMouse } from "react-use"
+import RequestSensorPermission from "./RequestSensorPermission"
+import useEventListener from "./useEventListener"
+
+import clamp from "lodash/clamp"
 
 const styles = {
   position: "fixed",
@@ -19,43 +22,104 @@ const styles = {
 }
 
 export default function ParallaxBackground({ img, color }) {
-  const ref = useRef(null)
-  // TODO: accelerometer for mobile
-  const { docX, docY } = useMouse(ref)
+  const [sensorPermissionGranted, setSensorPermissionGranted] = useState()
+  const [transform, setTransform] = useState({
+    x: 0,
+    y: 0,
+  })
+  // -- Step 1: Define functions for calculating transforms by mouse or device motion --
+  const onMouseMove = useCallback(
+    ({ x: docX, y: docY }) => {
+      let x = 0
+      let y = 0
 
-  let style = {
-    ...styles,
-    backgroundColor: color,
-    backgroundImage: `url(${img})`,
-  }
-
-  if (typeof window !== "undefined") {
-    // does the user prefer less motion? Then disable this.
-    const mediaReducedMotion = window.matchMedia(
-      "(prefers-reduced-motion: no-preference)"
-    )
-    if (mediaReducedMotion.matches || mediaReducedMotion.media === "not all") {
-      // can we assume mouse input? Then we use mouse for location
-      const mediaHover = window.matchMedia("(hover: hover)")
-      if (mediaHover.matches) {
+      if (typeof window !== "undefined") {
         const docW = window.innerWidth
         const docH = window.innerHeight
 
-        const prcX = (2 * (docW / 2 - docX)) / docW
-        const prcY = (2 * (docH / 2 - docY)) / docH
+        x = (2 * (docW / 2 - docX)) / docW
+        y = (2 * (docH / 2 - docY)) / docH
+      }
 
-        style = {
-          ...style,
-          transform: `
-            scale(1.25)
-            perspective(1000px)
-            rotateY(${-1 * prcX}deg)
-            rotateX(${1 * prcY}deg)
-            translate3d(${3 * prcX}px, ${3 * prcY}px, -100px)
-          `,
-        }
+      setTransform({
+        x,
+        y,
+      })
+    },
+    [setTransform]
+  )
+
+  const onDeviceMotion = useCallback(
+    ({ rotationRate }) => {
+      // abs(alpha) and abs(beta) tend to range between 0 and the low hundreds
+      // we scale that to the 1s to make it at least in the same ballpark as our transforms
+      const rotationSpeed = -0.1
+      const xRotation = (rotationSpeed * rotationRate?.beta) / 100 ?? 0
+      const yRotation = (rotationSpeed * rotationRate?.alpha) / 100 ?? 0
+
+      // transform.x and transform.y both should range from -1 to 1
+      setTransform(transform => ({
+        x: clamp(transform.x + xRotation, -1, 1),
+        y: clamp(transform.y + yRotation, -1, 1),
+      }))
+    },
+    [setTransform]
+  )
+
+  // -- Step 2: Determine whether to use mousemove or device motion or neither --
+  let eventName
+  // If the user hasn't indicated that they prefer less motion,
+  // we assign an event.
+  const mediaReducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: no-preference)"
+  )
+  if (mediaReducedMotion.matches || mediaReducedMotion.media === "not all") {
+    const mediaHover = window.matchMedia("(hover: hover)")
+    // can we assume mouse input? Then we use mouse for location
+    if (mediaHover.matches) {
+      eventName = "mousemove"
+    } else {
+      if (sensorPermissionGranted === "granted") {
+        eventName = "devicemotion"
       }
     }
   }
-  return <div ref={ref} aria-hidden="true" focusable="false" style={style} />
+
+  useEventListener(
+    eventName,
+    eventName === "mousemove"
+      ? onMouseMove
+      : eventName === "devicemotion"
+      ? onDeviceMotion
+      : () => {}
+  )
+
+  // -- Step 3: Calculate and Apply Styles --
+  const translateSpeed = eventName === "mousemove" ? 3 : 5
+  const style = {
+    ...styles,
+    backgroundColor: color,
+    backgroundImage: `url(${img})`,
+    transform: `
+      scale(1.25)
+      perspective(1000px)
+      rotateY(${-1 * transform.x}deg)
+      rotateX(${1 * transform.y}deg)
+      translate3d(
+        ${translateSpeed * transform.x}px,
+        ${translateSpeed * transform.y}px,
+        -100px
+      )
+    `,
+  }
+
+  return (
+    <>
+      <RequestSensorPermission
+        permissionGranted={sensorPermissionGranted}
+        setPermissionGranted={setSensorPermissionGranted}
+      />
+      <div aria-hidden="true" focusable="false" style={style} />
+    </>
+  )
 }
