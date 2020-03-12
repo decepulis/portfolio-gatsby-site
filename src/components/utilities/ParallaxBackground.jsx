@@ -9,9 +9,9 @@ const styles = {
   position: "fixed",
   zIndex: 0,
   top: 0,
+  bottom: 0,
   left: 0,
-  height: "100vh",
-  width: "100vw",
+  right: 0,
 
   backgroundPosition: "center",
   backgroundRepeat: "no-repeat",
@@ -21,7 +21,7 @@ const styles = {
   color: "white",
 }
 
-export default function ParallaxBackground({ img, color }) {
+export default function ParallaxBackground({ img, gradient, color }) {
   const [sensorPermissionGranted, setSensorPermissionGranted] = useState()
   const [transform, setTransform] = useState({
     x: 0,
@@ -53,7 +53,7 @@ export default function ParallaxBackground({ img, color }) {
     ({ rotationRate }) => {
       // abs(alpha) and abs(beta) tend to range between 0 and the low hundreds
       // we scale that to the 1s to make it at least in the same ballpark as our transforms
-      const rotationSpeed = -0.1
+      const rotationSpeed = -0.033
       const xRotation = (rotationSpeed * rotationRate?.beta) / 100 ?? 0
       const yRotation = (rotationSpeed * rotationRate?.alpha) / 100 ?? 0
 
@@ -95,11 +95,13 @@ export default function ParallaxBackground({ img, color }) {
   )
 
   // -- Step 3: Calculate and Apply Styles --
-  const translateSpeed = eventName === "mousemove" ? 3 : 5
+  // todo: calculate this based on viewport with MATH!
+  const translateSpeed = eventName === "mousemove" ? 5 : 20
   const style = {
     ...styles,
     backgroundColor: color,
-    backgroundImage: `url(${img})`,
+    backgroundImage: `url(${img}), ${gradient}`,
+    // backgroundImage: `url(${img})`,
     transform: `
       scale(1.25)
       perspective(1000px)

@@ -1,6 +1,7 @@
 .about {
   scroll-snap-align: start;
   height: 100vh;
+  max-width: 100%;
   @supports (-webkit-overflow-scrolling: touch) {
     height: calc(var(--vh, 1vh) * 100);
   }
@@ -8,10 +9,6 @@
 
   position: relative;
 
-  margin-left: calc(-50vw + 50%);
-  padding-left: calc(50vw - 50%);
-  margin-right: calc(-50vw + 50%);
-  padding-right: calc(50vw - 50%);
   margin-top: calc(-1 * var(--header-height));
   padding-top: var(--header-height);
 
@@ -30,6 +27,7 @@
     transition: transform 0.1s ease;
     bottom: 0;
     font-size: var(--unlock-height);
+    font-weight: var(--headerWeight);
     line-height: var(--unlock-height);
     padding: var(--unlock-padding);
     text-align: center;
@@ -136,6 +134,8 @@
 
   &__text {
     grid-area: text;
+    display: flex;
+    flex-direction: column;
 
     p {
       margin-bottom: calc(0.5 * var(--rhythm));
@@ -147,6 +147,7 @@
   }
 
   .action-btn {
+    margin-top: auto;
     a {
       &:before {
         content: "Tap to ";

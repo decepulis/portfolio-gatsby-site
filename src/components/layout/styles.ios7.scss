@@ -28,11 +28,13 @@ body {
     top: 0;
     left: 0;
     height: 100vh;
+    overflow-x: hidden;
     @supports (-webkit-overflow-scrolling: touch) {
       height: calc(var(--vh, 1vh) * 100);
     }
     width: 100vw;
-    overflow: scroll;
+    overflow-y: scroll;
+    overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
     scroll-snap-type: y mandatory;
   }

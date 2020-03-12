@@ -5,6 +5,7 @@
 .navbar {
   scroll-snap-align: start;
   height: 100vh;
+  max-width: 100%;
   @supports (-webkit-overflow-scrolling: touch) {
     height: calc(var(--vh, 1vh) * 100);
   }
