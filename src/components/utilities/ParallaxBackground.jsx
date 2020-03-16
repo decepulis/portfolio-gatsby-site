@@ -53,9 +53,41 @@ export default function ParallaxBackground({ img, gradient, color }) {
     ({ rotationRate }) => {
       // abs(alpha) and abs(beta) tend to range between 0 and the low hundreds
       // we scale that to the 1s to make it at least in the same ballpark as our transforms
-      const rotationSpeed = -0.033
-      const xRotation = (rotationSpeed * rotationRate?.beta) / 100 ?? 0
-      const yRotation = (rotationSpeed * rotationRate?.alpha) / 100 ?? 0
+      const rotationSpeed = 0.033
+      const betaCalcRotation = (rotationSpeed * rotationRate?.beta) / 100 ?? 0
+      const alphaCalcRotation = (rotationSpeed * rotationRate?.alpha) / 100 ?? 0
+
+      let xRotation
+      let yRotation
+
+      const orientation =
+        window.orientation ?? window.screen?.orientation?.angle
+      switch (orientation) {
+        case 90:
+        case -270:
+          xRotation = -1 * alphaCalcRotation
+          yRotation = betaCalcRotation
+          break
+
+        case -180:
+        case 180:
+          xRotation = betaCalcRotation
+          yRotation = alphaCalcRotation
+          break
+
+        case 270:
+        case -90:
+          xRotation = alphaCalcRotation
+          yRotation = -1 * betaCalcRotation
+          break
+
+        case 0:
+        case 360:
+        case -360:
+        default:
+          xRotation = -1 * betaCalcRotation
+          yRotation = -1 * alphaCalcRotation
+      }
 
       // transform.x and transform.y both should range from -1 to 1
       setTransform(transform => ({
