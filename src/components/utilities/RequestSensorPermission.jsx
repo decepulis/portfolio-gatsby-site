@@ -60,7 +60,11 @@ export default function RequestSensorPermission({
         onClick={requestPermission}
         aria-label="tap to enable wallpaper parallax effect"
       >
-        Tap to enable motion features
+        <div>
+          <b>Motion Features</b>
+          <br />
+          Tap to enable motion features
+        </div>
       </button>
       <button
         className="request-sensor-permission__dismiss"
