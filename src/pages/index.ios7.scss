@@ -15,8 +15,7 @@
     transition: transform 0.2s ease;
     transform: scale(0);
 
-    &:target,
-    &:focus {
+    &:target {
       transform: scale(1);
     }
 
@@ -44,8 +43,7 @@
   }
 }
 
-section[id]:target ~ .back-to-top,
-section[id]:focus ~ .back-to-top {
+section[id]:target ~ .back-to-top {
   transform: scale(1);
 }
 

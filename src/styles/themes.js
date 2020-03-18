@@ -16,7 +16,13 @@ export default {
     // blobs, waves, gradients
     label: "2019",
     highlightNavOnScroll: true,
-    variables: `html {--scroll-behavior-js: ${isChrome ? "auto" : "smooth"};}`,
+    // when in chrome, we use polyfilled scroll behavior to avoid
+    // bugs with chrome's implementation
+    variables: `
+    html.twenty-nineteen, html.twenty-nineteen body {
+      --scroll-behavior-css: ${isChrome ? "auto" : "smooth"};
+    }
+    `,
     fontHref:
       "https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap",
   },
@@ -74,7 +80,8 @@ export default {
     highlightNavOnScroll: false,
     navIsTop: true,
     accessible: false,
-    variables: `html {--scroll-behavior: ${isChrome ? "auto" : "smooth"};}`,
+    // In ios7, we disable the smooth scroll polyfill to avoid bugs it introduces with the :target selector
+    variables: `html.ios7, html.ios7 body {--scroll-behavior-css: smooth; --scroll-behavior-polyfill: auto}`,
     fontHref:
       "https://fonts.googleapis.com/css?family=Lato:100,300,400&display=swap",
   },
