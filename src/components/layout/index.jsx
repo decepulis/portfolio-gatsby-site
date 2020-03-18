@@ -63,7 +63,7 @@ export default ({ children, location: { pathname } }) => {
             ))}
           </select>
         </header>
-        {currentTheme.id === "ios7" && (
+        {currentTheme.id === "ios7" && pathname === "/" && (
           <ParallaxBackground
             img={ios7}
             gradient="linear-gradient(rgba(18,26,56,0.5) 0%,rgba(14,62,99,0.75) 40%,rgba(78,170,213,0.75) 80%, rgba(78,170,213,1) 100%)"

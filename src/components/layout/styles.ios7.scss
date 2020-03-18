@@ -2,18 +2,25 @@
 
 & {
   //html
-  --header__h1-size: 4rem;
+  --header__h1-height: 4rem;
   --header__h1-padding: var(--rhythm);
+  --header__h1-size: calc(
+    var(--header__h1-height) + calc(2 * var(--header__h1-padding))
+  );
   --header__select-height: 2rem;
+  --header__select-size: calc(var(--header__select-height) + var(--rhythm));
 
-  @media (min-width: 36rem) {
-    --header__h1-size: 6rem;
+  --header-height: var(--header__h1-size);
+
+  @media (min-height: 30rem) {
+    --header-height: calc(var(--header__h1-size) + var(--header__select-size));
   }
 
-  --header-height: calc(
-    var(--header__h1-size) + calc(2 * var(--header__h1-padding)) +
-      var(--header__select-height)
-  );
+  @media (min-width: 36rem) and (min-height: 30rem) {
+    --header-height: calc(var(--header__h1-size) + var(--header__select-size));
+    --header__h1-height: 6rem;
+    --header__h1-padding: var(--rhythm);
+  }
 }
 
 &,
@@ -64,14 +71,18 @@ body {
     text-decoration: none;
   }
 
-  display: block;
+  display: grid;
+  gap: var(--rhythm);
   padding: 0;
-  text-align: center;
+  @media (min-height: 30rem) {
+    display: block;
+    text-align: center;
+  }
 
   h1 {
-    font-size: var(--header__h1-size);
-    line-height: var(--header__h1-size);
-    height: calc(var(--header__h1-size) + var(--header__h1-padding));
+    font-size: var(--header__h1-height);
+    line-height: var(--header__h1-height);
+    height: calc(var(--header__h1-height) + var(--header__h1-padding));
     overflow: hidden;
     white-space: initial;
     padding-top: var(--header__h1-padding);

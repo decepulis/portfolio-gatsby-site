@@ -9,16 +9,16 @@
 
   position: relative;
 
-  margin-top: calc(-1 * var(--header-height));
-  padding-top: var(--header-height);
-
   --unlock-height: 1.5rem;
   --unlock-padding: var(--rhythm);
-  @media (min-width: 36rem) {
+  @media (min-width: 36rem) and (min-height: 30rem) {
     --unlock-height: 2.5rem;
     --unlock-padding: calc(2 * var(--rhythm));
   }
-  padding-bottom: calc(var(--unlock-height) + calc(2 * var(--unlock-padding)));
+
+  margin-top: calc(-1 * var(--header-height));
+  padding-top: var(--header-height);
+  padding-bottom: calc(var(--unlock-height) + var(--unlock-padding));
 
   &:after {
     position: absolute;
@@ -70,15 +70,17 @@
   position: relative;
   border-radius: calc(0.75 * var(--rhythm));
 
+  max-height: calc(100% - var(--rhythm));
+  overflow-y: scroll;
+
   grid-template-columns: 2fr 1fr;
-  @media (min-width: 36rem) {
-    grid-template-columns: 5fr 1fr;
-  }
   grid-template-areas:
     "header header"
     "text profile";
+  @media (min-width: 36rem) {
+    grid-template-columns: 5fr 1fr;
+  }
 
-  margin: var(--rhythm) 0;
   padding: calc(0.5 * var(--rhythm)) var(--rhythm);
   grid-gap: var(--rhythm) calc(0.5 * var(--rhythm));
 
@@ -148,6 +150,7 @@
 
   .action-btn {
     margin-top: auto;
+    font-size: 80%;
     a {
       &:before {
         content: "Tap to ";
