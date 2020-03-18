@@ -13,17 +13,17 @@ export default ({ title, subtitle, date, description, slug, image, tags }) => (
       <div className="gatsby-image-wrapper gatsby-image-wrapper-placeholder"></div>
     )}
 
-    <header>
+    <header className="post-preview__header">
       {title && (
-        <h3>
+        <h3 className="post-preview__h3">
           <Link to={slug}>{title}</Link>
         </h3>
       )}
-      {subtitle && <p>{subtitle}</p>}
-      {date && <p>{date}</p>}
+      {subtitle && <p className="post-preview__subtitle">{subtitle}</p>}
+      {date && <p className="post-preview__date">{date}</p>}
     </header>
 
-    {description && <p>{description}</p>}
+    {description && <p className="post-preview__description">{description}</p>}
 
     {tags && (
       <ul className="tag-list">

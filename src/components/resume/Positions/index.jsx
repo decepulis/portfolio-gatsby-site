@@ -64,7 +64,7 @@ const Positions = React.forwardRef(({ id }, ref) => {
               />
             ))}
           </section>
-          <p>
+          <p className="positions-link">
             <Link to="/positions/">
               View All {data.totalCount.totalCount} Positions &rarr;
             </Link>
