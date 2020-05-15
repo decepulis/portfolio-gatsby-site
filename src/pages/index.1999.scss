@@ -1,0 +1,16 @@
+#about,
+main {
+  & h1::first-letter,
+  & h2::first-letter {
+    font-size: 2em;
+    text-decoration: underline;
+  }
+}
+
+.about,
+main > section,
+main > article {
+  background-color: red;
+  border: 10px outset gray;
+  margin-bottom: 20px;
+}

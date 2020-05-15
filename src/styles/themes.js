@@ -7,9 +7,8 @@ export default {
     label: "1989",
   },
   "nineteen-ninetey-nine": {
-    // I'm thinkin... space jam
     label: "1999",
-    disabled: true,
+    highlightNavOnScroll: true,
   },
   "twenty-nineteen": {
     // netlify, contentful, zeit.
