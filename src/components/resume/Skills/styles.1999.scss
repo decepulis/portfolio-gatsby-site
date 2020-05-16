@@ -1,0 +1,40 @@
+.skills {
+  grid-column-start: full-start;
+  grid-column-end: full-end;
+  background-color: blue;
+
+  & > header {
+    display: flex;
+    justify-content: space-between;
+    &:after {
+      content: "";
+      background-image: url("./1999-skills.gif");
+      background-repeat: no-repeat;
+      background-size: contain;
+
+      height: 75px;
+      width: 75px;
+    }
+  }
+
+  a {
+    color: lightblue;
+    &:visited {
+      color: lightpink;
+    }
+  }
+
+  dl {
+    columns: 96px auto;
+    column-gap: 16px;
+
+    dd {
+      margin: 0;
+      margin-left: 16px;
+    }
+
+    div {
+      break-inside: avoid;
+    }
+  }
+}

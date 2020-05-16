@@ -4,6 +4,7 @@
   left: 0;
   top: 0;
   bottom: 0;
+  z-index: 1000;
 }
 
 .navlist {
@@ -24,7 +25,11 @@
   }
 
   &__link {
+    font-weight: bold;
     color: yellow;
+    &:visited {
+      color: yellow;
+    }
 
     &[aria-current="location"] {
       animation: blink 1s steps(3) infinite;

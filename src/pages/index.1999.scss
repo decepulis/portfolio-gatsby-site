@@ -1,16 +1,37 @@
-#about,
-main {
-  & h1::first-letter,
-  & h2::first-letter {
-    font-size: 2em;
-    text-decoration: underline;
+// Things should be cards!
+// The about on the home page...
+.layout--home .about-layout,
+// sections on the home page...
+.layout--home main > section,
+// and the main content not on home pages!
+.layout:not(.layout--home) main {
+  border: 10px outset silver;
+  padding: 10px;
+
+  & h1,
+  & h2 {
+    margin-top: 0;
   }
 }
 
-.about,
-main > section,
-main > article {
-  background-color: red;
-  border: 10px outset gray;
-  margin-bottom: 20px;
+.layout:not(.layout--home) main {
+  background-color: gray;
+}
+
+a:visited {
+  color: purple;
+}
+
+.about-layout,
+main {
+  margin-top: 10px;
+}
+
+.layout--home main {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: [full-start] 1fr [full-end];
+  @media (min-width: 768px) {
+    grid-template-columns: [full-start] 1fr 1fr [full-end];
+  }
 }

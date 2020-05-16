@@ -4,7 +4,7 @@ import { Link } from "gatsby"
 
 // todo: pull _this_ information from the cms
 const Skills = React.forwardRef(({ id }, ref) => (
-  <section id={id} ref={ref}>
+  <section id={id} ref={ref} className="skills">
     <header>
       <h2>Skills</h2>
     </header>

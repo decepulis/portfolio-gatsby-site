@@ -39,7 +39,7 @@ const Education = React.forwardRef(({ id }, ref) => {
   )
 
   return (
-    <section id={id} ref={ref}>
+    <section id={id} ref={ref} className="education">
       <header>
         <h2>Education</h2>
       </header>
