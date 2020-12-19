@@ -7,7 +7,7 @@ description: >-
   Creating Socio-Technical Patches for Information Foraging - A Requirements
   Traceability Case Study
 featuredpost: true
-featuredimage: assets/projects-ift.png
+featuredimage: ../../assets/projects-ift.png
 tags:
   - Information Foraging Theory
   - Graph Theory

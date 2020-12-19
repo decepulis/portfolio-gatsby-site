@@ -1,54 +1,38 @@
-const { createFilePath } = require(`gatsby-source-filesystem`)
-const path = require(`path`)
-const _ = require(`lodash`)
-
-// Webpack Configuration
-exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
-  if (stage === "build-html" || stage === "develop-html") {
-    actions.setWebpackConfig({
-      module: {
-        rules: [
-          {
-            test: /smoothscroll-polyfill/,
-            use: loaders.null(),
-          },
-        ],
-      },
-    })
-  }
-}
+const { createFilePath } = require(`gatsby-source-filesystem`);
+const path = require(`path`);
+const _ = require(`lodash`);
 
 // Page Creation
-const getDirFromSlug = slug => {
+const getDirFromSlug = (slug) => {
   // turns "/education/ms/" into ["", "education" "ms", ""] ...
-  const slugArr = slug.split("/")
+  const slugArr = slug.split("/");
   // ... into ["", "education", ""] and then "/education/""
-  return slugArr.filter((s, idx) => idx !== slugArr.length - 2).join("/")
-}
+  return slugArr.filter((s, idx) => idx !== slugArr.length - 2).join("/");
+};
 
 exports.onCreateNode = ({ node, getNode, actions }) => {
-  const { createNodeField } = actions
+  const { createNodeField } = actions;
 
   // Create slug for every MarkdownRemark
   if (node.internal.type === `MarkdownRemark`) {
-    const slug = createFilePath({ node, getNode, basePath: `pages` })
-    const directory = getDirFromSlug(slug)
+    const slug = createFilePath({ node, getNode, basePath: `pages` });
+    const directory = getDirFromSlug(slug);
 
     createNodeField({
       node,
       name: `slug`,
       value: slug,
-    })
+    });
     createNodeField({
       node,
       name: `directory`,
       value: directory,
-    })
+    });
   }
-}
+};
 
 exports.createPages = async ({ graphql, actions }) => {
-  const { createPage } = actions
+  const { createPage } = actions;
 
   // Create page for each directory, tag, and MarkdownRemark
   const resultMarkdown = await graphql(`
@@ -77,27 +61,27 @@ exports.createPages = async ({ graphql, actions }) => {
         }
       }
     }
-  `)
+  `);
 
-  resultMarkdown.data.directoryGroup.group.forEach(directory => {
+  resultMarkdown.data.directoryGroup.group.forEach((directory) => {
     createPage({
       path: `${directory.fieldValue}`,
       component: path.resolve(`./src/templates/directory.jsx`),
       context: {
         slug: `${directory.fieldValue}`,
       },
-    })
-  })
+    });
+  });
 
-  resultMarkdown.data.tagsGroup.group.forEach(tag => {
+  resultMarkdown.data.tagsGroup.group.forEach((tag) => {
     createPage({
       path: `/tags/${_.kebabCase(tag.fieldValue)}/`,
       component: path.resolve(`./src/templates/tags.jsx`),
       context: {
         tag: tag.fieldValue,
       },
-    })
-  })
+    });
+  });
 
   resultMarkdown.data.postsRemark.edges.forEach(({ node }) => {
     createPage({
@@ -106,6 +90,6 @@ exports.createPages = async ({ graphql, actions }) => {
       context: {
         slug: node.fields.slug,
       },
-    })
-  })
-}
+    });
+  });
+};

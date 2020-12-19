@@ -1,15 +1,15 @@
-import React from "react"
+import React from "react";
 
-import { Link } from "gatsby"
+import { Link } from "gatsby";
 
 // todo: pull _this_ information from the cms
-const Skills = React.forwardRef(({ id }, ref) => (
-  <section id={id} ref={ref} className="skills">
+const Skills = () => (
+  <section>
     <header>
       <h2>Skills</h2>
     </header>
 
-    <section className="skill-posts">
+    <section>
       <article>
         <header>
           <h3>Front-End Web</h3>
@@ -254,6 +254,6 @@ const Skills = React.forwardRef(({ id }, ref) => (
       </article>
     </section>
   </section>
-))
+);
 
-export default Skills
+export default Skills;

@@ -1,35 +1,35 @@
-import React from "react"
+import React from "react";
 
-import IconFacebook from "./facebook.inline.svg"
-import IconInstagram from "./instagram.inline.svg"
-import IconLinkedin from "./linkedin.inline.svg"
-import IconEmail from "./gmail.inline.svg"
+import IconFacebook from "./facebook.inline.svg";
+import IconInstagram from "./instagram.inline.svg";
+import IconLinkedin from "./linkedin.inline.svg";
+import IconEmail from "./gmail.inline.svg";
 
-const Contact = React.forwardRef(({ id }, ref) => (
-  <section className="contact" id={id} ref={ref}>
+const Contact = () => (
+  <section>
     <header>
       <h2>Contact</h2>
     </header>
-    <ul className="contact-list">
-      <li className="contact-list__item contact-list__item--email">
+    <ul>
+      <li>
         <a href="mailto:darius@decepulis.com">
           <IconEmail aria-hidden="true" focusable="false" height="2em" />
           <span className="visually-hidden-text">Email</span>
         </a>
       </li>
-      <li className="contact-list__item contact-list__item--linkedin">
+      <li>
         <a href="https://www.linkedin.com/in/decepulis/">
           <IconLinkedin aria-hidden="true" focusable="false" height="2em" />
           <span className="visually-hidden-text">LinkedIn</span>
         </a>
       </li>
-      <li className="contact-list__item contact-list__item--facebook">
+      <li>
         <a href="https://www.facebook.com/de.cepulis">
           <IconFacebook aria-hidden="true" focusable="false" height="2em" />
           <span className="visually-hidden-text">Facebook</span>
         </a>
       </li>
-      <li className="contact-list__item contact-list__item--instagram">
+      <li>
         <a href="https://www.instagram.com/__dardarbinks/">
           <IconInstagram aria-hidden="true" focusable="false" height="2em" />
           <span className="visually-hidden-text">Instagram</span>
@@ -37,6 +37,6 @@ const Contact = React.forwardRef(({ id }, ref) => (
       </li>
     </ul>
   </section>
-))
+);
 
-export default Contact
+export default Contact;

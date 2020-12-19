@@ -1,38 +1,30 @@
 module.exports = {
+  siteMetadata: {
+    title: "portfolio-gatsby-site",
+  },
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `assets`,
-        path: `${__dirname}/static/assets`,
+        path: `./src/assets`,
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `posts`,
-        path: `${__dirname}/src/posts`,
+        path: `./src/posts`,
       },
     },
 
-    {
-      resolve: `gatsby-plugin-netlify-cms-paths`,
-      options: {
-        cmsConfig: `/static/admin/config.yml`,
-      },
-    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+
     {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
-          {
-            resolve: `gatsby-plugin-netlify-cms-paths`,
-            options: {
-              cmsConfig: `/static/admin/config.yml`,
-            },
-          },
           {
             resolve: `gatsby-remark-images`,
             options: { maxWidth: 300 },
@@ -40,12 +32,7 @@ module.exports = {
         ],
       },
     },
-    {
-      resolve: "gatsby-plugin-sass",
-      options: {
-        useResolveUrlLoader: true,
-      },
-    },
+
     {
       resolve: "gatsby-plugin-react-svg",
       options: {
@@ -54,7 +41,13 @@ module.exports = {
         },
       },
     },
-
-    `gatsby-plugin-netlify-cms`,
+    {
+      resolve: "gatsby-plugin-manifest",
+      options: {
+        icon: "src/assets/icon.png",
+      },
+    },
+    "gatsby-plugin-react-helmet",
+    "gatsby-plugin-sitemap",
   ],
-}
+};

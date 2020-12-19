@@ -5,7 +5,7 @@ description: Data Visualization of Messages
 date: 2016-05-01T00:00:00.000Z
 datetimeformat: MM-YYYY
 featuredpost: false
-featuredimage: assets/projects-qselfie.jpg
+featuredimage: ../../assets/projects-qselfie.jpg
 tags: ["Python", "Data Visualization"]
 ---
 

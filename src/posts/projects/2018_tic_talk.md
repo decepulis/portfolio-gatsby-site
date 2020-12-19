@@ -5,7 +5,7 @@ description: Trying to stay on schedule with Senior Design.
 date: 2018-04-01T00:00:00.000Z
 datetimeformat: MM-YYYY
 featuredpost: false
-featuredimage: assets/projects-tt-interface.jpg
+featuredimage: ../../assets/projects-tt-interface.jpg
 tags: ["JavaScript/ES6", "jQuery", "CSS", "HTML", "UI/UX"]
 ---
 

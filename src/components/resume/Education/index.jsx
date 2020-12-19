@@ -1,8 +1,8 @@
-import React from "react"
-import { graphql, useStaticQuery, Link } from "gatsby"
-import PostPreview from "../../PostPreview"
+import React from "react";
+import { graphql, useStaticQuery, Link } from "gatsby";
+import PostPreview from "../../PostPreview";
 
-const Education = React.forwardRef(({ id }, ref) => {
+const Education = () => {
   const data = useStaticQuery(
     graphql`
       query {
@@ -36,14 +36,14 @@ const Education = React.forwardRef(({ id }, ref) => {
         }
       }
     `
-  )
+  );
 
   return (
-    <section id={id} ref={ref} className="education">
+    <section>
       <header>
         <h2>Education</h2>
       </header>
-      <section className="education-posts">
+      <section>
         {data.articles.edges.map(({ node }) => (
           <PostPreview
             key={node.id}
@@ -61,7 +61,7 @@ const Education = React.forwardRef(({ id }, ref) => {
         </Link>
       </p>
     </section>
-  )
-})
+  );
+};
 
-export default Education
+export default Education;
